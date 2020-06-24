@@ -364,11 +364,11 @@ a:hover {
     -webkit-transition: all 0.4s;
     transition: all 0.4s;
 }
-.header-row { position: relative; width: 100%; max-width: 1336px; height: 40px; margin: 0 auto; display: flex; align-items: center; padding: 0 12px; }
+.header-row { position: relative; width: 100%; max-width: 1336px; height: 40px; margin: 0 auto; display: flex; align-items: normal; padding: 0 12px; }
 .main-header.sticky-anim.sticky-header { top: 0; }
 .logged-in .main-header.sticky-anim.sticky-header { top: 32px; }
 
-.site-branding { width: 199px; height: 24px; text-align: left; -webkit-transition: all 0.4s; transition: all 0.4s; }
+.site-branding { width: 199px; height: 24px; text-align: left; margin-top: 3px; -webkit-transition: all 0.4s; transition: all 0.4s; }
 
 .disable-eventers > a { 
   pointer-events: none;
@@ -376,8 +376,8 @@ a:hover {
   color: #919AAB !important;
   display: inline-block;
 }
-.main-navigation { width: calc(100% - 379px); padding-left: 112px }
-.main-navigation ul { margin: 0; padding: 0; list-style: none; text-align: right; }
+.main-navigation { width: calc(100% - 379px); padding-left: 112px; margin-top: 5px; }
+.main-navigation ul { margin: 0; padding: 0; list-style: none; text-align: left; }
 .main-navigation ul li { display: inline-block; margin: 0 18px 0 0; }
 .main-navigation ul li a {
 display: inline-block;
