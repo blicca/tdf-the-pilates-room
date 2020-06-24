@@ -140,7 +140,7 @@ function thepilatesroom_fonts_url() {
     by chosen font(s), translate this to 'off'. Do not translate into your own language.
      */
     if ( 'off' !== _x( 'on', 'Google font: on or off', 'thepilatesroom' ) ) {
-        $font_url = add_query_arg( 'family', urlencode( 'Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap&subset=latin' ), "//fonts.googleapis.com/css" );
+        $font_url = add_query_arg( 'family', urlencode( 'Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap&subset=latin' ), "//fonts.googleapis.com/css2" );
     }
 
     return $font_url;
