@@ -161,7 +161,6 @@
     // Document Ready
     $(document).ready(function(){
         sticky_main_header();
-        isotope_blog();
         home_hero_slider();
     });
 
