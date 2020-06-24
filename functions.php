@@ -152,7 +152,7 @@ Enqueue scripts and styles.
 function thepilatesroom_scripts() {
     wp_enqueue_style( 'thepilatesroom-fonts', thepilatesroom_fonts_url(), array(), '1.0.0' );
 }
-add_action( 'wp_enqueue_scripts', 'studio_scripts' );
+add_action( 'wp_enqueue_scripts', 'thepilatesroom_scripts' );
 
 function thepilatesroom_script_style() {
   /* CSS */
