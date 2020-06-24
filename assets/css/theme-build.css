@@ -681,13 +681,22 @@ display: block;
 
 /* About Us */
 .home-about {
-background-color: #ffffff;
-background-repeat: no-repeat;
-background-position: right top;
-background-size: 39.722222% auto;
+  position: relative;
+}
+.hero-bg-col {
+  position: absolute;
+  width: 39.722222%;
+  height: 100%;
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: cover;
 }
 .home-about-container.theme-row {
-  padding: 84px 0;
+  padding: 220px 12px 138px;
+}
+.hero-about-content {
+  width: calc( 50% - 12px);
 }
 .home-about-title {
   width: 30%;
@@ -754,9 +763,8 @@ margin-bottom: 16px;
 
 /* Clients */
 
-.global-clients {
-  background: rgb(5,42,148);
-  background: linear-gradient(90deg, rgba(5,42,148,1) 0%, rgba(5,42,148,1) 50%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
+.global-clients-partners {
+  background: #0D0E0E;
 }
 .theme-row.global-clients-row {
   padding: 97px 0 88px;
