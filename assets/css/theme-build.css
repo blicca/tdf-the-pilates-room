@@ -342,6 +342,7 @@ a:hover {
   letter-spacing: 0;
   line-height: 19px;  
   padding: 13px 24px 16px 24px;
+  border-radius: 4px;
 }
 .thepilatesroom-button:hover { background-color:  var(--buttonHBG); color: var(--buttonColor); }
 .thepilatesroom-button:active, .thepilatesroom-button:focus { background-color: var(--buttonBG);}
