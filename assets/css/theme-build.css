@@ -345,7 +345,9 @@ a:hover {
 }
 .thepilatesroom-button:hover { background-color:  var(--buttonHBG); color: var(--buttonColor); }
 .thepilatesroom-button:active, .thepilatesroom-button:focus { background-color: var(--buttonBG);}
-
+.thepilatesroom-content {
+  margin-top: -40px;
+}
 /**
   * 3.1 - Header Styles
   */
