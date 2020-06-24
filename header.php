@@ -62,22 +62,10 @@ if ( is_single() ) {
 			</nav><!-- #site-navigation -->
 			
 			<div class="header-button-col">
-				<span><?php echo esc_html__("Call Us:", "thepilatesroom"); ?> <?php the_field('phone', 'option'); ?></span>
-				<div class="wpml-custom-sw">
-					<?php echo do_shortcode('[wpml_language_switcher type="widget" flags=0 native=0 translated=1][/wpml_language_switcher]'); ?>
-				</div>
+				<a href="#">Sign Up</a>
+				<a href="#">Log in</a>
 			</div>
-			
-			<?php 
-				$link = get_field('contact_button','option');
-				if( $link ): 
-					$link_url = $link['url'];
-					$link_title = $link['title'];
-					$link_target = $link['target'] ? $link['target'] : '_self';
-					?>
-					<a class="thepilatesroom-button contact-us-button-header" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?><span class="square"></span></a>
-			<?php endif; ?>				
-	
+
 			<div class="mobile-menu-icon">
 				<div class="icoline"></div>
 				<div class="icoline"></div>

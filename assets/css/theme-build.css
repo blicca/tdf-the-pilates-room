@@ -274,94 +274,6 @@ ins {
 embed {
   max-width: 100%; }
 
-@font-face {
-  font-family: 'Gilroy';
-  src: url('../fonts/Gilroy-Medium.eot');
-  src: url('../fonts/Gilroy-Medium.eot?#iefix') format('embedded-opentype'),
-      url('../fonts/Gilroy-Medium.woff2') format('woff2'),
-      url('../fonts/Gilroy-Medium.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-  display: swap;
-}
-
-@font-face {
-  font-family: 'Gilroy';
-  src: url('../fonts/Gilroy-BoldItalic.eot');
-  src: url('../fonts/Gilroy-BoldItalic.eot?#iefix') format('embedded-opentype'),
-      url('../fonts/Gilroy-BoldItalic.woff2') format('woff2'),
-      url('../fonts/Gilroy-BoldItalic.woff') format('woff');
-  font-weight: bold;
-  font-style: italic;
-  display: swap;
-}
-
-@font-face {
-  font-family: 'Gilroy';
-  src: url('../fonts/Gilroy-MediumItalic.eot');
-  src: url('../fonts/Gilroy-MediumItalic.eot?#iefix') format('embedded-opentype'),
-      url('../fonts/Gilroy-MediumItalic.woff2') format('woff2'),
-      url('../fonts/Gilroy-MediumItalic.woff') format('woff');
-  font-weight: 500;
-  font-style: italic;
-  display: swap;
-}
-
-@font-face {
-  font-family: 'Gilroy';
-  src: url('../fonts/Gilroy-Bold.eot');
-  src: url('../fonts/Gilroy-Bold.eot?#iefix') format('embedded-opentype'),
-      url('../fonts/Gilroy-Bold.woff2') format('woff2'),
-      url('../fonts/Gilroy-Bold.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
-  display: swap;
-}
-
-@font-face {
-  font-family: 'Neue Montreal';
-  src: url('../fonts/NeueMontreal-Italic.eot');
-  src: url('../fonts/NeueMontreal-Italic.eot?#iefix') format('embedded-opentype'),
-      url('../fonts/NeueMontreal-Italic.woff2') format('woff2'),
-      url('../fonts/NeueMontreal-Italic.woff') format('woff');
-  font-weight: normal;
-  font-style: italic;
-  display: swap;
-}
-
-@font-face {
-  font-family: 'Neue Montreal';
-  src: url('../fonts/NeueMontreal-Bold.eot');
-  src: url('../fonts/NeueMontreal-Bold.eot?#iefix') format('embedded-opentype'),
-      url('../fonts/NeueMontreal-Bold.woff2') format('woff2'),
-      url('../fonts/NeueMontreal-Bold.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
-  display: swap;
-}
-
-@font-face {
-  font-family: 'Neue Montreal';
-  src: url('../fonts/NeueMontreal-Regular.eot');
-  src: url('../fonts/NeueMontreal-Regular.eot?#iefix') format('embedded-opentype'),
-      url('../fonts/NeueMontreal-Regular.woff2') format('woff2'),
-      url('../fonts/NeueMontreal-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  display: swap;
-}
-
-@font-face {
-  font-family: 'Neue Montreal';
-  src: url('../fonts/NeueMontreal-BoldItalic.eot');
-  src: url('../fonts/NeueMontreal-BoldItalic.eot?#iefix') format('embedded-opentype'),
-      url('../fonts/NeueMontreal-BoldItalic.woff2') format('woff2'),
-      url('../fonts/NeueMontreal-BoldItalic.woff') format('woff');
-  font-weight: bold;
-  font-style: italic;
-  display: swap;
-}
-
 ul, ol {
   list-style-position: inside;
 }
@@ -372,115 +284,92 @@ a[href^=tel] {
 /**
  * 3.0 - Base Styles
  */
-body { font-family: 'Neue Montreal', sans-serif; font-size: 16px; font-weight: normal; line-height: 28px; letter-spacing: 0; color: #2B2F3B;
+:root {
+  --titleFonts: "Helvetica Neue", -apple-system,BlinkMacSystemFont,Roboto,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  --buttonBG: #101010;
+  --buttonHBG: #101010;
+  --buttonColor: #ffffff;
+}
+body { font-family: 'Lora', serif; font-size: 16px; font-weight: 400; line-height: 30px; letter-spacing: 0; color: #000000;
    text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; -webkit-text-size-adjust: 100%; word-wrap: break-word; overflow-wrap: break-word; overflow-x: hidden; 
 }
-h1, h2, h3, h4, h5, h6 { font-family: 'Gilroy', sans-serif; font-weight: bold; letter-spacing: 0; line-height: 1.5; color:#083FDE; margin-bottom: 24px; }
-h1 { font-size: 40px; line-height: 56px; }
-h2 { font-size: 32px; line-height: 48px; } 
-h3 { font-size: 24px; line-height: 36px; }
-h4 { font-size: 16px; line-height: 24px;}
-h5 { font-size: 14px; }
-h6 { font-size: 12px; }
-.single-services h3 { margin-bottom: 16px; }
+h1, h2, h3, h4, h5, h6 { font-family: "Helvetica Neue", -apple-system,BlinkMacSystemFont,Roboto,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-weight: bold; letter-spacing: 0; line-height: 1.5; color:#000000; margin-bottom: 24px; }
+h1 { font-size: 48px; line-height: 60px; }
+h2 { font-size: 39px; line-height: 60px; } 
+h3 { font-size: 31px; line-height: 60px; }
+h4 { font-size: 25px; line-height: 30px; }
+h5 { font-size: 20px; line-height: 30px; }
+h6 { font-size: 16px; line-height: 30px; }
 p {
   margin-bottom: 24px;
   min-height: 1px;
 }
 a {
-  color: #083FDE;
+  color: #000000;
+  text-decoration: underline;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;  
 }
 a:hover {
-  color: #052A94;
+  color: #000000;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
 .theme-row { 
   width: 100%;
-  max-width: 1248px;
-  padding: 56px 0 80px;
+  max-width: 1164px;
+  padding: 56px 12px 80px;
   margin: 0 auto;
 }
 .theme-row-zero {
   width: 100%;
-  max-width: 1248px;
+  max-width: 1164px;
   margin: 0 auto;
 }
 .narrow-text {
-  max-width: 612px;
+  max-width: 572px;
   margin: 0 auto;
 }
 .thepilatesroom-button {
-  background-color: #052A94;
+  background-color: var(--buttonBG);
   display: inline-block;
-  color: #ffffff;
-  font-family: 'Gilroy';
+  color: var(--buttonColor);
+  font-family: var(--titleFonts);
   font-size: 16px;
   font-weight: bold;
   letter-spacing: 0;
-  line-height: 28px;  
-  padding: 12px 36px 12px 32px;
+  line-height: 19px;  
+  padding: 13px 24px 16px 24px;
 }
-.thepilatesroom-button:hover { background-color: #083FDE; color: #ffffff; }
-.thepilatesroom-button:active, .thepilatesroom-button:focus { background-color: #03154A; }
-.thepilatesroom-button .square {
-  width: 3px;
-  height: 3px;
-  margin-left: 4px;
-  background-color: #E600BD;
-  display: inline-block;
-}
-.section-title { font-size: 40px; line-height: 56px; }
-.section-title.light { color: #fff; }
+.thepilatesroom-button:hover { background-color:  var(--buttonHBG); color: var(--buttonColor); }
+.thepilatesroom-button:active, .thepilatesroom-button:focus { background-color: var(--buttonBG);}
+
 /**
   * 3.1 - Header Styles
   */
 .main-header { 
     position: -webkit-sticky; /* Safari */  
     position: sticky;
+    top: 60px;
     margin: 0 auto; 
     width: 100%; 
     height: 124px;
-    font-family: 'Gilroy', sans-serif;
+    font-family: 'Lora', sans-serif;
     font-size: 16px;	
-    line-height: 28px;    
+    line-height: 30px;    
     z-index: 900;
-    background: #fff;
+    background: #000000;
     -webkit-transition: all 0.4s;
     transition: all 0.4s;
 }
-.header-row { position: relative; width: 100%; max-width: 1248px; height: 124px; margin: 0 auto; display: flex; align-items: center; padding: 0; }
-
-.main-header.sticky-anim { position: fixed; width: 100%; height: 80px; top: -80px; }
-.sticky-anim .contact-us-button-header { display: none; }
-
-
-@media (min-width: 1249px) {
-.sticky-anim .header-row { height: 80px; }  
-.sticky-anim .main-navigation ul.menu > li > a { padding-top: 25px; }
-.sticky-anim .site-branding .logo-alt-text { font-size: 10px; margin-top: 0; }
-.sticky-anim .site-branding { width: 118px; height: 42px; margin-right: 94px; } 
-}
-
+.header-row { position: relative; width: 100%; max-width: 1336px; height: 40px; margin: 0 auto; display: flex; align-items: center; padding: 0 12px; }
 .main-header.sticky-anim.sticky-header { top: 0; }
 .logged-in .main-header.sticky-anim.sticky-header { top: 32px; }
 
-.site-branding { width: 207px; height: 51px; text-align: left; -webkit-transition: all 0.4s; transition: all 0.4s; }
-.site-branding .logo-alt-text { 
-  font-weight: 500;
-  color: #01259A;
-  font-family: 'Gilroy', serif;
-  font-size: 14px;
-  letter-spacing: 0.21px;
-  line-height: 12px;  
-  margin-top: 5px;
-  display: block;
-}
+.site-branding { width: 199px; height: 24px; text-align: left; -webkit-transition: all 0.4s; transition: all 0.4s; }
 
 .disable-eventers > a { 
   pointer-events: none;
@@ -488,7 +377,7 @@ a:hover {
   color: #919AAB !important;
   display: inline-block;
 }
-.main-navigation { width: calc(100% - 508px); }
+.main-navigation { width: calc(100% - 379px); padding-left: 112px }
 .main-navigation ul { margin: 0; padding: 0; list-style: none; text-align: right; }
 .main-navigation ul li { display: inline-block; margin: 0 0 0 20px; }
 .main-navigation ul li a {
@@ -776,33 +665,24 @@ z-index: 12;
 
 /* Header Buttons */
 .header-button-col {
-width: 301px;
+width: 180px;
 text-align: right;
-color: #052A94;
+color: #fff;
 height: 100%;
 padding-top: 48px;
 -webkit-transition: all 0.4s;
 transition: all 0.4s;
 }
-.sticky-header .header-button-col {
-padding-top: 26px;
+.header-button-col a {
+  color: #fff;
+  padding: 6px 16px 8px 16px;
+  font-size: 16px; 
+  line-height: 26px;
+  display: inline-block;
 }
-.contact-us-button-header {
-position: absolute;
-background-color: #052A94;
-display: inline-block;
-color: #FFFFFF;
-font-family: 'Gilroy';
-font-size: 16px;
-font-weight: bold;
-letter-spacing: 0;
-line-height: 28px;
-padding: 12px 36px 12px 32px;
-bottom: -52px;
-right: 100px;
-z-index: 100;
+.header-button-col a:nth-child(2) {
+  margin-left: 8px;
 }
-
 .mobile-menu-row .header-button-col {
 position: static;
 color: #fff;
@@ -813,13 +693,7 @@ margin-top: 48px;
 margin-bottom: 48px;
 display: block;
 }
-.mobile-menu-row .contact-us-button-header {
-background: #03154A;
-position: static;
-display: inline-block;
-margin-top: 24px;
-text-align: center;
-}
+
 /**
   * 4.0 - Homepage
   */
@@ -1954,14 +1828,11 @@ display: block;
  */
 
 .main-footer { 
-  font-size: 14px;
-  letter-spacing: 0;
-  line-height: 24px;
-  background: #052A94;
+  background: #ffffff;
   color: #fff;
 }
 .main-footer a {
-  color: #fff;
+  color: #000000;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
 }
@@ -1972,12 +1843,11 @@ display: block;
 .main-footer h1, .main-footer h2, .main-footer h3, .main-footer h4, .main-footer h5, .main-footer h6 {
   color: #fff;
 }
-.footer-top-background {
-  background: #083FDE;
-  padding: 65px 0 24px;
-}
 .theme-row.footer-logo {
-  margin-bottom: 48px;
+  padding: 68px 0 26px;
+}
+.theme-row.footer-menu-row {
+  padding: 26px 0 78px;
 }
 .footer-top-col1 { 
   width: 30.04%;
@@ -2087,79 +1957,7 @@ footer .wp-caption.alignright,
 footer .wp-caption.alignleft {
 padding:0;
 }
-/* 
- * WPML
- */
 
-.wpml-custom-sw ul,
-.wpml-custom-sw ol {
-list-style-type: none;
-}
-
-.wpml-custom-sw {
-position: relative;
-width: 72px;
-height: 30px;
-margin-left: 26px;
-border-left: 1px solid #052A94;
-padding-left: 11px;
-display: inline-block;
-vertical-align: middle;
-margin-top: -5px;
-}
-.wpml-ls-legacy-dropdown {
-position: absolute;
-top: 0;
-right: 0;
-width: 60px;
-background: #FFFFFF;
-border: 1px solid transparent;
-box-shadow: 0px 2px 10px rgba(5, 42, 148, 0);
-border-radius: 2px;
-text-align: left;
-padding: 0 0 0 0;
-line-height: 30px;
--webkit-transition: all 0.4s;
-transition: all 0.4s;
-}
-.wpml-ls-legacy-dropdown.wpml-aktif {
-border: 1px solid #E2E4E9;
-box-shadow: 0px 2px 10px rgba(5, 42, 148, 0.146771);  
-}
-.wpml-ls-sub-menu {
-display: none;
-margin-bottom: 1px;
-}
-.wpml-ls-legacy-dropdown.wpml-aktif .wpml-ls-sub-menu{
-display: block;
-}
-.wpml-custom-sw a {
-display: block;
-padding-left: 11px;
-color: #052A94;
-}
-.wpml-custom-sw .wpml-aktif a:hover { 
-background: rgba(5, 42, 148, 0.045236);
-}
-.wpml-ls-item-toggle:before {
-  position: absolute;
-  width: 12.02px;
-  height: 5.95px;
-  left: auto;
-  right: 9px;
-  top: 12px;
-  content: "";
-  background: url('../img/wpmlarrow.svg');
-  background-repeat: no-repeat;
-  -webkit-transform-origin: center;
-  transform-origin: center;
-  -webkit-transform: rotate(180deg);
-  transform: rotate(180deg);
-}
-.wpml-ls-legacy-dropdown.wpml-aktif .wpml-ls-item-toggle:before {
-  -webkit-transform: rotate(0);
-  transform: rotate(0);  
-}
 /*** Seperator ***/
 .wp-block-separator:not(.is-style-dots), hr:not(.is-style-dots) {
   background-color: #d9dff2;
@@ -2188,7 +1986,7 @@ background: rgba(5, 42, 148, 0.045236);
 /*
  * Responsive Queries
  */
-@media (max-width: 1248px) {
+@media (max-width: 1336px) {
   /* General */
   .header-row, .theme-row, .theme-row-zero, .main-blog-caption, .page-template-page-meet-our-team .single-blog-row, .single-team-row, .single-blog-content, .caption-title {
     padding-left: 24px;

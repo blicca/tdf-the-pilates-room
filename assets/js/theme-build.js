@@ -55,23 +55,7 @@
 
 
     }
-
-    //
-    // Maps Changer
-    //
-
-    $('.au-button').on('click', function(){
-        $(this).addClass("active");
-        $('.ch-button').removeClass("active");
-        $('.ch-map').hide();
-        $('.au-map').show();
-    });
-    $('.ch-button').on('click', function(){
-        $(this).addClass("active");
-        $('.au-button').removeClass("active");
-        $('.au-map').hide();
-        $('.ch-map').show();
-    });    
+ 
 
     //
     // Mobile Menu
@@ -96,23 +80,7 @@
         $('.mobile-menu-container').removeClass('opened-mobile-menu');
         $('body').css('overflow', 'auto');
     });
-    //
-    // WPML Dropdown
-    //
-    $('.wpml-ls-legacy-dropdown').on('click', function(e){
-        $(this).toggleClass('wpml-aktif');
-    });
-    //
-    // Open WeChat
-    //
-    $('.open-wechat').on('click', function(){
-        $('.main-we-chat').addClass('opened-we-chat');
-        $('body').css('overflow','hidden');
-    });
-    $('.we-chat-close').on('click', function(){
-        $('.main-we-chat').removeClass('opened-we-chat');
-        $('body').css('overflow', 'auto');        
-    })
+
     //
     // Close All Windows ESC
     //
