@@ -128,6 +128,32 @@ add_action( 'after_setup_theme', 'thepilatesroom_content_width', 0 );
 /**
  * Enqueue scripts and styles.
  */
+
+/*
+Register Fonts
+*/
+function thepilatesroom_fonts_url() {
+    $font_url = '';
+    
+    /*
+    Translators: If there are characters in your language that are not supported
+    by chosen font(s), translate this to 'off'. Do not translate into your own language.
+     */
+    if ( 'off' !== _x( 'on', 'Google font: on or off', 'thepilatesroom' ) ) {
+        $font_url = add_query_arg( 'family', urlencode( 'Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap' ), "//fonts.googleapis.com/css" );
+    }
+
+    return $font_url;
+}
+
+/*
+Enqueue scripts and styles.
+*/
+function thepilatesroom_scripts() {
+    wp_enqueue_style( 'thepilatesroom-fonts', thepilatesroom_fonts_url(), array(), '1.0.0' );
+}
+add_action( 'wp_enqueue_scripts', 'studio_scripts' );
+
 function thepilatesroom_script_style() {
   /* CSS */
   wp_enqueue_style( 'slick-slider', get_parent_theme_file_uri() .'/assets/css/slick.css' );
@@ -149,6 +175,9 @@ function load_custom_wp_admin_style(){
     wp_enqueue_style( 'custom_wp_admin_css' );
 }
 add_action('admin_enqueue_scripts', 'load_custom_wp_admin_style');
+
+
+
 /*
 	Add OPTIONS page for the SITE 
 */
