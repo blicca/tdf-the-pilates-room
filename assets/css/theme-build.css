@@ -1826,11 +1826,11 @@ display: block;
 }
 .theme-row.footer-logo {
   max-width: 1336px;
-  padding: 68px 0 26px;
+  padding: 68px 12px 26px;
 }
 .theme-row.footer-menu-row {
   max-width: 1336px;
-  padding: 26px 0 78px;
+  padding: 26px 12px 78px;
 }
 .footer-top-col1 { 
   width: 30.04%;
