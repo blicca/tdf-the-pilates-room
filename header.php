@@ -47,8 +47,7 @@ if ( is_single() ) {
         
             <div class="site-branding">			
                 <a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-					<img alt="Logo" width="207" height="34" src="<?php the_field('logo', 'option'); ?>" />
-					<span class="logo-alt-text"><?php echo esc_html__("Accountants & Advisors", "thepilatesroom"); ?></span>
+					<img alt="Logo" width="199" height="24" src="<?php the_field('logo', 'option'); ?>" />
                 </a>										
             </div><!-- .site-branding -->
 
