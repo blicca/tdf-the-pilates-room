@@ -648,14 +648,15 @@ z-index: 12;
 /* Header Buttons */
 .header-button-col {
 width: 180px;
+height: 40px;
 text-align: right;
-color: #fff;
+color: #000;
 height: 100%;
-padding-top: 48px;
 -webkit-transition: all 0.4s;
 transition: all 0.4s;
 }
 .header-button-col a {
+  background: var(--buttonBG);
   color: #fff;
   padding: 6px 16px 8px 16px;
   font-size: 16px; 
