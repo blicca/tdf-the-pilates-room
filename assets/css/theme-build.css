@@ -687,6 +687,8 @@ display: block;
   position: absolute;
   width: 39.722222%;
   height: 100%;
+  right: 0;
+  top: 0;
   background-color: #ffffff;
   background-repeat: no-repeat;
   background-position: right center;
