@@ -17,7 +17,7 @@
         <div class="footer-top-background">
         <div class="theme-row footer-logo">
                 <a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                    <img alt="Logo" width="139" height="26" src="<?php the_field('small_logo', 'option'); ?>" />
+                    <img alt="Logo" width="199" height="24" src="<?php the_field('logo', 'option'); ?>" />
                 </a>       
         </div>
         <div class="theme-row footer-menu-row">
