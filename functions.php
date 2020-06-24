@@ -129,28 +129,8 @@ add_action( 'after_setup_theme', 'thepilatesroom_content_width', 0 );
  * Enqueue scripts and styles.
  */
 
-/*
-Register Fonts
-*/
-function thepilatesroom_fonts_url() {
-    $font_url = '';
-    
-    /*
-    Translators: If there are characters in your language that are not supported
-    by chosen font(s), translate this to 'off'. Do not translate into your own language.
-     */
-    if ( 'off' !== _x( 'on', 'Google font: on or off', 'thepilatesroom' ) ) {
-        $font_url = add_query_arg( 'family', urlencode( 'Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap&subset=latin' ), "//fonts.googleapis.com/css2" );
-    }
-
-    return $font_url;
-}
-
-/*
-Enqueue scripts and styles.
-*/
 function thepilatesroom_scripts() {
-    wp_enqueue_style( 'thepilatesroom-fonts', thepilatesroom_fonts_url(), array(), '1.0.0' );
+    wp_enqueue_style( 'thepilatesroom-fonts', 'https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap&subset=latin', array(), '1.0.0' );
 }
 add_action( 'wp_enqueue_scripts', 'thepilatesroom_scripts' );
 
