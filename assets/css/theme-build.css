@@ -391,9 +391,7 @@ transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
 
-.main-navigation, .main-navigation > div, .main-navigation > div > ul {
-  height: 100%; 
-}
+
 .main-navigation > div > ul > li {
   display: inline-block;
   height: 100%;
