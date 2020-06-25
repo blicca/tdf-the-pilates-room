@@ -770,82 +770,46 @@ margin-bottom: 16px;
 
 .global-clients-partners {
   background: #0D0E0E;
+
 }
 .theme-row.global-clients-row {
-  padding: 97px 0 88px;
+  padding: 67px 12px 120px;
 }
-.clients-left .section-title {
-  margin-bottom: 34px;
-}
-.clients-left p {
-  max-width: 505px;
-  color: #ffffff;
+.section-small-title {
+  color: rgba(255,255,255,0.5);
   font-size: 16px;
-  line-height: 24px;
+  line-height: 26px;
+  margin-bottom: 41px;
 }
-.clients-left {
-  width: 50%;
-  float: left;
-  padding-top: 25px;
-}
-.client-column {
-  width: 50%;
-  float: left;
-  padding-left: 2.5%;
-}
-.client-slider {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-items: center;
-  align-items: center;
-  transform: translateX(24px);
-}
-.client-single {
-  flex: auto;
-  padding: 29px 21px;
-  max-width: 33%;
-}
-.client-single img {
-  max-height: 38px
-}
-.client-single:nth-child(1) img, .client-single:nth-child(2) img, .client-single:nth-child(3) img, .client-single:nth-child(4) img, .client-single:nth-child(5) img {
-  max-height: 47px;
-}    
-/* Partners */
-.global-partners {
-  background: #F7F8FA;
-}
-.theme-row.global-partners-row {
-  padding: 96px 0 100px;
-  text-align: center;
+.clients-right .section-small-title  { 
+  margin-bottom: 38px;
 }
 .partners-left {
-  max-width: 608px;
-  margin: 0 auto; 
-}
-.partner-column {
-  max-width: 762px;
-  margin: 0 auto;
+  width: 66.66666%;
+  padding-left: 12.10%;
+  float: left;
 }
 
-.partner-slider {
-  text-align: center;
-  display: flex;  
+.clients-right { 
+  width: 33.3333%;
+  padding-left: 9.065%;
+  float: left;
+}
+
+.partner-slider, .client-slider {
+  display: flex;
   justify-items: center;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
   align-items: center;
-  align-content: center;
+  align-content: center;  
 }
-.partner-single {
-  flex: auto;
-  padding: 29px 21px;
+.partner-slider > div, .client-slider > div {
+  margin-right: 32px;
 }
-
-.partner-single:nth-child(4) { margin-left: 50px;}
-.partner-single:last-child { margin-right: 50px; width: 148px;}
+.partner-slider > div:last-child, .client-slider > div:last-child {
+  margin-right: 0;
+}
 /**
  * 5.0 - Breadcrumbs
  */

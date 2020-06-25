@@ -168,29 +168,8 @@ if( function_exists('acf_add_options_page') ) {
 			'menu_slug' 	=> 'theme-settings',
 			'capability'	=> 'edit_posts',
 			'redirect'		=> false
-		));
-
-
-		acf_add_options_page(array(
-			'page_title' 	=> 'Sliders',
-			'menu_title'	=> 'Sliders',
-			'menu_slug' 	=> 'theme-sliders',
-			'capability'	=> 'edit_posts',
-			'redirect'		=> false,
-			'position' 		=> '7.2',
-			'icon_url' 		=> 'dashicons-images-alt2',
-		));
-
-		acf_add_options_page(array(
-			'page_title' 	=> 'Clients',
-			'menu_title'	=> 'Clients',
-			'menu_slug' 	=> 'theme-clients',
-			'capability'	=> 'edit_posts',
-			'redirect'		=> false,
-			'position' 		=> '7.2',
-			'icon_url' 		=> 'dashicons-admin-users',
-		));
-
+        ));
+        
 		acf_add_options_page(array(
 			'page_title' 	=> 'Partners',
 			'menu_title'	=> 'Partners',
@@ -199,8 +178,18 @@ if( function_exists('acf_add_options_page') ) {
 			'redirect'		=> false,
 			'position' 		=> '7.2',
 			'icon_url' 		=> 'dashicons-groups',
-		)); 
-   
+        )); 
+        
+		acf_add_options_page(array(
+			'page_title' 	=> 'As Seen',
+			'menu_title'	=> 'As Seen',
+			'menu_slug' 	=> 'theme-clients',
+			'capability'	=> 'edit_posts',
+			'redirect'		=> false,
+			'position' 		=> '7.2',
+			'icon_url' 		=> 'dashicons-admin-users',
+		));
+
 }
 
 
