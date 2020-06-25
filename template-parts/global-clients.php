@@ -8,7 +8,7 @@
                     if( have_rows('global_partners_images', 'option') ): ?>
                         <?php while( have_rows('global_partners_images', 'option') ): the_row(); ?>    
                             <div class="partner-single">
-                                    <img src="<?php the_sub_field('image'); ?>" alt="as seen">
+                                <img src="<?php the_sub_field('image'); ?>" alt="as seen">
                             </div>
                         <?php
                         endwhile;

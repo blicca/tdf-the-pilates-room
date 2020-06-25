@@ -810,6 +810,40 @@ margin-bottom: 16px;
 .partner-slider > div:last-child, .client-slider > div:last-child {
   margin-right: 0;
 }
+
+/* Benefits */
+.home-benefits-container.theme-row {
+  padding: 96px 12px 114px;
+}
+.home-benefits-bg-col, .hero-benefits-content-col {
+  width: 50%;
+  float: left;
+}
+.home-benefits-bg-col img {
+  margin: 0 auto;
+  -webkit-transform: scale(0.765);
+  transform: scale(0.765);
+  -webkit-transform-origin: top;
+  transform-origin: top;
+}
+.hero-benefits-content-col {
+  padding-top: 30px;
+}
+.home-benefit {
+  display: grid;
+  grid-template-columns: auto auto; 
+  grid-column-gap: 41px;
+  margin-bottom: 10px;
+}
+.home-benefit:last-child {
+  margin-bottom: 0;
+}
+.home-benefit-img {
+  padding-top: 10px;
+}
+.home-benefit h2, .home-benefit h3, .home-benefit h4, .home-benefit h5 {
+  margin-bottom: 13px;
+}
 /**
  * 5.0 - Breadcrumbs
  */

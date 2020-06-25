@@ -11,7 +11,7 @@ get_header();
 
 <?php get_template_part( 'template-parts/global', 'clients'); ?>
 
-<?php get_template_part( 'template-parts/home', 'services'); ?>
+<?php get_template_part( 'template-parts/home', 'benefits'); ?>
 
 
 <?php the_content(); ?>
