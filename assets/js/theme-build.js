@@ -139,19 +139,19 @@
         window.onscroll = function() {header_anim();};
 
         // Get the header
-        var header = document.getElementById("thepilatesroom-header");
-
+        var header = document.getElementById("thepilatesroom-content");
+        var real_header = document.getElementById("thepilatesroom-header");
         // Get the offset position of the navbar
-        var head_anim = header.offsetTop;
+        var head_anim = header.offsetTop + 40;
 
         // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
         function header_anim() {
             if (window.pageYOffset > head_anim) {
-                header.classList.add("sticky-anim");
-                header.classList.add("sticky-header");
+                real_header.classList.add("sticky-anim");
+                real_header.classList.add("sticky-header");
             } else {
-                header.classList.remove("sticky-anim");
-                header.classList.remove("sticky-header");
+                real_header.classList.remove("sticky-anim");
+                real_header.classList.remove("sticky-header");
             }
         }     
         

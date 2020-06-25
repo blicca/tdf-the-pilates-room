@@ -813,7 +813,7 @@ margin-bottom: 16px;
 
 /* Benefits */
 .home-benefits-container.theme-row {
-  padding: 96px 12px 114px;
+  padding: 45px 12px 0;
 }
 .home-benefits-bg-col, .hero-benefits-content-col {
   width: 50%;
@@ -821,13 +821,9 @@ margin-bottom: 16px;
 }
 .home-benefits-bg-col img {
   margin: 0 auto;
-  -webkit-transform: scale(0.765);
-  transform: scale(0.765);
-  -webkit-transform-origin: top;
-  transform-origin: top;
 }
 .hero-benefits-content-col {
-  padding-top: 30px;
+  padding-top: 68px;
 }
 .home-benefit {
   display: grid;
