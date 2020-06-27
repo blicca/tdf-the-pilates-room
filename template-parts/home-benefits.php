@@ -13,7 +13,7 @@ if( $benefits_section ): ?>
             $single_benefits = $benefits_section['single_benefits'];
                 foreach($single_benefits as $single_benefit) { ?>
                         <div class="home-benefit">
-                            <div class="home-benefit-img"><img src="<?php echo $single_benefit['icon']; ?>" alt="as seen"></div>
+                            <div class="home-benefit-img"><img src="<?php echo $single_benefit['icon']; ?>" alt="benefit"></div>
                             <div class="home-benefit-desc">
                                 <?php echo $single_benefit['description']; ?>
                             </div>
