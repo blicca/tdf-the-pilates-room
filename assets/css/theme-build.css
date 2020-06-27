@@ -879,6 +879,14 @@ background-repeat: no-repeat;
 background-position: right center;
 background-size: cover;
 }
+
+/* Outro */
+.home-outro-container.theme-row {
+padding: 96px 12px;
+max-width: 776px;
+text-align: center;
+}
+
 /**
  * 5.0 - Breadcrumbs
  */

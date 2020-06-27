@@ -15,6 +15,8 @@ get_header();
 
 <?php get_template_part( 'template-parts/home', 'approachs'); ?>
 
+<?php get_template_part( 'template-parts/home', 'outro'); ?>
+
 <?php the_content(); ?>
 
 <?php wp_link_pages(); ?> 
