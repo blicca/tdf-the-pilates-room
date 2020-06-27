@@ -840,6 +840,45 @@ margin-bottom: 16px;
 .home-benefit h2, .home-benefit h3, .home-benefit h4, .home-benefit h5 {
   margin-bottom: 13px;
 }
+/* Approach */
+.home-approach {
+position: relative;
+background: #FAFAFB;
+}
+.home-approach-container.theme-row {
+padding: 96px 12px;
+}
+.home-approach-column {
+width: 42.6666%;
+margin-right: 8.333%;
+float: right;
+}
+.home-approach-main-content h1,
+.home-approach-main-content h2,
+.home-approach-main-content h3 {
+margin-bottom: 38px;
+}
+.home-approach-main-content {
+margin-bottom: 14px;
+overflow: hidden;
+}
+.home-sing-approach {
+display: grid;
+grid-template-columns: 24px auto;
+grid-column-gap: 15px;
+margin-bottom: 20px;
+}
+.home-approach-bg-col {
+width: 39.65%;
+height: 100%;
+position: absolute;
+top: 0;
+left: 0;
+background-color: #ffffff;
+background-repeat: no-repeat;
+background-position: right center;
+background-size: cover;
+}
 /**
  * 5.0 - Breadcrumbs
  */
