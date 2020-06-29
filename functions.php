@@ -138,13 +138,21 @@ function thepilatesroom_script_style() {
   /* CSS */
   wp_enqueue_style( 'flickity', get_parent_theme_file_uri() .'/assets/css/flickity.min.css' );
   wp_enqueue_style( 'thepilatesroom', get_parent_theme_file_uri() . '/assets/css/theme-build.css', '1.0.11' );
+  if ( is_page_template( 'video_library.php' ) ) {
+    wp_enqueue_style( 'select2', get_parent_theme_file_uri() . '/assets/css/select2.min.css', '1.0.11' );
+  }  
   /* Scripts */
+  // Are you looking Ajax Scripts? Check bottom of page
+  // Other Scripts:
   if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 	wp_enqueue_script( 'comment-reply' );
   }
   wp_enqueue_script('isotope', get_parent_theme_file_uri() . '/assets/js/isotope.pkgd.min.js', array('jquery'), '', true);
   wp_enqueue_script('infinite-scroll', get_parent_theme_file_uri() . '/assets/js/infinite-scroll.pkgd.min.js', array('jquery'), '', true);
   wp_enqueue_script('flickity', get_parent_theme_file_uri() . '/assets/js/flickity.pkgd.min.js', array('jquery'), '', true);
+  if ( is_page_template( 'video_library.php' ) ) {
+    wp_enqueue_script('select2', get_parent_theme_file_uri() . '/assets/js/select2.min.js', array('jquery'), '', true);
+  }
   wp_enqueue_script('main-script', get_parent_theme_file_uri() . '/assets/js/theme-build.js', array('jquery'), '1.0.11', true);	
 }
 add_action( 'wp_enqueue_scripts', 'thepilatesroom_script_style' );
@@ -235,8 +243,8 @@ if ( !function_exists('thepilatesroom_blog_pagination')) {
                             $big = 999999999; // need an unlikely integer
   
                             echo paginate_links( array(
-                                'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-                                'format' => '?paged=%#%',
+                                'base' => get_pagenum_link(1) . '%_%',
+                                'format' => 'page/%#%',
                                 'current' => max( 1, get_query_var('paged') ),
                                 'total' => $wp_query->max_num_pages,
                                 'type'         => 'list',
@@ -533,6 +541,7 @@ function myextensionTinyMCE($init) {
 
 add_filter('tiny_mce_before_init', 'myextensionTinyMCE' );
 
-/* WPML REMOVE */
-define('ICL_DONT_LOAD_NAVIGATION_CSS', true);
-define('ICL_DONT_LOAD_LANGUAGE_SELECTOR_CSS', true);
+/** 
+ * Include Ajax Files
+*/
+include_once( 'inc/ajax-video-library.php' );

@@ -335,6 +335,9 @@ a:hover {
   max-width: 1164px;
   margin: 0 auto;
 }
+.caption.theme-row{
+  padding: 188px 12px 72px;
+}
 .narrow-text {
   max-width: 572px;
   margin: 0 auto;
@@ -1358,9 +1361,7 @@ margin-bottom: 41px;;
 }
 .main-blog-caption {
   width: 100%;
-  max-width: 1140px;
   margin: 0 auto;
-  text-align: center;
 }
 .blog .theme-row.front-blog-row, .archive .theme-row.front-blog-row {
 padding-top: 0;
@@ -1716,56 +1717,121 @@ display: block;
   line-height: 24px;
   padding: 12.5px 24px;
 }
-/**
- * WeChat Imagebox
+/** 
+ * Archive Video Library
  */
-.open-wechat {
-  cursor: pointer;
+.all-video-posts {
+display: grid;
+grid-template-columns:  repeat(3, 1fr);
+grid-column-gap: 24px;
+grid-row-gap: 30px;
 }
-.main-we-chat {
-  position: fixed;
-  background: rgba(0,0,0,0.3);
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  text-align: center;
-  font-size: 20px; 
-  line-height: 20px;
-  color: #052A94;
-  opacity: 0;
-  visibility: hidden;
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
-  z-index: 1000;
+.video-preview-image {
+border-radius: 4px;
+overflow: hidden;
+position: relative;
+cursor: pointer;
+margin-bottom: 24px;
 }
-.main-we-chat.opened-we-chat {
-  opacity: 1;
-  visibility: visible;
+.single-play-icon {
+position: absolute;
+top:0 ;
+left: 0;
+width: 100%;
+height: 100%;
+text-align: center;
+display: flex;
+align-content: center;
+align-items: center;
+justify-content: center;
 }
-.we-chat-box {
-  width: 280px;
-  height: 280px;
-  padding: 40px 78px;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  background: #fff;
-  position: absolute;
+.video-grid-item h3 {
+color: #000000;
+font-size: 20px;
+letter-spacing: 0;
+line-height: 30px;
 }
-.we-chat-close {
-  width: 13px;
-  height: 20px;
-  cursor: pointer;
-  position: absolute;
-  top: 28px;
-  right: 24px;
-  -webkit-filter: grayscale(100%) brightness(70%) contrast(0.9);
-  filter: grayscale(100%) brightness(70%) contrast(0.9);  
+.video-library-filter {
+width: 267px;
+height: 48px;
+margin-bottom: 30px;
 }
-.wechatimg { margin-top: 30px; }
+.video-library-load-more {
+height: 40px;
+width: 115px;
+border-radius: 4px;
+background-color: #101010;
+color: #fff;
+margin: 0 auto;
+font-size: 16px;
+font-weight: bold;
+font-family: var(--titleFonts);
+line-height: 40px;
+text-align: center;
+cursor: pointer;
+}
+/* Select 2 */
+.thepilatesroom-helper .select2-container--default .select2-selection--single {
+color: rgba(20,20,21,0.5);
+border: 2px solid transparent;
+height: 48px;
+border: 1px solid #C2C4C9 !important;
+border-radius: 4px;
+}
+.thepilatesroom-helper .select2-container .select2-container--focus .select2-selection--single {
+border: 2px solid #AFC1E2
+}
+
+.thepilatesroom-helper .select2-container .select2-selection--single {
+color: rgba(20,20,21,0.5);
+border: 2px solid transparent;
+height: 48px;
+border: 1px solid #C2C4C9 !important;
+border-radius: 4px;
+}
+.thepilatesroom-helper .select2-container--default .select2-selection--single .select2-selection__rendered {
+color: rgba(20,20,21,0.5);
+font-size: 16px;
+line-height: 20px;
+padding: 15px 36px 13px 16px;
+}
+
+.thepilatesroom-helper.select2-container--default .select2-results__option[aria-selected=true], .thepilatesroom-helper.select2-container--default .select2-results__option[data-selected=true],
+.thepilatesroom-helper .select2-container--default .select2-results__option--highlighted[aria-selected], .thepilatesroom-helper .select2-container--default .select2-results__option--highlighted[data-selected] {
+background-color: #ffffff;
+color: rgba(20,20,21,0.5);
+}
+.thepilatesroom-helper .select2-container {
+transform: translateY(-2px);
+z-index: 100;  
+}
+
+.thepilatesroom-helper .select2-results__option {
+padding: 15px 36px 13px 16px; 
+font-size: 16px;
+line-height: 20px
+}
+.thepilatesroom-helper .select2-container--default .select2-results>.select2-results__options {
+max-height: 240px;
+}
+.thepilatesroom-helper .select2-container--default .select2-selection--single .select2-selection__arrow {
+width: 12px;
+height: 8px;
+top: 25px;
+right: 24px;
+}
+.thepilatesroom-helper .select2-container--default .select2-selection--single .select2-selection__arrow b  {
+border-color: #7a7f8f transparent transparent transparent;  
+border-width: 8px 6px 0 6px;
+}
+
+.thepilatesroom-helper .select2-container--default .select2-results__option--highlighted[aria-selected] {
+  background: inherit;
+}
+.thepilatesroom-helper ul.select2-results__options li:hover {
+background-color: #000000 !important;
+color: #ffffff !important;
+}
 /**
  * 1.0 - WordPress Defaults
  */

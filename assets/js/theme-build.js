@@ -113,10 +113,19 @@
         });        
     }    
     //
+    // Select2 Style for Video_Library dropdown
+    function tdf_select2() {
+        $('.video-library-select').select2({
+          placeholder: "All videos",
+          minimumResultsForSearch: Infinity
+        });
+      }    
+    //
     // Document Ready
     $(document).ready(function(){
         sticky_main_header();
         testimonials_slider();
+        tdf_select2();
     });
 
 })(jQuery);    
