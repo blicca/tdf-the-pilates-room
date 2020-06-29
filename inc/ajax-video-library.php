@@ -6,7 +6,7 @@ function thepilatesroom_ajax_video_library_scripts() {
 	global $wp_query;
  
 	// when you use wp_localize_script(), do not enqueue the target script immediately
-	wp_register_script( 'theme-ajax-video-library', get_parent_theme_file_uri() . '/assets/js/ajax-video-library.js', array('jquery') );
+	wp_register_script( 'theme-ajax-video-library', get_parent_theme_file_uri() . '/assets/js/ajax-video-library.js', array('jquery'), true );
  
 	// passing parameters here
 	wp_localize_script( 'theme-ajax-video-library', 'theme_loadmore_params', array(
