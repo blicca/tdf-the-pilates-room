@@ -886,7 +886,51 @@ background-repeat: no-repeat;
 background-position: right center;
 background-size: cover;
 }
+/* Testimonials Slider */
+.home-testimonials {
+background: #FAFAFB;
+padding: 96px 0; 
+text-align: center;
+}
 
+.home-testimonials-item {
+text-align: left;
+width: 557px;
+padding: 56px 73px 52px 72px;
+border-radius: 8px;
+background-color: #FFFFFF;
+box-shadow: 0 4px 14px 0 rgba(9,9,9,0.06), 0 2px 3px 0 rgba(9,9,9,0.06);
+margin: 17px 12px 30px;
+}
+.home-testimonial-footer {
+display: grid;
+grid-template-columns: 48px auto;
+grid-column-gap: 24px;
+}
+.testimonial-thumbnail {
+height: 48px;
+border-radius: 50%;
+overflow: hidden;
+}
+.testimonial-names h3 {
+font-family: "Lora";
+font-size: 16px;
+font-weight: bold;
+letter-spacing: 0;
+line-height: 16px;
+margin-bottom: 0;
+}
+.appellation {
+font-family: Lora;
+font-size: 13px;
+letter-spacing: 0;
+line-height: 13px;
+color: #000000;
+opacity: 0.5;
+}
+.testimonial-names {
+padding-top: 4px;
+}
 /* Outro */
 .home-outro-container.theme-row {
 padding: 96px 12px;

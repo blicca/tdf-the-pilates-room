@@ -1,61 +1,5 @@
 (function($) {
-    "use strict";
-    //
-    // Home Page Hero Slider 
-    //
-    function home_hero_slider()  {
-        $('.hero-slider-container').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: false,
-            dots: true,
-            customPaging: function(slider, i) {
-                return '<span class="thepilatesroom-slide-dots"></span>';
-            },            
-            autoplay: true,
-            autoplaySpeed: 3000,
-            speed: 800,
-            adaptiveHeight: true,
-            pauseOnHover: false,
-            pauseOnFocus: false,
-            pauseOnDotsHover: false,            
-        });        
-        $('.slick-dots').attr('data-mycurrent', '01');
-        $('.slick-dots').attr('data-mycount', '0' + $('.slick-dots li').length);
-        
-// On before slide change
-        $('.hero-slider-container').on('afterChange', function(event, slick, currentSlide, nextSlide){
-            // Slide Dots and Numbers 
-            //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
-            var i = (currentSlide ? currentSlide : 0) + 1;
-
-            $('.slick-dots').attr('data-mycount', '0' + slick.slideCount);
-            $('.slick-dots').attr('data-mycurrent', '0' + i);
-        });     
-        $('.hero-slider-container').on('beforeChange', function(){
-
-            // Slide Animation Restart
-            // retrieve the element
-            var element = document.getElementById("home-hero-slider-timer");
-            
-            // -> removing the class
-            element.classList.remove("run-slide-timer");
-            element.classList.remove("run-slide-timer2");
-            void element.offsetWidth;
-            
-            // -> and re-adding the class
-            element.classList.add("run-slide-timer2");
-
-        }); 
-
-
-        $('.home-hero-slider-timer').on('click', function(){
-            $('.hero-slider-container').slick('slickNext');
-        });
-
-
-    }
- 
+    "use strict"; 
 
     //
     // Mobile Menu
@@ -157,11 +101,22 @@
         
     } //  End outer function
 
+
+    //
+    // Testimonials Slider
+    function testimonials_slider() {
+        $('.home-testimonials-slider').flickity({
+            // options
+            wrapAround: true,
+            prevNextButtons: false,
+            pageDots: false            
+        });        
+    }    
     //
     // Document Ready
     $(document).ready(function(){
         sticky_main_header();
-        home_hero_slider();
+        testimonials_slider();
     });
 
 })(jQuery);    

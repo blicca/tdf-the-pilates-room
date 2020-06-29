@@ -13,6 +13,8 @@ get_header();
 
 <?php get_template_part( 'template-parts/home', 'benefits'); ?>
 
+<?php get_template_part( 'template-parts/global', 'testimonials'); ?>
+
 <?php get_template_part( 'template-parts/home', 'approachs'); ?>
 
 <?php get_template_part( 'template-parts/home', 'outro'); ?>

@@ -136,8 +136,7 @@ add_action( 'wp_enqueue_scripts', 'thepilatesroom_scripts' );
 
 function thepilatesroom_script_style() {
   /* CSS */
-  wp_enqueue_style( 'slick-slider', get_parent_theme_file_uri() .'/assets/css/slick.css' );
-  wp_enqueue_style( 'slick-slider-theme', get_parent_theme_file_uri() .'/assets/css/slick-theme.css' );
+  wp_enqueue_style( 'flickity', get_parent_theme_file_uri() .'/assets/css/flickity.min.css' );
   wp_enqueue_style( 'thepilatesroom', get_parent_theme_file_uri() . '/assets/css/theme-build.css', '1.0.11' );
   /* Scripts */
   if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -145,7 +144,7 @@ function thepilatesroom_script_style() {
   }
   wp_enqueue_script('isotope', get_parent_theme_file_uri() . '/assets/js/isotope.pkgd.min.js', array('jquery'), '', true);
   wp_enqueue_script('infinite-scroll', get_parent_theme_file_uri() . '/assets/js/infinite-scroll.pkgd.min.js', array('jquery'), '', true);
-  wp_enqueue_script('slick-slider', get_parent_theme_file_uri() . '/assets/js/slick.min.js', array('jquery'), '', true);
+  wp_enqueue_script('flickity', get_parent_theme_file_uri() . '/assets/js/flickity.pkgd.min.js', array('jquery'), '', true);
   wp_enqueue_script('main-script', get_parent_theme_file_uri() . '/assets/js/theme-build.js', array('jquery'), '1.0.11', true);	
 }
 add_action( 'wp_enqueue_scripts', 'thepilatesroom_script_style' );
@@ -308,64 +307,24 @@ if ( $posts_pagination ) { ?>
 }		
 	}
 }
+
 /***********************/
-/* Creating Services */
+/* Creating Testimonials */
 /***********************/
-add_action('init', 'thepilatesroom_services', 1, 1);
-function thepilatesroom_services() {
+add_action('init', 'thepilatesroom_testimonials', 1, 1);
+function thepilatesroom_testimonials() {
 
   $labels = array(
-    'name' => __( 'Services','thepilatesroom'),
-    'singular_name' => __( 'Service Item','thepilatesroom' ),
-    'rewrite' => array('slug' => __( 'service_item','thepilatesroom' )),
-    'add_new' => _x('Add New', 'service', 'thepilatesroom'),
-    'add_new_item' => __('Add New Service Item','thepilatesroom'),
-    'edit_item' => __('Edit Service Item','thepilatesroom'),
-    'new_item' => __('New Service Item','thepilatesroom'),
-    'view_item' => __('View Service Item','thepilatesroom'),
-    'search_items' => __('Search Service Item','thepilatesroom'),
-    'not_found' =>  __('No service found','thepilatesroom'),
-    'not_found_in_trash' => __('No service found in Trash','thepilatesroom'), 
-    'parent_item_colon' => ''
-    );
-
-    $args = array(
-    'labels' => $labels,
-    'public' => true,
-    'exclude_from_search' => false,
-    'publicly_queryable' => true,
-    'show_ui' => true,
-    'menu_icon' => 'dashicons-clipboard',
-    'query_var' => true,
-	'rewrite' => array('slug' => 'services', 'with_front' => true),
-	'has_archive' => false,
-    'capability_type' => 'post',
-    'hierarchical' => false,
-    'menu_position' => null,
-	'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
-	'show_in_rest' => true,
-    ); 
-  
-    register_post_type('services',$args);
-}
-
-/***********************/
-/* Creating Meet Our Teams */
-/***********************/
-add_action('init', 'thepilatesroom_meet_our_teams', 1, 1);
-function thepilatesroom_meet_our_teams() {
-
-  $labels = array(
-    'name' => __( 'Meet Our Team','thepilatesroom'),
-    'singular_name' => __( 'Team Item','thepilatesroom' ),
-    'add_new' => _x('Add New', 'team', 'thepilatesroom'),
-    'add_new_item' => __('Add New Team Item','thepilatesroom'),
-    'edit_item' => __('Edit Team Item','thepilatesroom'),
-    'new_item' => __('New Team Item','thepilatesroom'),
-    'view_item' => __('View Team Item','thepilatesroom'),
-    'search_items' => __('Search Team Item','thepilatesroom'),
-    'not_found' =>  __('No team item found','thepilatesroom'),
-    'not_found_in_trash' => __('No team found in Trash','thepilatesroom'), 
+    'name' => __( 'Testimonials','thepilatesroom'),
+    'singular_name' => __( 'Testimonial Item','thepilatesroom' ),
+    'add_new' => _x('Add New', 'Testimonial', 'thepilatesroom'),
+    'add_new_item' => __('Add New Testimonial Item','thepilatesroom'),
+    'edit_item' => __('Edit Testimonial Item','thepilatesroom'),
+    'new_item' => __('New Testimonial Item','thepilatesroom'),
+    'view_item' => __('View Testimonial Item','thepilatesroom'),
+    'search_items' => __('Search Testimonial Item','thepilatesroom'),
+    'not_found' =>  __('No Testimonial item found','thepilatesroom'),
+    'not_found_in_trash' => __('No Testimonial found in Trash','thepilatesroom'), 
     'parent_item_colon' => ''
     );
 
@@ -377,16 +336,15 @@ function thepilatesroom_meet_our_teams() {
     'show_ui' => true,
     'menu_icon' => 'dashicons-groups',
     'query_var' => true,
-	'rewrite' => array('slug' => 'meet-our-team', 'with_front' => true),
-	'has_archive' => false,
+	'rewrite' => array('slug' => 'testimonial', 'with_front' => true),
+	'has_archive' => true,
     'capability_type' => 'post',
     'hierarchical' => false,
     'menu_position' => null,
 	'supports' => array( 'title', 'editor', 'thumbnail' ),
-	'show_in_rest' => true,
     ); 
   
-    register_post_type('meet_our_teams',$args);
+    register_post_type('testimonials',$args);
 }
 
 
