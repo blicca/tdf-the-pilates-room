@@ -47,15 +47,24 @@ $r = new WP_Query( $args );
             endwhile;
         ?>
         </div> 
-            <?php
-            if (  $wp_query->max_num_pages > 1 ) {
+
+        
+        <?php
+        // Load More Check            
+            $total_pages = $r->max_num_pages;
+
+            if ($total_pages > 1){
             ?>          
             <div class="video-library-load-more">
                 Load More
             </div>
             <?php
             }
-            ?>       
+
+        // Load More End
+        ?>    
+            
+            
         <?php
         endif; 
         wp_reset_postdata();
