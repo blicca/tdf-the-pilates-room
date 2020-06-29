@@ -332,7 +332,7 @@ function thepilatesroom_testimonials() {
     'labels' => $labels,
     'public' => true,
     'exclude_from_search' => false,
-    'publicly_queryable' => true,
+    'publicly_queryable' => false, // Set to false hides Single Pages
     'show_ui' => true,
     'menu_icon' => 'dashicons-groups',
     'query_var' => true,
@@ -347,7 +347,83 @@ function thepilatesroom_testimonials() {
     register_post_type('testimonials',$args);
 }
 
+/***********************/
+/* Creating Video Library */
+/***********************/
+add_action('init', 'thepilatesroom_video_library', 1, 1);
+function thepilatesroom_video_library() {
 
+  $labels = array(
+    'name' => __( 'Video Library','thepilatesroom'),
+    'singular_name' => __( 'Video Library Item','thepilatesroom' ),
+    'add_new' => _x('Add New', 'Video Library', 'thepilatesroom'),
+    'add_new_item' => __('Add New Video Library Item','thepilatesroom'),
+    'edit_item' => __('Edit Video Library Item','thepilatesroom'),
+    'new_item' => __('New Video Library Item','thepilatesroom'),
+    'view_item' => __('View Video Library Item','thepilatesroom'),
+    'search_items' => __('Search Video Library Item','thepilatesroom'),
+    'not_found' =>  __('No Video Library item found','thepilatesroom'),
+    'not_found_in_trash' => __('No Video Library found in Trash','thepilatesroom'), 
+    'parent_item_colon' => ''
+    );
+
+    $args = array(
+    'labels' => $labels,
+    'public' => true,
+    'exclude_from_search' => false,
+    'publicly_queryable' => true,
+    'show_ui' => true,
+    'menu_icon' => 'dashicons-video-alt3',
+    'query_var' => true,
+	'rewrite' => array('slug' => 'video', 'with_front' => true),
+	'has_archive' => true,
+    'capability_type' => 'post',
+    'hierarchical' => false,
+    'menu_position' => null,
+	'supports' => array( 'title', 'editor', 'thumbnail' ),
+	'show_in_rest' => true,
+    ); 
+  
+    register_post_type('video_library',$args);
+}
+/***********************/
+/* Creating Principles */
+/***********************/
+add_action('init', 'thepilatesroom_principles', 1, 1);
+function thepilatesroom_principles() {
+
+  $labels = array(
+    'name' => __( 'Principles','thepilatesroom'),
+    'singular_name' => __( 'Principle Item','thepilatesroom' ),
+    'add_new' => _x('Add New', 'Principles', 'thepilatesroom'),
+    'add_new_item' => __('Add New Principles Item','thepilatesroom'),
+    'edit_item' => __('Edit Principles Item','thepilatesroom'),
+    'new_item' => __('New Principles Item','thepilatesroom'),
+    'view_item' => __('View Principles Item','thepilatesroom'),
+    'search_items' => __('Search Principles Item','thepilatesroom'),
+    'not_found' =>  __('No Principles item found','thepilatesroom'),
+    'not_found_in_trash' => __('No Principles found in Trash','thepilatesroom'), 
+    'parent_item_colon' => ''
+    );
+
+    $args = array(
+    'labels' => $labels,
+    'public' => true,
+    'exclude_from_search' => false,
+    'publicly_queryable' => false, // Set to false hides Single Pages
+    'show_ui' => true,
+    'menu_icon' => 'dashicons-video-alt3',
+    'query_var' => true,
+	'rewrite' => array('slug' => 'principle', 'with_front' => true),
+	'has_archive' => true,
+    'capability_type' => 'post',
+    'hierarchical' => false,
+    'menu_position' => null,
+	'supports' => array( 'title', 'thumbnail' ),
+    ); 
+  
+    register_post_type('principles',$args);
+}
 /************************/
 /*  Creating Gutenberg  */
 /************************/
