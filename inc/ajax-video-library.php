@@ -16,7 +16,7 @@ function thepilatesroom_ajax_video_library_scripts() {
 		'max_page' => $wp_query->max_num_pages
 	) );
  
- 	wp_enqueue_script( 'theme-ajax-video-library_scripts' );
+ 	wp_enqueue_script( 'theme-ajax-video-library' );
 }
 
 
