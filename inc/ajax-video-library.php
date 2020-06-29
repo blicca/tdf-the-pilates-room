@@ -20,8 +20,8 @@ function thepilatesroom_ajax_video_library_scripts() {
 }
 
 
-add_action('wp_ajax_loadmorebutton', 'thepilatesroom_ajax_video_library_handler');
-add_action('wp_ajax_nopriv_loadmorebutton', 'thepilatesroom_ajax_video_library_handler');
+add_action('wp_ajax_thepilatesroom_ajax_video_library_handler', 'thepilatesroom_ajax_video_library_handler');
+add_action('wp_ajax_nopriv_thepilatesroom_ajax_video_library_handler', 'thepilatesroom_ajax_video_library_handler');
  
 function thepilatesroom_ajax_video_library_handler(){
  
@@ -47,8 +47,8 @@ function thepilatesroom_ajax_video_library_handler(){
  
  
  
-add_action('wp_ajax_mishafilter', 'thepilatesroom_video_library_filter'); 
-add_action('wp_ajax_nopriv_mishafilter', 'thepilatesroom_video_library_filter');
+add_action('wp_ajax_thepilatesroom_ajax_video_library_handler', 'thepilatesroom_video_library_filter'); 
+add_action('wp_ajax_nopriv_thepilatesroom_ajax_video_library_handler', 'thepilatesroom_video_library_filter');
  
 function thepilatesroom_video_library_filter(){
  

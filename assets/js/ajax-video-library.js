@@ -3,12 +3,12 @@
 	/*
 	 * Load More
 	 */
-	$('.video-library-load-more').click(function(){
+	$('.video-library-load-more').on('click', function(){
  
 		$.ajax({
 			url : theme_loadmore_params.ajaxurl, // AJAX handler
 			data : {
-				'action': 'loadmorebutton', // the parameter for admin-ajax.php
+				'action': 'thepilatesroom_ajax_video_library_handler', // the parameter for admin-ajax.php
 				'query': theme_loadmore_params.posts, // loop parameters passed by wp_localize_script()
 				'page' : theme_loadmore_params.current_page // current page
 			},
