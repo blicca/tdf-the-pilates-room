@@ -38,7 +38,7 @@ function thepilatesroom_ajax_video_library_handler(){
 		// run the loop
         while( have_posts() ): the_post();
         
-            get_template_part( 'template-parts/loop', 'video-library' );
+            get_template_part( '../template-parts/loop', 'video-library' );
  
 		endwhile;
 	endif;
@@ -72,7 +72,7 @@ function thepilatesroom_video_library_filter(){
  
 		while( have_posts() ): the_post();
  
-			get_template_part( 'template-parts/loop', 'video-library' );
+			get_template_part( '../template-parts/loop', 'video-library' );
  
 		endwhile;
  
