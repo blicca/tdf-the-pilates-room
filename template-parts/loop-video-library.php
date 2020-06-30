@@ -1,6 +1,6 @@
                     <article class="video-grid-item" itemscope="" itemtype="http://schema.org/Article">
                         <figure class="video-preview-image">
-                            <?php the_post_thumbnail('recentpost', array('itemprop'=>'image')); ?>
+                            <?php the_post_thumbnail('full', array('itemprop'=>'image')); ?>
                             <div class="single-play-icon"> 
                                 <img src="<?php echo get_parent_theme_file_uri() . '/assets/img/video-play-ico.svg'; ?>" alt="play">
                             </div>

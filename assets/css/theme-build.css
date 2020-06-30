@@ -300,9 +300,8 @@ body {
    text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; -webkit-text-size-adjust: 100%; word-wrap: break-word; overflow-wrap: break-word; overflow-x: hidden; 
-  font-display: swap;
 }
-h1, h2, h3, h4, h5, h6 { font-family: "Helvetica Neue", -apple-system,BlinkMacSystemFont,Roboto,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-weight: bold; letter-spacing: 0; line-height: 1.5; color:#000000; margin-bottom: 24px; font-display: swap; }
+h1, h2, h3, h4, h5, h6 { font-family: "Helvetica Neue", -apple-system,BlinkMacSystemFont,Roboto,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-weight: bold; letter-spacing: 0; line-height: 1.5; color:#000000; margin-bottom: 24px; }
 h1 { font-size: 48px; line-height: 60px; }
 h2 { font-size: 39px; line-height: 60px; } 
 h3 { font-size: 31px; line-height: 60px; }
@@ -1809,7 +1808,9 @@ z-index: 100;
 .thepilatesroom-helper .select2-results__option {
 padding: 15px 36px 13px 16px; 
 font-size: 16px;
-line-height: 20px
+line-height: 20px;
+color: rgba(20,20,21,0.5) !important;
+background: #fff !important;
 }
 .thepilatesroom-helper .select2-container--default .select2-results>.select2-results__options {
 max-height: 240px;

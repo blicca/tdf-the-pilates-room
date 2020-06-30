@@ -118,8 +118,8 @@
         $('.video-library-select').select2({
           placeholder: "All videos",
           minimumResultsForSearch: Infinity
-        });
-      }    
+        });  
+    }    
     //
     // Document Ready
     $(document).ready(function(){

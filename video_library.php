@@ -29,29 +29,30 @@ $args = array(
     'paged' => $paged,
 );
 $r = new WP_Query( $args );
+$total_pages = $r->max_num_pages;
 ?>
     <div class="theme-row video-library-row">
-    <div class="video-library-filter">
-        <select class="video-library-select" style="width: 100%">
-            <option></option>
-            <?php wp_get_archives( array( 'post_type'=> 'video_library', 'format'=> 'option', 'type' => 'monthly', 'limit' => 24, 'show_post_count' => 'false' ) ); ?>
-        </select>
-    </div>
-        <div class="all-video-posts">
-        <?php if ( $r->have_posts() ) : while ( $r->have_posts() ) : $r->the_post(); ?>
-        <?php 
-            $postid = get_the_ID();
-            
-            get_template_part( 'template-parts/loop', 'video-library' );
-            
-            endwhile;
-        ?>
+        <div class="video-library-filter">
+            <select class="video-library-select" style="width: 100%">
+                <option></option>
+                <option value="https://stg.thepilatesroom.studio/video-library/"> All Videos </option>
+                <?php wp_get_archives( array( 'post_type'=> 'video_library', 'format'=> 'option', 'type' => 'monthly', 'limit' => 24) ); ?>
+            </select>
+        </div>
+        <div class="all-video-posts" data-videomaxpage="<?php echo esc_attr($total_pages); ?>">
+            <?php if ( $r->have_posts() ) : while ( $r->have_posts() ) : $r->the_post(); ?>
+            <?php 
+                $postid = get_the_ID();
+                
+                get_template_part( 'template-parts/loop', 'video-library' );
+                
+                endwhile;
+            ?>
         </div> 
 
         
         <?php
         // Load More Check            
-            $total_pages = $r->max_num_pages;
 
             if ($total_pages > 1){
             ?>          

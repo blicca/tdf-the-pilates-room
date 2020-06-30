@@ -11,9 +11,10 @@ function thepilatesroom_ajax_video_library_scripts() {
 	// passing parameters here
 	wp_localize_script( 'theme-ajax-video-library', 'theme_loadmore_params', array(
 		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
-		'posts' => json_encode( $wp_query->query_vars ), // everything about your loop is here
-		'current_page' => $wp_query->query_vars['paged'] ? $wp_query->query_vars['paged'] : 1,
-		'max_page' => $wp_query->max_num_pages
+		'current_page' => $wp_query->query_vars['paged'] ? $wp_query->query_vars['paged'] : 1, // galiba bu da gereksiz çalışmıyor.
+		'max_page' => $wp_query->max_num_pages, // aslında gereksiz kod
+		'year' => 'All',
+		'selectedmonth' => 'All'
 	) );
  
  	wp_enqueue_script( 'theme-ajax-video-library' );
@@ -26,70 +27,65 @@ add_action('wp_ajax_nopriv_thepilatesroom_ajax_video_library_handler', 'thepilat
 function thepilatesroom_ajax_video_library_handler(){
  
 	// prepare our arguments for the query
-	$params = json_decode( stripslashes( $_POST['query'] ), true ); // query_posts() takes care of the necessary sanitization 
-	$params['paged'] = $_POST['page'] + 1; // we need next page to be loaded
-	$params['post_status'] = 'publish';
+	$args = array(
+		'post_type'=>'video_library',
+		'posts_per_page' => 3,
+		'paged' => sanitize_text_field($_POST['page'] + 1),
+	);
+
+	$r = new WP_Query( $args );
  
-	// it is always better to use WP_Query but not here
-	query_posts( $params );
- 
-	if( have_posts() ) :
+	if( $r->have_posts() ) :
  
 		// run the loop
-        while( have_posts() ): the_post();
+        while( $r->have_posts() ): $r->the_post();
         
             get_template_part( 'template-parts/loop', 'video-library' );
  
 		endwhile;
 	endif;
+	wp_reset_postdata();
 	die; // here we exit the script and even no wp_reset_query() required!
 }
  
  
  
-add_action('wp_ajax_thepilatesroom_ajax_video_library_handler', 'thepilatesroom_video_library_filter'); 
-add_action('wp_ajax_nopriv_thepilatesroom_ajax_video_library_handler', 'thepilatesroom_video_library_filter');
+add_action('wp_ajax_thepilatesroom_video_library_filter', 'thepilatesroom_video_library_filter'); 
+add_action('wp_ajax_nopriv_thepilatesroom_video_library_filter', 'thepilatesroom_video_library_filter');
  
 function thepilatesroom_video_library_filter(){
- 
-	// example: date-ASC 
-	$order = explode( '-', $_POST['misha_order_by'] );
- 
-	$params = array(
-		'posts_per_page' => $_POST['misha_number_of_results'], // when set to -1, it shows all posts
-		'orderby' => $order[0], // example: date
-		'order'	=> $order[1] // example: ASC
-	);
- 
- 
-	query_posts( $params );
- 
-	global $wp_query;
- 
-	if( have_posts() ) :
- 
- 		ob_start(); // start buffering because we do not need to print the posts now
- 
-		while( have_posts() ): the_post();
- 
-			get_template_part( 'template-parts/loop', 'video-library' );
+	if ( sanitize_text_field($_POST['year']) == "Videos" ) {
+		$args = array(
+			'post_type'=>'video_library',
+			'posts_per_page' => 3,
+		);
+	}
+	else {
+		$args = array(
+			'post_type'=>'video_library',
+			'posts_per_page' => 3,
+			'year' => sanitize_text_field($_POST['year']),
+			'monthnum' => sanitize_text_field($_POST['selectedmonth']),
+		);
+	}
+	$r = new WP_Query( $args );
+	$total_pages = $r->max_num_pages;
+
+	if( $r->have_posts() ) :
+		// run the loop
+		?>
+		<div class="all-video-posts" data-videomaxpage="<?php echo esc_attr($total_pages); ?>">
+		<?php
+        while( $r->have_posts() ): $r->the_post();
+        
+            get_template_part( 'template-parts/loop', 'video-library' );
  
 		endwhile;
- 
- 		$posts_html = ob_get_contents(); // we pass the posts to variable
-   		ob_end_clean(); // clear the buffer
-	else:
-		$posts_html = '<p>Nothing found for your criteria.</p>';
+		?>
+		</div>
+		<?php
+	
 	endif;
- 
-	// no wp_reset_query() required
- 
- 	echo json_encode( array(
-		'posts' => json_encode( $wp_query->query_vars ),
-		'max_page' => $wp_query->max_num_pages,
-		'found_posts' => $wp_query->found_posts,
-		'content' => $posts_html
-	) );
- 
+	wp_reset_postdata();
 	die();
 }

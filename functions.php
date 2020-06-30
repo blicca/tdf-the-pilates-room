@@ -138,9 +138,9 @@ function thepilatesroom_script_style() {
   /* CSS */
   wp_enqueue_style( 'flickity', get_parent_theme_file_uri() .'/assets/css/flickity.min.css' );
   wp_enqueue_style( 'thepilatesroom', get_parent_theme_file_uri() . '/assets/css/theme-build.css', '1.0.11' );
-  if ( is_page_template( 'video_library.php' ) ) {
+  
     wp_enqueue_style( 'select2', get_parent_theme_file_uri() . '/assets/css/select2.min.css', '1.0.11' );
-  }  
+ 
   /* Scripts */
   // Are you looking Ajax Scripts? Check bottom of page
   // Other Scripts:
@@ -150,9 +150,9 @@ function thepilatesroom_script_style() {
   wp_enqueue_script('isotope', get_parent_theme_file_uri() . '/assets/js/isotope.pkgd.min.js', array('jquery'), '', true);
   wp_enqueue_script('infinite-scroll', get_parent_theme_file_uri() . '/assets/js/infinite-scroll.pkgd.min.js', array('jquery'), '', true);
   wp_enqueue_script('flickity', get_parent_theme_file_uri() . '/assets/js/flickity.pkgd.min.js', array('jquery'), '', true);
-  if ( is_page_template( 'video_library.php' ) ) {
+  
     wp_enqueue_script('select2', get_parent_theme_file_uri() . '/assets/js/select2.min.js', array('jquery'), '', true);
-  }
+  
   wp_enqueue_script('main-script', get_parent_theme_file_uri() . '/assets/js/theme-build.js', array('jquery'), '1.0.11', true);	
 }
 add_action( 'wp_enqueue_scripts', 'thepilatesroom_script_style' );

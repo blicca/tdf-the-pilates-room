@@ -1,16 +1,16 @@
 (function($) {
-    "use strict"; 
+	"use strict"; 
+
 	/*
 	 * Load More
 	 */
 	$('.video-library-load-more').on('click', function(){
- 
+		var max_video_pages = $('.all-video-posts').data('videomaxpage');
 		$.ajax({
 			url : theme_loadmore_params.ajaxurl, // AJAX handler
 			data : {
 				'action': 'thepilatesroom_ajax_video_library_handler', // the parameter for admin-ajax.php
-				'query': theme_loadmore_params.posts, // loop parameters passed by wp_localize_script()
-				'page' : theme_loadmore_params.current_page // current page
+				'page' : theme_loadmore_params.current_page // current page,
 			},
 			type : 'POST',
 			beforeSend : function ( xhr ) {
@@ -18,13 +18,14 @@
 			},
 			success : function( posts ){
 				if( posts ) {
- 
-					$('.video-library-load-more').text( 'More posts' );
+					$('.video-library-load-more').text('Load More');
+
 					$('.all-video-posts').append( posts ); // insert new posts
 					theme_loadmore_params.current_page++;
  
-					if ( theme_loadmore_params.current_page == theme_loadmore_params.max_page ) 
+					if ( theme_loadmore_params.current_page >= max_video_pages ) {
 						$('.video-library-load-more').hide(); // if last page, HIDE the button
+					}
  
 				} else {
 					$('.video-library-load-more').hide(); // if no data, HIDE the button as well
@@ -33,50 +34,67 @@
 		});
 		return false;
 	});
- 
-	/*
-	 * Filter
-	 */
-	$('#misha_filters').submit(function(){
- 
+     
+    // Filter    
+	$('.video-library-select').on('select2:select', function (e) {
+		var filter_date = $(this).find(':selected').text();
+		filter_date = filter_date.split(" ");
+
+		var months = [
+			'January',
+			'February',
+			'March',
+			'April',
+			'May',
+			'June',
+			'July',
+			'August',
+			'September',
+			'October',
+			'November',
+			'December'
+		];     
+		var selected_month = months.indexOf(filter_date[1]) + 1;  
+		theme_loadmore_params.selectedmonth = selected_month;
+		theme_loadmore_params.year = filter_date[2];
+		theme_loadmore_params.current_page = 1;
+
 		$.ajax({
-			url : theme_loadmore_params.ajaxurl,
-			data : $('#misha_filters').serialize(), // form data
-			dataType : 'json', // this data type allows us to receive objects from the server
-			type : 'POST',
-			beforeSend : function(xhr){
-				$('#misha_filters').find('button').text('Filtering...');
+			url : theme_loadmore_params.ajaxurl, // AJAX handler
+			data : {
+				'action': 'thepilatesroom_video_library_filter', // the parameter for admin-ajax.php
+				'page' : theme_loadmore_params.current_page, // current page,
+				'selectedmonth' : theme_loadmore_params.selectedmonth,
+				'year' : theme_loadmore_params.year
+
 			},
-			success : function( data ){
+			type : 'POST',
+			beforeSend : function ( xhr ) {
+				$('.video-library-load-more').text('Loading...'); // some type of preloader
+			},
+			success : function( posts ){
+				if( posts ) {
+					$('.video-library-load-more').show();
+					$('.video-library-load-more').text('Load More');
+					$('.all-video-posts').remove();
+					$('.video-library-filter').after( posts ); // insert new posts
+					if ( theme_loadmore_params.year != "Videos" ) {
+					theme_loadmore_params.current_page++;
+					}
+					if ( $('.all-video-posts').data('videomaxpage') < 2 ) {
+					   $('.video-library-load-more').hide();
+					}
+					
  
-				// when filter applied:
-				// set the current page to 1
-				theme_loadmore_params.current_page = 1;
- 
-				// set the new query parameters
-				theme_loadmore_params.posts = data.posts;
- 
-				// set the new max page parameter
-				theme_loadmore_params.max_page = data.max_page;
- 
-				// change the button label back
-				$('#misha_filters').find('button').text('Apply filter');
- 
-				// insert the posts to the container
-				$('#misha_posts_wrap').html(data.content);
- 
-				// hide load more button, if there are not enough posts for the second page
-				if ( data.max_page < 2 ) {
-					$('#misha_loadmore').hide();
 				} else {
-					$('#misha_loadmore').show();
+					$('.video-library-load-more').hide(); // if no data, HIDE the button as well
 				}
 			}
 		});
- 
-		// do not submit the form
 		return false;
  
+
 	});
+
  
 })(jQuery);
