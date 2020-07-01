@@ -1,6 +1,8 @@
 <?php
 /**
- * The Video Library Template File
+ * Template Name: Principles
+ * 
+ * The Principles Library Template File
  *
  * This is the most generic template file in a WordPress theme
  * and one of the two required files for a theme (the other being style.css).
@@ -19,22 +21,23 @@ get_header();
         <div class="caption-title"><h1><?php the_title(); ?></h1></div>
     </div>
 <?php
-global $wp_query;
-$total_pages = $wp_query->max_num_pages;
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
+$args = array(
+    'post_type'=>'principles',
+    'posts_per_page' => 6,
+    'paged' => $paged,
+);
+$r = new WP_Query( $args );
+$total_pages = $r->max_num_pages;
 ?>
-    <div class="theme-row video-library-row">
-        <div class="video-library-filter">
-            <select class="video-library-select" style="width: 100%">
-                <option></option>
-                <?php wp_get_archives( array( 'post_type'=> 'video_library', 'format'=> 'option', 'type' => 'monthly', 'limit' => 24) ); ?>
-            </select>
-        </div>
-        <div class="all-video-posts" data-videomaxpage="<?php echo esc_attr($total_pages); ?>" data-filteryear="" data-filtermonth="">
-            <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+    <div class="video-library-row theme-row">
+        <div class="all-video-posts" data-videomaxpage="<?php echo esc_attr($total_pages); ?>">
+            <?php if ( $r->have_posts() ) : while ( $r->have_posts() ) : $r->the_post(); ?>
             <?php 
                 $postid = get_the_ID();
                 
-                get_template_part( 'template-parts/loop', 'video-library' );
+                get_template_part( 'template-parts/loop', 'principles' );
                 
                 endwhile;
             ?>
@@ -46,7 +49,7 @@ $total_pages = $wp_query->max_num_pages;
 
             if ($total_pages > 1){
             ?>          
-            <div class="video-library-load-more">
+            <div class="principles-load-more">
                 Load More
             </div>
             <?php

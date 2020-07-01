@@ -423,7 +423,7 @@ function thepilatesroom_principles() {
     'menu_icon' => 'dashicons-video-alt3',
     'query_var' => true,
 	'rewrite' => array('slug' => 'principle', 'with_front' => true),
-	'has_archive' => true,
+	'has_archive' => false,
     'capability_type' => 'post',
     'hierarchical' => false,
     'menu_position' => null,

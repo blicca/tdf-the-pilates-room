@@ -2,7 +2,7 @@
 	"use strict"; 
 
 	/*
-	 * Load More
+	 * Load More Video Library
 	 */
 	$('.video-library-load-more').on('click', function(){
 		var max_video_pages = $('.all-video-posts').data('videomaxpage');
@@ -95,6 +95,39 @@
  
 
 	});
+
+	//
+	// Load More Principles
+	$('.principles-load-more').on('click', function(){
+		var max_video_pages = $('.all-video-posts').data('videomaxpage');
+		$.ajax({
+			url : theme_loadmore_params.ajaxurl, // AJAX handler
+			data : {
+				'action': 'thepilatesroom_ajax_principles_handler', // the parameter for admin-ajax.php
+				'page' : theme_loadmore_params.current_page // current page,
+			},
+			type : 'POST',
+			beforeSend : function ( xhr ) {
+				$('.principles-load-more').text('Loading...'); // some type of preloader
+			},
+			success : function( posts ){
+				if( posts ) {
+					$('.principles-load-more').text('Load More');
+
+					$('.all-video-posts').append( posts ); // insert new posts
+					theme_loadmore_params.current_page++;
+ 
+					if ( theme_loadmore_params.current_page >= max_video_pages ) {
+						$('.principles-load-more').hide(); // if last page, HIDE the button
+					}
+ 
+				} else {
+					$('.principles-load-more').hide(); // if no data, HIDE the button as well
+				}
+			}
+		});
+		return false;
+	});	
 
  
 })(jQuery);

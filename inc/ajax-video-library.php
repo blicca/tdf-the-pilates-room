@@ -11,7 +11,7 @@ function thepilatesroom_ajax_video_library_scripts() {
 	// passing parameters here
 	wp_localize_script( 'theme-ajax-video-library', 'theme_loadmore_params', array(
 		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
-		'current_page' => $wp_query->query_vars['paged'] ? $wp_query->query_vars['paged'] : 1, // galiba bu da gereksiz çalışmıyor.
+		'current_page' => "1", // galiba bu da gereksiz çalışmıyor.
 		'max_page' => $wp_query->max_num_pages, // aslında gereksiz kod
 		'year' => 'All',
 		'selectedmonth' => 'All'
@@ -20,7 +20,7 @@ function thepilatesroom_ajax_video_library_scripts() {
  	wp_enqueue_script( 'theme-ajax-video-library' );
 }
 
-
+/* Video Library */
 add_action('wp_ajax_thepilatesroom_ajax_video_library_handler', 'thepilatesroom_ajax_video_library_handler');
 add_action('wp_ajax_nopriv_thepilatesroom_ajax_video_library_handler', 'thepilatesroom_ajax_video_library_handler');
  
@@ -88,4 +88,32 @@ function thepilatesroom_video_library_filter(){
 	endif;
 	wp_reset_postdata();
 	die();
+}
+
+/* Principles */
+add_action('wp_ajax_thepilatesroom_ajax_principles_handler', 'thepilatesroom_ajax_principles_handler');
+add_action('wp_ajax_nopriv_thepilatesroom_ajax_principles_handler', 'thepilatesroom_ajax_principles_handler');
+ 
+function thepilatesroom_ajax_principles_handler(){
+ 
+	// prepare our arguments for the query
+	$args = array(
+		'post_type'=>'principles',
+		'posts_per_page' => 6,
+		'paged' => sanitize_text_field($_POST['page'] + 1),
+	);
+
+	$r = new WP_Query( $args );
+ 
+	if( $r->have_posts() ) :
+ 
+		// run the loop
+        while( $r->have_posts() ): $r->the_post();
+        
+            get_template_part( 'template-parts/loop', 'principles' );
+ 
+		endwhile;
+	endif;
+	wp_reset_postdata();
+	die; // here we exit the script and even no wp_reset_query() required!
 }
