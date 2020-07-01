@@ -335,7 +335,10 @@ a:hover {
   margin: 0 auto;
 }
 .caption.theme-row{
-  padding: 188px 12px 72px;
+  padding: 155px 12px 0;
+}
+.caption.theme-row h1 {
+  margin-bottom: 18px;
 }
 .narrow-text {
   max-width: 572px;
@@ -357,6 +360,56 @@ a:hover {
 .thepilatesroom-button:active, .thepilatesroom-button:focus { background-color: var(--buttonBG);}
 .thepilatesroom-content {
   margin-top: -40px;
+}
+
+.site-lightbox {
+position: fixed;
+top: 0;
+width: 100%;
+height: 100%;
+background: rgba(11,12,15,0.8);
+visibility: hidden;
+opacity: 0;
+-webkit-transition: all 0.4s;
+transition: all 0.4s;
+z-index: 10000;
+}
+.logged-in .site-lightbox {
+top: 32px;
+height: calc(100% - 32px);
+}
+.site-lightbox.opened-video-box {
+visibility: visible;
+opacity: 1;
+}
+.site-lightbox-top {
+border-bottom: 1px solid rgba(255,255,255,0.5);
+height: 56px;
+padding-left: 24px; 
+font-size: 20px;
+font-weight: 700;
+line-height: 56px; 
+}
+.site-light-box-close {
+line-height: 0;
+cursor: pointer;
+position: absolute;
+top: 0;
+right: 0;
+width: 56px;
+height: 56px;
+padding: 20px;
+z-index: 1000;
+border-left: 1px solid rgba(255,255,255,0.5);
+}
+.site-lightbox-frame {
+width: 50.34%;
+height: 100%;
+margin: 0 auto;
+}
+.site-lightbox-frame iframe {
+width: 100%;
+height: 100%;
 }
 /**
   * 3.1 - Header Styles

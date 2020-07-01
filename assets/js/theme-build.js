@@ -31,9 +31,36 @@
     $(document).on('keydown', function(event) {
         if (event.keyCode == 27) {
             $('.main-we-chat').removeClass('opened-we-chat');
+            $('.site-lightbox').removeClass('opened-video-box');
+            $('.site-lightbox-frame').html('');
             $('body').css('overflow', 'auto');
         }
-    });    
+    });
+    //
+    // Play Video 
+    //
+
+    /**
+     * Helper For Vimeo
+     */
+    function getIdFromVimeoURL(url) {
+        return /(vimeo(pro)?\.com)\/(?:[^\d]+)?(\d+)\??(.*)?$/.exec(url)[3];
+    }    
+    function tpr_play_video() {
+        $('.trigger-video').on('click', function() {
+            $('.site-lightbox').addClass('opened-video-box');
+            $('body').css('overflow','hidden');
+            var title = $(this).data('vidtitle');
+            var vimeo = $(this).data('vimeo');
+            $('.site-light-box-title').html(title);
+            $('.site-lightbox-frame').html('<iframe src="https://player.vimeo.com/video/'+getIdFromVimeoURL(vimeo)+'" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>');
+            
+        });
+        $('.site-light-box-close').on('click', function() {
+            $('.site-lightbox').removeClass('opened-video-box');
+            $('.site-lightbox-frame').html('');
+        })
+    }
     //
     // Isotope Code for Blog
     //
@@ -123,6 +150,7 @@
     //
     // Document Ready
     $(document).ready(function(){
+        tpr_play_video();
         sticky_main_header();
         testimonials_slider();
         tdf_select2();

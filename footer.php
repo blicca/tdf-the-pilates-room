@@ -106,7 +106,14 @@
     </div>
     <div class="mobile-overlay"></div>    
 </div>
-
+<!-- Lightbox -->
+<div class="site-lightbox">
+    <div class="site-lightbox-top">
+          <div class="site-light-box-title"></div>
+          <div class="site-light-box-close"><img width="16" height="16" src="<?php echo get_parent_theme_file_uri() . '/assets/img/main-thin-times.svg'; ?>" alt="close"></div>
+    </div>
+    <div class="site-lightbox-frame"></div>
+</div>
 <?php 
 /* 
  * Stop Editing Here

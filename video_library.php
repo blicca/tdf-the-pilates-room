@@ -31,7 +31,7 @@ $args = array(
 $r = new WP_Query( $args );
 $total_pages = $r->max_num_pages;
 ?>
-    <div class="theme-row video-library-row">
+    <div class="video-library-row theme-row">
         <div class="video-library-filter">
             <select class="video-library-select" style="width: 100%">
                 <option></option>
