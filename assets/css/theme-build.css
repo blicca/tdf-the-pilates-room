@@ -389,6 +389,7 @@ padding-left: 24px;
 font-size: 20px;
 font-weight: 700;
 line-height: 56px; 
+color: #fff;
 }
 .site-light-box-close {
 line-height: 0;
@@ -398,7 +399,7 @@ top: 0;
 right: 0;
 width: 56px;
 height: 56px;
-padding: 20px;
+padding: 15px 20px 20px 20px;
 z-index: 1000;
 border-left: 1px solid rgba(255,255,255,0.5);
 }

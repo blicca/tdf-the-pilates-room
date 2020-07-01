@@ -53,12 +53,13 @@
             var title = $(this).data('vidtitle');
             var vimeo = $(this).data('vimeo');
             $('.site-light-box-title').html(title);
-            $('.site-lightbox-frame').html('<iframe src="https://player.vimeo.com/video/'+getIdFromVimeoURL(vimeo)+'" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>');
+            $('.site-lightbox-frame').html('<iframe src="https://player.vimeo.com/video/'+getIdFromVimeoURL(vimeo)+'?title=false" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>');
             
         });
         $('.site-light-box-close').on('click', function() {
             $('.site-lightbox').removeClass('opened-video-box');
             $('.site-lightbox-frame').html('');
+            $('body').css('overflow', 'auto');
         })
     }
     //
