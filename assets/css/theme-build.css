@@ -1826,7 +1826,7 @@ width: 267px;
 height: 48px;
 margin-bottom: 30px;
 }
-.video-library-load-more, .principles-load-more{
+.video-library-load-more, .principles-load-more, .events-load-more, .knowledge-load-more{
 height: 40px;
 width: 115px;
 border-radius: 4px;
@@ -1904,6 +1904,10 @@ border-width: 8px 6px 0 6px;
 background-color: #000000 !important;
 color: #ffffff !important;
 }
+/* Main Events */
+
+
+
 /* Main Testimonials */
 .row-bg {
 background: #FAFAFB;

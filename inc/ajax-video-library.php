@@ -117,3 +117,65 @@ function thepilatesroom_ajax_principles_handler(){
 	wp_reset_postdata();
 	die; // here we exit the script and even no wp_reset_query() required!
 }
+
+
+/* Events */
+add_action('wp_ajax_thepilatesroom_ajax_events_handler', 'thepilatesroom_ajax_events_handler');
+add_action('wp_ajax_nopriv_thepilatesroom_ajax_events_handler', 'thepilatesroom_ajax_events_handler');
+ 
+function thepilatesroom_ajax_events_handler(){
+ 
+	// prepare our arguments for the query
+	$args = array(
+		'post_type'=>'events',
+		'posts_per_page' => 6,
+		'paged' => sanitize_text_field($_POST['page'] + 1),
+	);
+
+	$r = new WP_Query( $args );
+ 
+	if( $r->have_posts() ) :
+ 
+		// run the loop
+        while( $r->have_posts() ): $r->the_post();
+        
+            get_template_part( 'template-parts/loop', 'events' );
+ 
+		endwhile;
+	endif;
+	wp_reset_postdata();
+	die; // here we exit the script and even no wp_reset_query() required!
+}
+
+/* All Knowledge */
+add_action('wp_ajax_thepilatesroom_ajax_knowledge_handler', 'thepilatesroom_ajax_knowledge_handler');
+add_action('wp_ajax_nopriv_thepilatesroom_ajax_knowledge_handler', 'thepilatesroom_ajax_knowledge_handler');
+ 
+function thepilatesroom_ajax_knowledge_handler(){
+ 
+	// prepare our arguments for the query
+	$args = array(
+		'post_type'=>'video_library, principles, events',
+		'posts_per_page' => 6,
+		'paged' => sanitize_text_field($_POST['page'] + 1),
+	);
+
+	$r = new WP_Query( $args );
+ 
+	if( $r->have_posts() ) :
+ 
+		// run the loop
+        while( $r->have_posts() ): $r->the_post();
+		if ( get_post_type( get_the_ID() ) == 'video_library' ) {
+			$template_post = "video-library";
+		}
+		else {
+			$template_post = get_post_type( get_the_ID() );
+		}			
+            get_template_part( 'template-parts/loop', $template_post );
+ 
+		endwhile;
+	endif;
+	wp_reset_postdata();
+	die; // here we exit the script and even no wp_reset_query() required!
+}

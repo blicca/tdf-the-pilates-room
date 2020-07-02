@@ -432,6 +432,46 @@ function thepilatesroom_principles() {
   
     register_post_type('principles',$args);
 }
+
+/***********************/
+/* Creating Video Library */
+/***********************/
+add_action('init', 'thepilatesroom_events', 1, 1);
+function thepilatesroom_events() {
+
+  $labels = array(
+    'name' => __( 'Events Library','thepilatesroom'),
+    'singular_name' => __( 'Event Library Item','thepilatesroom' ),
+    'add_new' => _x('Add New', 'Event Library', 'thepilatesroom'),
+    'add_new_item' => __('Add New Event Library Item','thepilatesroom'),
+    'edit_item' => __('Edit Event Library Item','thepilatesroom'),
+    'new_item' => __('New Event Library Item','thepilatesroom'),
+    'view_item' => __('View Event Library Item','thepilatesroom'),
+    'search_items' => __('Search Event Library Item','thepilatesroom'),
+    'not_found' =>  __('No Event Library item found','thepilatesroom'),
+    'not_found_in_trash' => __('No Event Library found in Trash','thepilatesroom'), 
+    'parent_item_colon' => ''
+    );
+
+    $args = array(
+    'labels' => $labels,
+    'public' => true,
+    'exclude_from_search' => false,
+    'publicly_queryable' => true,
+    'show_ui' => true,
+    'menu_icon' => 'dashicons-calendar-alt',
+    'query_var' => true,
+	'rewrite' => array('slug' => 'event', 'with_front' => true),
+	'has_archive' => true,
+    'capability_type' => 'post',
+    'hierarchical' => false,
+    'menu_position' => null,
+	'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+	'show_in_rest' => true,
+    ); 
+  
+    register_post_type('events',$args);
+}
 /************************/
 /*  Creating Gutenberg  */
 /************************/

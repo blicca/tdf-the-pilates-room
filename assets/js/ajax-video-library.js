@@ -129,5 +129,73 @@
 		return false;
 	});	
 
+	//
+	// Load More Events
+	$('.events-load-more').on('click', function(){
+		var max_video_pages = $('.all-video-posts').data('videomaxpage');
+		$.ajax({
+			url : theme_loadmore_params.ajaxurl, // AJAX handler
+			data : {
+				'action': 'thepilatesroom_ajax_events_handler', // the parameter for admin-ajax.php
+				'page' : theme_loadmore_params.current_page // current page,
+			},
+			type : 'POST',
+			beforeSend : function ( xhr ) {
+				$('.events-load-more').text('Loading...'); // some type of preloader
+			},
+			success : function( posts ){
+				if( posts ) {
+					$('.events-load-more').text('Load More');
+
+					$('.all-video-posts').append( posts ); // insert new posts
+					theme_loadmore_params.current_page++;
  
+					if ( theme_loadmore_params.current_page >= max_video_pages ) {
+						$('.events-load-more').hide(); // if last page, HIDE the button
+					}
+ 
+				} else {
+					$('.events-load-more').hide(); // if no data, HIDE the button as well
+				}
+			}
+		});
+		return false;
+	});		
+
+	//
+	// Load More Events
+	$('.knowledge-load-more').on('click', function(){
+		var max_video_pages = $('.all-video-posts').data('videomaxpage');
+		$.ajax({
+			url : theme_loadmore_params.ajaxurl, // AJAX handler
+			data : {
+				'action': 'thepilatesroom_ajax_knowledge_handler', // the parameter for admin-ajax.php
+				'page' : theme_loadmore_params.current_page // current page,
+			},
+			type : 'POST',
+			beforeSend : function ( xhr ) {
+				$('.knowledge-load-more').text('Loading...'); // some type of preloader
+			},
+			success : function( posts ){
+				if( posts ) {
+					$('.knowledge-load-more').text('Load More');
+
+					$('.all-video-posts').append( posts ); // insert new posts
+					theme_loadmore_params.current_page++;
+ 
+					if ( theme_loadmore_params.current_page >= max_video_pages ) {
+						$('.knowledge-load-more').hide(); // if last page, HIDE the button
+					}
+ 
+				} else {
+					$('.knowledge-load-more').hide(); // if no data, HIDE the button as well
+				}
+			}
+		});
+		return false;
+	});	
+	
+	
+
+	// End
 })(jQuery);
