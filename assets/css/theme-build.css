@@ -1905,8 +1905,14 @@ background-color: #000000 !important;
 color: #ffffff !important;
 }
 /* Main Events */
-
-
+.events-loop h3 {
+  margin-bottom: 0;
+}
+.event-time {
+  font-size: 13px;
+  line-height: 26px;
+  color: rgba(0,0,0,0.5);
+}
 
 /* Main Testimonials */
 .row-bg {

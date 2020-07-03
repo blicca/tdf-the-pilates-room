@@ -155,7 +155,7 @@ function thepilatesroom_ajax_knowledge_handler(){
  
 	// prepare our arguments for the query
 	$args = array(
-		'post_type'=>'video_library, principles, events',
+		'post_type'=> array( 'knowledge_base'),
 		'posts_per_page' => 6,
 		'paged' => sanitize_text_field($_POST['page'] + 1),
 	);
@@ -165,14 +165,9 @@ function thepilatesroom_ajax_knowledge_handler(){
 	if( $r->have_posts() ) :
  
 		// run the loop
-        while( $r->have_posts() ): $r->the_post();
-		if ( get_post_type( get_the_ID() ) == 'video_library' ) {
-			$template_post = "video-library";
-		}
-		else {
-			$template_post = get_post_type( get_the_ID() );
-		}			
-            get_template_part( 'template-parts/loop', $template_post );
+		while( $r->have_posts() ): $r->the_post();
+		
+			get_template_part( 'template-parts/loop', 'knowledge-base' );
  
 		endwhile;
 	endif;

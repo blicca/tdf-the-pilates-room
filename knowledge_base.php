@@ -24,7 +24,7 @@ get_header();
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
 $args = array(
-    'post_type'=>'video_library, principles, events',
+    'post_type'=> array( 'knowledge_base' ),
     'posts_per_page' => 6,
     'paged' => $paged,
 );
@@ -36,13 +36,8 @@ $total_pages = $r->max_num_pages;
         <div class="all-video-posts" data-videomaxpage="<?php echo esc_attr($total_pages); ?>">
             <?php if ( $r->have_posts() ) : while ( $r->have_posts() ) : $r->the_post(); ?>
             <?php 
-                if ( get_post_type( get_the_ID() ) == 'video_library' ) {
-                    $template_post = "video-library";
-                }
-                else {
-                    $template_post = get_post_type( get_the_ID() );
-                }			
-                    get_template_part( 'template-parts/loop', $template_post );
+                
+                get_template_part( 'template-parts/loop', 'knowledge-base' );
                 
                 endwhile;
             ?>

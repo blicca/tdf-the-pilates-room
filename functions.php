@@ -434,7 +434,7 @@ function thepilatesroom_principles() {
 }
 
 /***********************/
-/* Creating Video Library */
+/* Creating Events     */
 /***********************/
 add_action('init', 'thepilatesroom_events', 1, 1);
 function thepilatesroom_events() {
@@ -471,6 +471,49 @@ function thepilatesroom_events() {
     ); 
   
     register_post_type('events',$args);
+}
+
+/***************************/
+/* Creating Knowledge Base */
+/***************************/
+/***********************/
+/* Creating Events     */
+/***********************/
+add_action('init', 'thepilatesroom_knowledge_base', 1, 1);
+function thepilatesroom_knowledge_base() {
+
+  $labels = array(
+    'name' => __( 'Knowledge Base','thepilatesroom'),
+    'singular_name' => __( 'Knowledge Base Item','thepilatesroom' ),
+    'add_new' => _x('Add New', 'Knowledge Base', 'thepilatesroom'),
+    'add_new_item' => __('Add New Knowledge Base Item','thepilatesroom'),
+    'edit_item' => __('Edit Knowledge Base Item','thepilatesroom'),
+    'new_item' => __('New Knowledge Base Item','thepilatesroom'),
+    'view_item' => __('View Knowledge Base Item','thepilatesroom'),
+    'search_items' => __('Search Knowledge Base Item','thepilatesroom'),
+    'not_found' =>  __('No Knowledge Base item found','thepilatesroom'),
+    'not_found_in_trash' => __('No Knowledge Base found in Trash','thepilatesroom'), 
+    'parent_item_colon' => ''
+    );
+
+    $args = array(
+    'labels' => $labels,
+    'public' => true,
+    'exclude_from_search' => false,
+    'publicly_queryable' => true,
+    'show_ui' => true,
+    'menu_icon' => 'dashicons-calendar-alt',
+    'query_var' => true,
+	'rewrite' => array('slug' => 'event', 'with_front' => true),
+	'has_archive' => true,
+    'capability_type' => 'post',
+    'hierarchical' => false,
+    'menu_position' => null,
+	'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+	'show_in_rest' => true,
+    ); 
+  
+    register_post_type('knowledge_base',$args);
 }
 /************************/
 /*  Creating Gutenberg  */
