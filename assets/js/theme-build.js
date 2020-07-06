@@ -62,44 +62,7 @@
             $('body').css('overflow', 'auto');
         })
     }
-    //
-    // Isotope Code for Blog
-    //
-    function isotope_blog() {
- 
-        // with Isotope & jQuery
-        // init Isotope
-        var $grid = $('.all-blog-posts').isotope({
-        // Isotope options...
-        
-        itemSelector: '.front-blog-item', 
-        percentPosition: true,
-        masonry: {
-          // use outer width of grid-sizer for columnWidth
-          columnWidth: '.grid-sizer',
-          gutter: '.gutter-sizer'
-        }        
-        });
-        $grid.imagesLoaded().progress( function() {
-            $grid.isotope('layout');
-        });
-
-        // INFINITE 
-        // get Isotope instance
-        var iso = $grid.data('isotope');
-
-        // init Infinite Scroll
-        $grid.infiniteScroll({
-        // Infinite Scroll options...
-        path: '.next.page-numbers',
-        append: '.front-blog-item',
-        outlayer: iso,
-        status: '.scroller-status',
-        scrollThreshold: 600
-        });        
-        
-
-    }
+  
 
 
     //

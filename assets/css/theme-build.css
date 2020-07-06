@@ -1914,6 +1914,11 @@ color: #ffffff !important;
   color: rgba(0,0,0,0.5);
 }
 
+/* Knowledge Base */
+.knowledge-loop h3 {
+  margin-bottom: 0;
+} 
+
 /* Main Testimonials */
 .row-bg {
 background: #FAFAFB;
@@ -1954,6 +1959,49 @@ border-radius: 0 4px 4px 0;
 .testimonials-pagination .current {
 background: #000;
 color: #fff;
+}
+/**
+ * Sessions
+ */
+.sessions-row.theme-row {
+max-width: 582px;
+padding-top: 194px;
+}
+.sessions-arrows {
+margin-top: 7px;
+margin-bottom: 23px;
+}
+.sessions-left img {
+-webkit-transform: rotateY(180deg);
+transform: rotateY(180deg);
+}
+.sessions-arrow {
+  float: left;
+}
+.sessions-arrow.sessions-right {
+  float: right;
+}
+.sessions-arrow img {
+opacity: 0.2;
+}
+
+.sessions-arrow a img {
+opacity: 1;
+} 
+
+.single-sessions-main-date {
+color: #000000;
+font-family: var(--titleFonts);
+font-size: 48px;
+font-weight: bold;
+letter-spacing: 0;
+line-height: 60px;  
+}
+.single-sessions-note-date {
+color: rgba(0,0,0,0.5);
+font-size: 16px;
+letter-spacing: 0;
+line-height: 30px;
 }
 /**
  * 1.0 - WordPress Defaults

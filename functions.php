@@ -232,6 +232,37 @@ function awesome_acf_responsive_image($image_id,$image_size,$max_width){
 	}
 }
 
+function get_previous_post_id( $post_id ) {
+    // Get a global post reference since get_adjacent_post() references it
+    global $post;
+    // Store the existing post object for later so we don't lose it
+    $oldGlobal = $post;
+    // Get the post object for the specified post and place it in the global variable
+    $post = get_post( $post_id );
+    // Get the post object for the previous post
+    $previous_post = get_previous_post();
+    // Reset our global object
+    $post = $oldGlobal;
+    if ( '' == $previous_post ) 
+        return 0;
+    return get_permalink($previous_post->ID); 
+} 
+
+function get_next_post_id( $post_id ) {
+    // Get a global post reference since get_adjacent_post() references it
+    global $post;
+    // Store the existing post object for later so we don't lose it
+    $oldGlobal = $post;
+    // Get the post object for the specified post and place it in the global variable
+    $post = get_post( $post_id );
+    // Get the post object for the next post
+    $next_post = get_next_post();
+    // Reset our global object
+    $post = $oldGlobal;
+    if ( '' == $next_post ) 
+        return 0;
+    return get_permalink($next_post->ID); 
+}
 /********************************/
 /*         Pagination           */
 /********************************/
@@ -476,9 +507,6 @@ function thepilatesroom_events() {
 /***************************/
 /* Creating Knowledge Base */
 /***************************/
-/***********************/
-/* Creating Events     */
-/***********************/
 add_action('init', 'thepilatesroom_knowledge_base', 1, 1);
 function thepilatesroom_knowledge_base() {
 
@@ -504,7 +532,7 @@ function thepilatesroom_knowledge_base() {
     'show_ui' => true,
     'menu_icon' => 'dashicons-calendar-alt',
     'query_var' => true,
-	'rewrite' => array('slug' => 'event', 'with_front' => true),
+	'rewrite' => array('slug' => 'knowledge-base', 'with_front' => true),
 	'has_archive' => true,
     'capability_type' => 'post',
     'hierarchical' => false,
@@ -514,6 +542,45 @@ function thepilatesroom_knowledge_base() {
     ); 
   
     register_post_type('knowledge_base',$args);
+}
+/***************************/
+/* Creating Sessions       */
+/***************************/
+add_action('init', 'thepilatesroom_sessions', 1, 1);
+function thepilatesroom_sessions() {
+
+  $labels = array(
+    'name' => __( 'Sessions','thepilatesroom'),
+    'singular_name' => __( 'Sessions Item','thepilatesroom' ),
+    'add_new' => _x('Add New', 'Sessions', 'thepilatesroom'),
+    'add_new_item' => __('Add New Sessions Item','thepilatesroom'),
+    'edit_item' => __('Edit Sessions Item','thepilatesroom'),
+    'new_item' => __('New Sessions Item','thepilatesroom'),
+    'view_item' => __('View Sessions Item','thepilatesroom'),
+    'search_items' => __('Search Sessions Item','thepilatesroom'),
+    'not_found' =>  __('No Sessions item found','thepilatesroom'),
+    'not_found_in_trash' => __('No Sessions found in Trash','thepilatesroom'), 
+    'parent_item_colon' => ''
+    );
+
+    $args = array(
+    'labels' => $labels,
+    'public' => true,
+    'exclude_from_search' => false,
+    'publicly_queryable' => true,
+    'show_ui' => true,
+    'menu_icon' => 'dashicons-calendar-alt',
+    'query_var' => true,
+	'rewrite' => array('slug' => 'sessions', 'with_front' => true),
+	'has_archive' => true,
+    'capability_type' => 'post',
+    'hierarchical' => false,
+    'menu_position' => null,
+	'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+	'show_in_rest' => true,
+    ); 
+  
+    register_post_type('sessions',$args);
 }
 /************************/
 /*  Creating Gutenberg  */
@@ -538,36 +605,15 @@ function register_acf_block_types() {
 
     // register meet the team block.
     acf_register_block_type(array(
-        'name'              => 'meet_the_team_block',
-        'title'             => __('Meet The Team', 'thepilatesroom'),
-        'description'       => __('A custom meet the team block.', 'thepilatesroom'),
-        'render_template'   => 'template-parts/global-meet-the-team.php',
+        'name'              => 'video_content',
+        'title'             => __('TPR Videos', 'thepilatesroom'),
+        'description'       => __('Add videos from your library', 'thepilatesroom'),
+        'render_template'   => 'template-parts/global-videos.php',
         'category'          => 'thepilatesroom',
-        'icon'              => 'groups',
-        'keywords'          => array( 'team', 'meet' ),
+        'icon'              => 'video-alt3',
+        'keywords'          => array( 'videos', 'video', 'library' ),
 	));
 	
-	// register jobs
-    acf_register_block_type(array(
-        'name'              => 'single_job_block',
-        'title'             => __('Job', 'thepilatesroom'),
-        'description'       => __('A custom BT Recruitment block.', 'thepilatesroom'),
-        'render_template'   => 'template-parts/global-single-job.php',
-        'category'          => 'thepilatesroom',
-        'icon'              => 'money',
-        'keywords'          => array( 'job', 'recruitment', 'career' ),
-	));
-	
-	// register jobs
-    acf_register_block_type(array(
-        'name'              => 'contact_box_block',
-        'title'             => __('Contact Box', 'thepilatesroom'),
-        'description'       => __('A custom contact box block.', 'thepilatesroom'),
-        'render_template'   => 'template-parts/global-contact-box.php',
-        'category'          => 'thepilatesroom',
-        'icon'              => 'email-alt',
-        'keywords'          => array( 'contact', 'box', 'career' ),
-    ));		
 }
 
 // Check if function exists and hook into setup.

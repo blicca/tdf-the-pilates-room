@@ -75,15 +75,38 @@ get_header();
             endif; 
             ?>
         </div>       
-        <!-- status elements -->
-        <div class="scroller-status">
-        <div class="infinite-scroll-request loader-ellips"></div>
-        <p class="infinite-scroll-last"></p>
-        <p class="infinite-scroll-error"><?php echo esc_html__("No more pages to load", "thepilatesroom"); ?></p>
-        </div>               
-        <div class="blog-pagination">
-			<?php thepilatesroom_blog_nextprev(); ?>
-        </div>       
+            
+        
+        <?php
+        // Load More Check            
+            if ($total_pages > 1){
+            ?>          
+            <div class="testimonials-pagination">
+                <?php 
+                
+                
+
+                if ($total_pages > 1){
+            
+                    $current_page = max(1, get_query_var('paged'));
+            
+                    echo paginate_links(array(
+                        'base' => get_pagenum_link(1) . '%_%',
+                        'format' => '?s=%#%',
+                        'current' => $current_page,
+                        'total' => $total_pages,
+                        'prev_text'    => __('«'),
+                        'next_text'    => __('»'),
+                    ));
+                } 
+
+                ?>
+            </div>
+            <?php
+            }
+
+        // Load More End
+        ?>        
          
     </div>  
 </div>
