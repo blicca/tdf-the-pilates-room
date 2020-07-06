@@ -65,8 +65,6 @@ if ( ! function_exists( 'thepilatesroom_setup' ) ) :
 			'menu-flyout' => esc_html__( 'Flyout', 'thepilatesroom' ),
 			'footer-menu1' => esc_html__( 'Footer Menu 1', 'thepilatesroom'),
 			'footer-menu2' => esc_html__( 'Footer Menu 2', 'thepilatesroom'),
-			'footer-menu3' => esc_html__( 'Footer Menu 3', 'thepilatesroom'),
-			'footer-menu4' => esc_html__( 'Footer Menu 4', 'thepilatesroom'),
 		) );
 
 		/*

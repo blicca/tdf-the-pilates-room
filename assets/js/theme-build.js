@@ -111,9 +111,16 @@
           minimumResultsForSearch: Infinity
         });  
     }    
+	//
+	// Year
+	function add_year() {
+		var year = new Date().getFullYear();
+		$('.footer-year').html(year);
+	}    
     //
     // Document Ready
     $(document).ready(function(){
+        add_year();
         tpr_play_video();
         sticky_main_header();
         testimonials_slider();

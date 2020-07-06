@@ -2028,10 +2028,11 @@ line-height: 30px;
 
 .main-footer { 
   background: #ffffff;
-  color: #fff;
+  color: #000000;
 }
 .main-footer a {
   color: #000000;
+  text-decoration: underline;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
 }
@@ -2040,7 +2041,7 @@ line-height: 30px;
 }
 .main-footer .theme-row { padding: 0; }
 .main-footer h1, .main-footer h2, .main-footer h3, .main-footer h4, .main-footer h5, .main-footer h6 {
-  color: #fff;
+  color: #000000;
 }
 .theme-row.footer-logo {
   max-width: 1336px;
@@ -2049,7 +2050,7 @@ line-height: 30px;
 }
 .theme-row.footer-menu-row {
   max-width: 1336px;
-  padding: 26px 12px 78px;
+  padding: 26px 12px 55px;
 }
 .footer-top-col1 { 
   width: 30.04%;
@@ -2085,21 +2086,7 @@ img.thepilatesroom-qr.alignright{
 
 /* Footer Linkedin */
 .footer-top-col4 .footer-nav { position: relative; }
-.footer-linkedin {
-  width: 21px;
-  height: 24px;
-  display: block;
-  position: absolute;
-  top: 45px;
-  left: 0;  
-}
-.footer-we-chat { 
-  width: 24px;
-  display: none;
-  position: absolute;
-  right: 0;
-  top: 45px;
-}
+
 /* Footer Menu */
 .footer-nav ul li {
 margin: 0;
@@ -2108,7 +2095,7 @@ list-style: none;
 }
 
 .footer-nav ul li a {
-color: #fff;
+color: #000000;
 -webkit-transition: all 0.3s;
 transition: all 0.3s;
 }
@@ -2116,8 +2103,11 @@ transition: all 0.3s;
   opacity: 0.5;
 }
 /* Footer Copyright */
+.theme-row.footer-bot-row {
+  max-width: 1336px;  
+}
 .footer-copy-container {
-  padding: 48px 0;
+  padding: 0 12px 48px 12px;
 }
 .footer-copy-left {
   width: 70%;

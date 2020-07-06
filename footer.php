@@ -28,18 +28,30 @@
                 </div>
                 <div class="footer-top-col2">
                     <div class="footer-nav">
-                        <?php the_field("footer_column_2", "option"); ?>
+                    <?php
+                    wp_nav_menu( array(
+                        'theme_location' => 'footer-menu1',
+                        'menu_id'        => 'footer-menu1',
+                        'menu_class'     => 'footer-menu',
+                    ));
+                    ?>
                     </div>                
                 </div>
                 <div class="footer-top-col3">
                     <div class="footer-nav">
-                        <?php the_field("footer_column_3", "option"); ?>
+                    <?php
+                    wp_nav_menu( array(
+                        'theme_location' => 'footer-menu2',
+                        'menu_id'        => 'footer-menu2',
+                        'menu_class'     => 'footer-menu',
+                    ));
+                    ?>
                     </div>                
                 </div>
                 <div class="footer-top-col4">
                     <div class="footer-nav">
                         <?php the_field("footer_column_4", "option"); ?>
-                        <div class="clearfix"></div>>
+                        <div class="clearfix"></div>
                     </div>                
                 </div>
                 <div class="clearfix"></div>                                                
