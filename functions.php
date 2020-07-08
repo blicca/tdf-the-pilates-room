@@ -610,7 +610,18 @@ function register_acf_block_types() {
         'category'          => 'thepilatesroom',
         'icon'              => 'video-alt3',
         'keywords'          => array( 'videos', 'video', 'library' ),
-	));
+    ));
+    
+    // register meet the team block.
+    acf_register_block_type(array(
+        'name'              => 'warning_box',
+        'title'             => __('Warning Box', 'thepilatesroom'),
+        'description'       => __('Create warning/notice/info box', 'thepilatesroom'),
+        'render_template'   => 'template-parts/global-warning.php',
+        'category'          => 'thepilatesroom',
+        'icon'              => 'info',
+        'keywords'          => array( 'warning', 'notice', 'info' ),
+	));    
 	
 }
 

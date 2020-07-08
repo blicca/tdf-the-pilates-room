@@ -75,6 +75,39 @@ $total_pages = $r->max_num_pages;
                 <div class="sessions-content">
                     <?php the_content(); ?>
                 </div>
+                
+                <div class="sessions-bottom">
+                    <span class="question-icon"><img width="24" height="24" src="<?php echo get_parent_theme_file_uri(); ?>/assets/img/question.svg" alt="play"></span>
+                    <span class="sessions-question">Questions?
+                    <?php 
+                    $link = get_field('support_button','option');
+                    if( $link ): 
+                        $link_url = $link['url'];
+                        $link_title = $link['title'];
+                        $link_target = $link['target'] ? $link['target'] : '_self';
+                        ?>
+                        <a class="support-text" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+                    <?php endif; ?></span>      
+                </div>
+
+                <div class="comment-form">
+                    <div id="disqus_thread"></div>
+                        <?php
+                        $page_url = get_permalink();
+                        ?>
+                        <script>
+                            var disqus_config = function () {
+                                this.page.url = '<?php the_permalink(); ?>';  // Replace PAGE_URL with your page's canonical URL variable
+                                this.page.identifier = '<?php echo get_the_ID(); ?>'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                            };
+                            (function () { // DON'T EDIT BELOW THIS LINE
+                                var d = document, s = d.createElement('script');
+                                s.src = 'https://thepilatesroom.disqus.com/embed.js';
+                                s.setAttribute('data-timestamp', +new Date());
+                                (d.head || d.body).appendChild(s);
+                            })();
+                        </script>
+                </div>                
                        
             <?php endwhile; ?>
         </div>    
