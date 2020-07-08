@@ -2398,7 +2398,6 @@ font-weight: 400
   }
   .woocommerce-cart .coupon ~ button::before {
       font-family: WooCommerce;
-      speak: none;
       font-weight: 400;
       font-variant: normal;
       text-transform: none;
