@@ -126,5 +126,8 @@
         testimonials_slider();
         tdf_select2();
     });
+    $( document ).ajaxComplete(function() {
+        tpr_play_video();
+      });
 
 })(jQuery);    

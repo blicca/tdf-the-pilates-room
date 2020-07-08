@@ -26,6 +26,7 @@
 					if ( theme_loadmore_params.current_page >= max_video_pages ) {
 						$('.video-library-load-more').hide(); // if last page, HIDE the button
 					}
+					
  
 				} else {
 					$('.video-library-load-more').hide(); // if no data, HIDE the button as well
