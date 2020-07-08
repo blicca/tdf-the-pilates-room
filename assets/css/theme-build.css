@@ -1501,66 +1501,32 @@ box-shadow: inset 0 1px 0 1px rgba(255,255,255,0.06), 0 1px 0 0 rgba(40,64,79,0.
 color: #fff;
 }
 
-/* Single */
-.single-wechat-icon { width: 23px; }
-.single-post .single-blog {
-  padding-top: 33px;
-}
-.single-post .bt_blog_time {
-  font-size: 14px;
-  letter-spacing: 0;
-  line-height: 24px;  
-  color: #989FB3;  
-}
-.single-post .main-blog-caption h1 {
-  margin-bottom: 8px;
-}
-.single-post .bt_blog_thumbnail {
-  margin-bottom: 50px;
-}
-.single-post .single-blog-content {
-  padding-top: 28px;
-}
-blockquote {
-  border-top: 1px solid #D9DFF2;
-  border-bottom: 1px solid #D9DFF2; 
-  padding: 28px 5px 4px 53px;
-  margin-bottom: 24px;
-  position: relative;
-}
-blockquote:before {
-  width: 39px;
-  height: 32px;
-  display: block;
-  content: ' ';
-  background-image: url('../img/single-blog-quote.svg');
-  background-size: 39px 32px;
-  position: absolute;
-  top: 28px;
-  left: 0;
-  z-index: 11;
-}
-.single-blog-caption {
-background-color: #083FDE;
-padding: 52px 0 72px;
-text-align: center;
-}
+/* Single Blog */
+/* Single Events */
+/* Single Principles */
+/* Single Video Library */
+/* Single Knowledge Base */
+
+
 .single-blog-row {
-max-width: 612px;
+max-width: 582px;
 margin: 0 auto;
+padding: 194px 12px 73px 12px;
 }
 .single-blog-row.wide-row {
   max-width: 1248px;
 }
-.single-post .caption-title {
-  max-width: none;
-}
-.single-blog-caption .caption-title h1 {
-color: #fff;
-}
 
-.single-blog-content {
-padding: 60px 0 100px;
+.single-blog-row h1.main-single-title { margin-bottom: 0; }
+.single-page-time { 
+  color: rgba(0,0,0,0.5);
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 30px;  
+  margin-bottom: 32px;
+}
+.main-single-thumbnail {
+  margin-bottom: 48px;
 }
 .single-blog-row .front-blog-meta, .single-blog-row .front-blog-cat{
 font-size: 14px;
@@ -1598,168 +1564,40 @@ width: 100%;
   padding: 0 0 16px 12px;
   
 }
-/**
- * Meet The Team
- */
-
-.page-template-page-meet-our-team .single-blog-row{
-max-width: 964px;
+.wp-block-quote {
+  background: #000000;
+  padding: 30px 48px; 
+  color: #ffffff;
+  border-radius: 4px; 
+  position: relative;
 }
-.grid-team-member {
-width: calc( (100% - 112px) / 3 );
-float: left;
-margin-right: 56px;
-margin-bottom: 64px;
+.wp-block-quote:before {
+  content: "";
+  width: 78px;
+  height: 64px;
+  background: url('../img/single-blog-quote.svg');
+  background-repeat: no-repeat;
+  background-size: 78px 64px;
+  display: inline-block;
+  position: absolute;
+  top: -14px;
+  left: 30px;
+  z-index: 0;
 }
-.grid-team-member:nth-child(3n) {
-margin-right: 0;
+.wp-block-quote p {
+  position: relative;
+  z-index: 12;
 }
-.grid-team-member a {
-color: #083FDE;
+.wp-block-image {
+  border-radius: 4px;
 }
-.grid-team-photo { 
-margin-bottom: 16px;
-}
-.grid-meta-content h3 span{
-font-size: 14px;
-margin-left: 8px;
-}
-.grid-meta-content h3 {
-margin-bottom: 4px;
-}
-.partner-text, .grid-phone {
-color: #2B2F3B;
-font-size: 14px;
-line-height: 24px;
-} 
-
-
-/* Single Meat */
-.single-team-row {
-max-width: 1248px;
-width: 100%;
-margin: 0 auto;
-}
-.single-team-content-row {
-  width: 41.4666%;
-  margin: 0 auto;
-  margin-left: 52.7%;
-}
-.single-meet_our_teams .thepilatesroom-breadcrumbs,
-.single-meet_our_teams .single-blog-caption {
-  text-align: left;
-}
-.single-meet_our_teams .single-blog-caption {
-  padding-bottom: 56px;
-}
-.single-team-left {
-width: 33.33333%;
-float: left;
-position: relative;
-margin-left: 9%;
-}
-.single-team-left img {
-position: absolute;
-width: 100%;
-left: 0;
-top: 0;
-}
-.single-team-right {
-width: 41.4666%;
-float: left;
-margin-left: 10.4%;
-color: #fff;
-}
-.single-team-right a, .single-team-right h1 {
-  color: #fff;
-}
-.single-team-right a:hover {
-  opacity: 0.5;
-}
-.single-team-right h1 {
-  margin-bottom: 2px;
-}
-.single-team-right .caption-title p:last-child {
-  margin-bottom: 0;
-}
-.single-team-right h1 .team-position {
-  font-size: 24px;
-  font-weight: 500;
-}
-.single-team-right p {
-  margin-bottom: 0;
-}
-.team-linkedin img { width: 21px; opacity: 0.5;}
-.single-meet_our_teams .single-blog-content { padding-top: 55px; }
-/* Meet The Team Gutenberg */
-.meet-the-team-gutenberg {
-margin: 56px -170px 8px;
-}
-
-.meet-the-team-gutenberg .grid-team-member {
-    width: calc( (100% - 48px) / 3 );
-    margin-right: 24px;
-    margin-bottom: 28px;
-    /* for inside */
-    display: grid;
-    grid-template-columns: 90px 1fr;
-    grid-column-gap: 24px;
-}
-.meet-the-team-gutenberg .grid-team-member:nth-child(3n) {
-   margin-right: 0;
-}
-
-.meet-the-team-gutenberg .grid-team-member h4 {
-font-size: 20px;
-line-height: 20px;
-}
-
-.meet-the-team-gutenberg  .grid-team-member .team-position{
-font-size: 12px;
-line-height: 18px;
-overflow: hidden;
-display: inline-block;
-overflow: hidden;
-white-space: nowrap;
-text-overflow: ellipsis;
-}
-
-/**
- *  Single Job
- */
-.thepilatesroom-single-job {
-padding: 24.5px 40.5px;
-border: 1px solid #E2E4E9;
-background-color: #FFFFFF;
-box-shadow: 0 8px 28px 0 #E6F2FF;
-border-left: 4px solid #E600BD; 
-margin-bottom: 16px;
-}
-.job-title {
-color: #083FDE;
-font-size: 18px;
-font-weight: bold;
-letter-spacing: 0;
-line-height: 32px;
-margin-bottom: 4px;
-display: block;
-}
-.job-tags {
-color: #2B2F3B;
-font-size: 14px;
-letter-spacing: 0;
-line-height: 24px;
-margin-bottom: 8px;
-display: block;
-}
-.job-excerpt {
-color: #2B2F3B;
-font-family: "Neue Montreal";
-font-size: 16px;
-letter-spacing: 0;
-line-height: 28px;  
-margin-bottom: 16px;
-display: block;
+.wp-block-image figcaption {
+  margin-top: 8px;
+  color: rgba(0,0,0,0.65);
+  font-size: 14px;
+  font-style: italic;
+  letter-spacing: 0;
+  line-height: 30px;  
 }
 
 /**
@@ -2222,7 +2060,7 @@ padding:0;
  */
 @media (max-width: 1336px) {
   /* General */
-  .header-row, .theme-row, .theme-row-zero, .main-blog-caption, .page-template-page-meet-our-team .single-blog-row, .single-team-row, .single-blog-content, .caption-title {
+  .header-row, .theme-row, .theme-row-zero, .main-blog-caption, .page-template-page-meet-our-team .single-blog-row, .single-team-row, .caption-title {
     padding-left: 24px;
     padding-right: 24px;  
   }
@@ -2492,9 +2330,7 @@ padding:0;
   .partners-left, .partner-column { padding: 0 24px; } 
 
   /* Single Posts and Pages */
-  .single-blog-content {
-    padding-left: 24px; padding-right: 24px;
-  }
+ 
   /* Meet The Team Gutenberg and CPT */
   .meet-the-team-gutenberg .grid-team-member {
     width: 100%;
