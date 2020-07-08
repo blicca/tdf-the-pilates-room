@@ -685,3 +685,10 @@ add_filter('tiny_mce_before_init', 'myextensionTinyMCE' );
 include_once( 'inc/ajax-video-library.php' );
 
 
+/*********************/
+/*   WOO COMMERCE    */
+/*********************/
+add_theme_support( 'woocommerce' );
+if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+    include_once( 'inc/woocommerce-settings.php' );
+}
