@@ -9,6 +9,12 @@ add_action('add_meta_boxes', 'remove_short_description', 999);
 /***********************************/
 /* Layout Codes for All Shop Pages */
 /***********************************/
+function disable_woo_commerce_sidebar() {
+	remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10); 
+}
+add_action('init', 'disable_woo_commerce_sidebar');
+
+
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
 remove_action( 'woocommerce_before_main_content','woocommerce_breadcrumb', 20, 0);
@@ -23,18 +29,14 @@ global $post;
 global $woocommerce;
 
 ?>
-<div class="content-wrapper">
-	<div class="container">
-		<div class="row">
-			<div class="shop-col">
+<div class="main-woo">
+  <div class="theme-row shop-row">
 <?php			 
 }
 
 function custom_shop_after_main_content($location) {
 global $woocommerce;  
 ?>
-			</div>
-		</div>
 	</div>
 </div>
 <?php
@@ -42,7 +44,7 @@ global $woocommerce;
 
 function woocommerce_product_category( $args = array() ) {
 ?>
-<div class="gym-woo-categories">
+<div class="thepilatesroom-woo-categories">
 <a class="main-woo-category" href="<?php echo get_permalink( wc_get_page_id( 'shop' ) ); ?>">All Products</a>	
 <?php
 the_widget( 'WC_Widget_Product_Categories', 'title=&dropdown=0&max_depth=1');
@@ -81,14 +83,17 @@ function remove_additional_information_heading() {
 }
 add_filter( 'woocommerce_product_additional_information_heading', 'remove_additional_information_heading' );
 
+
+add_action('woocommerce_single_product_summary', 'customizing_single_product_summary_hooks', 2  );
+function customizing_single_product_summary_hooks(){
 /* move desc */
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
-add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 10);
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 5);
 
 /* move price */
 remove_action( 'woocommerce_single_product_summary ', 'woocommerce_template_single_price', 10 );
-add_action( 'woocommerce_single_product_summary ', 'woocommerce_template_single_price', 5 );
-
+add_action( 'woocommerce_single_product_summary ', 'woocommerce_template_single_price', 30 );
+}
 add_action( 'after_setup_theme', 'activello_theme_setup' );
 function activello_theme_setup() {
   add_theme_support( 'wc-product-gallery-lightbox' );

@@ -1915,6 +1915,7 @@ text-decoration: underline;
 .main-footer { 
   background: #ffffff;
   color: #000000;
+  clear: both;
 }
 .main-footer a {
   color: #000000;
@@ -1930,28 +1931,29 @@ text-decoration: underline;
   color: #000000;
 }
 .theme-row.footer-logo {
-  max-width: 1336px;
-  padding: 68px 12px 26px;
+  max-width: 1312px;
+  padding: 68px 0 26px;
   border-top: 1px solid rgba(0,0,0,0.1);
 }
 .theme-row.footer-menu-row {
-  max-width: 1336px;
-  padding: 26px 12px 55px;
+  max-width: 1312px;
+  padding: 26px 0 55px;
 }
 .footer-top-col1 { 
-  width: 30.04%;
+  width: 26.07%;
   float: left;
+  margin-right: 19.96%;
 }
 .footer-top-col2 { 
-  width: 33.89%;
+  width: 27.21%;
   float: left;
 }
 .footer-top-col3 { 
-  width: 26.041%;
+  width: 15%;
   float: left;
 }
 .footer-top-col4 { 
-  width: 10.029%;
+  width: 11.76%;
   float: left;
 }
 .menu-footer-4-container{
@@ -1990,14 +1992,19 @@ transition: all 0.3s;
 }
 /* Footer Copyright */
 .theme-row.footer-bot-row {
-  max-width: 1336px;  
+  max-width: 1312px;  
 }
 .footer-copy-container {
-  padding: 0 12px 48px 12px;
+  padding: 0 0 48px 0;
 }
 .footer-copy-left {
   width: 70%;
   float: left;
+  opacity: 0.5;
+  color: #000000;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: 15px;
 }
 .footer-copy-left > p { margin-bottom: 18px;}
 .tpp-link { margin-left: 16px; }
@@ -2060,9 +2067,10 @@ padding:0;
   letter-spacing: 12px;
   padding-left: 12px;
 }
-/*
- * WooCommerce Start 
- */
+
+/******************************/
+/*    WooCommerce Start       */
+/******************************/
 /* Fix for stripe checkbox */
 #wc-stripe-new-payment-method {
 -webkit-appearance: checkbox;
@@ -2080,10 +2088,6 @@ padding:0;
 .woocommerce-order-received h2 {
 margin-bottom: 20px;
 margin-top: 20px;
-}
-/* Fix for Footer Link */
-.is-white .footer .menu-item a {
-color: #000;
 }
 
 /* Cart Box at Header */
@@ -2123,6 +2127,23 @@ display: none !important;
 /* Cart Box Finished */
 
 /* Shop Page */
+.lmp_button  {
+  height: 40px !important;
+  width: 115px !important;
+  border-radius: 4px !important;
+  background-color: #101010 !important;
+  color: #fff !important;
+  margin: 0 auto !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  font-family: var(--titleFonts) !important;
+  line-height: 40px !important;
+  text-align: center !important;
+  cursor: pointer !important;
+}
+.theme-row.shop-row {
+  padding: 188px 12px 100px 12px;
+}
 .single-product.single .summary ul {
   padding-left: 0;
   list-style-position: unset;
@@ -2175,23 +2196,27 @@ display: none !important;
     padding: 0 10px;
     width: 100%;
   }
-  .gym-woo-categories {
+  .thepilatesroom-woo-categories {
   padding: 32px 0 62px 0;
-  font-size: 14px;
+  font-size: 16px;
   }
-  .gym-woo-categories .product-categories {
+  .thepilatesroom-woo-categories .product-categories {
   list-style: none;
   margin: 0;
   padding: 0;
   }
   .main-woo-category {
-  width: 86px;
+  width: 91px;
   margin-right: 23px;
   float: left;
   }
+.cat-item { margin-right: 23px; float: left; cursor: pointer; }
+.cat-item a:hover { opacity: .5; }
+.cat-item:last-child { margin-right: 0; }
+.cat-item.current-cat a { opacity: .5; }
   .post-type-archive-product .main-woo-category,
-  .gym-woo-categories .cat-item.current-cat a {
-  color: rgba(20,20,21,0.3);
+  .thepilatesroom-woo-categories .cat-item.current-cat a {
+  color: rgba(20,20,21,0.5);
   opacity: 1;
   }
   
@@ -2199,6 +2224,7 @@ display: none !important;
   font-size: 20px;
   line-height: 30px;
   margin-bottom: 3px;
+  padding: 0;
   color: #000;
   font-weight: 700;
   }
@@ -2213,6 +2239,7 @@ display: none !important;
   
   .woocommerce ul.products li.product .price ins {
     text-decoration: none;
+    border: 0;
   }
   /* Product Page */
   .woocommerce #content div.product div.summary, .woocommerce div.product div.summary, .woocommerce-page #content div.product div.summary, .woocommerce-page div.product div.summary {
@@ -2250,15 +2277,17 @@ display: none !important;
   .woocommerce.single .shop-col img {
   margin-bottom: 30px;
   }
-  
+.woocommerce-product-gallery__wrapper > div {
+margin-bottom: 30px;
+}  
   .woocommerce div.product div.images .woocommerce-product-gallery__image:nth-child(n+2) {
   width: 64px;
   margin-right: 32px;
   }
   .woocommerce div.product .product_title {
-  font-size: 32px;
-  line-height: 48px;
-  margin-bottom: 0;
+  font-size: 48px;
+  line-height: 60px;
+  margin-bottom: 30px;
   }
   .woocommerce div.product p.price, .woocommerce div.product span.price {
   margin-top: 0;
@@ -2275,7 +2304,7 @@ display: none !important;
     margin-bottom: 24px;
   }
   .woocommerce div.product p.price ins, .woocommerce div.product span.price ins {
-  text-decoration: none;
+  border: 0;
   }
   
   .single.woocommerce p {
@@ -2284,14 +2313,14 @@ display: none !important;
   }
   .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt,
   .woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover {
-  width: 147px;
-  height: 56px;
-  background: #141415;
+  width: 140px;
+  height: 48px;
+  background: #101010;
   border-radius: 4px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: none;
   }
   .single-product.woocommerce .quantity .qty {
-  height: 56px;
+  height: 48px;
   }
   .product_meta {
   font-size: 13px;
@@ -2329,7 +2358,7 @@ display: none !important;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background: url("https://www.98gym.com/wp-content/themes/rileystgym/css/images/selecticon.svg") no-repeat;
+    background: url("../img/selecticon.svg") no-repeat;
     background-size: 10px 6px;
     background-position: calc(100% - 16px) 22px;
     background-repeat: no-repeat;
@@ -2339,6 +2368,7 @@ display: none !important;
     width: 267px;
     height: 48px;
     margin-bottom: 10px;
+    padding-left: 16px;
   }
   
   .woocommerce .select-item-avatar {
@@ -2630,6 +2660,20 @@ font-weight: 400
     display: none;
   }
   
+  /* extra size label */
+.woo-variation-swatches.wvs-style-squared .variable-items-wrapper .variable-item {
+border-radius: 4px;
+border: 1px solid #C2C4C9;
+width: 48px !important;;
+height: 48px;
+margin-top: 3px;
+}
+.single-product.single .summary ul.variable-items-wrapper li:before {
+display: none;
+}
+.value.woo-variation-items-wrapper {
+margin-top: 10px !important;
+}
   /* select 2 */
   .gym-mobil-woo-categories .select2-container--default .select2-selection--single .select2-selection__rendered { 
       color: #FFFFFF !important;
@@ -2743,6 +2787,7 @@ font-weight: 400
     .woocommerce div.product div.images {
       margin-bottom: 0;
     }	
+    
   .woocommerce div.product div.images .woocommerce-product-gallery__image:nth-child(n+2) img {
   margin-bottom: 17px;
   }	
