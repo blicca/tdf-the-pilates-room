@@ -61,8 +61,8 @@ if ( is_single() ) {
 			</nav><!-- #site-navigation -->
 			
 			<div class="header-button-col">
-				<a href="#">Sign Up</a>
-				<a href="#">Log in</a>
+				<a href="/register/the-pilates-room-online/">Sign Up</a>
+				<a href="/log-in">Log in</a>
 			</div>
 
 			<div class="mobile-menu-icon">

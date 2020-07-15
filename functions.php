@@ -136,8 +136,7 @@ function thepilatesroom_script_style() {
   /* CSS */
   wp_enqueue_style( 'flickity', get_parent_theme_file_uri() .'/assets/css/flickity.min.css' );
   wp_enqueue_style( 'thepilatesroom', get_parent_theme_file_uri() . '/assets/css/theme-build.css', '1.0.11' );
-  
-    wp_enqueue_style( 'select2', get_parent_theme_file_uri() . '/assets/css/select2.min.css', '1.0.11' );
+  wp_enqueue_style( 'select2', get_parent_theme_file_uri() . '/assets/css/select2.min.css', '1.0.11' );
  
   /* Scripts */
   // Are you looking Ajax Scripts? Check bottom of page
@@ -145,12 +144,10 @@ function thepilatesroom_script_style() {
   if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 	wp_enqueue_script( 'comment-reply' );
   }
-  wp_enqueue_script('isotope', get_parent_theme_file_uri() . '/assets/js/isotope.pkgd.min.js', array('jquery'), '', true);
-  wp_enqueue_script('infinite-scroll', get_parent_theme_file_uri() . '/assets/js/infinite-scroll.pkgd.min.js', array('jquery'), '', true);
+  //wp_enqueue_script('isotope', get_parent_theme_file_uri() . '/assets/js/isotope.pkgd.min.js', array('jquery'), '', true);
+  //wp_enqueue_script('infinite-scroll', get_parent_theme_file_uri() . '/assets/js/infinite-scroll.pkgd.min.js', array('jquery'), '', true);
   wp_enqueue_script('flickity', get_parent_theme_file_uri() . '/assets/js/flickity.pkgd.min.js', array('jquery'), '', true);
-  
-    wp_enqueue_script('select2', get_parent_theme_file_uri() . '/assets/js/select2.min.js', array('jquery'), '', true);
-  
+  wp_enqueue_script('select2', get_parent_theme_file_uri() . '/assets/js/select2.min.js', array('jquery'), '', true);
   wp_enqueue_script('main-script', get_parent_theme_file_uri() . '/assets/js/theme-build.js', array('jquery'), '1.0.11', true);	
 }
 add_action( 'wp_enqueue_scripts', 'thepilatesroom_script_style' );
@@ -378,7 +375,7 @@ function thepilatesroom_testimonials() {
     'capability_type' => 'post',
     'hierarchical' => false,
     'menu_position' => null,
-	'supports' => array( 'title', 'editor', 'thumbnail' ),
+	'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
     ); 
   
     register_post_type('testimonials',$args);
@@ -692,3 +689,13 @@ add_theme_support( 'woocommerce' );
 if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
     include_once( 'inc/woocommerce-settings.php' );
 }
+
+function add_privacy_policy_and_subscribtion_membership($membership_ID) { ?>
+    <div class="mp-form-row membership-subscription">
+        <label for="mepr_agree_to_subscription" class="mepr-checkbox-field mepr-form-input">
+        <input type="checkbox" name="mepr_agree_to_subscription" id="mepr_agree_to_subscription" class="checkbox filled"><label for="mepr_agree_to_subscription" class="checkbox-label"></label>
+        Stay in the know with training, events and The Pilates Room community updates<span class="custom-checkbox"></span></label> 
+    </div>    
+<?php
+}
+add_action('mepr-checkout-before-submit', 'add_privacy_policy_and_subscribtion_membership');

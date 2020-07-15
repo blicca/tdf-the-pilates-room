@@ -13,7 +13,7 @@ if( $testimonial_section['show_testimonial'] ) {
                     while ( $r->have_posts() ) : $r->the_post();
                     ?>
                         <article class="home-testimonials-item">
-                            <?php the_content(); ?>
+                            <?php the_excerpt(); ?>
                             <div class="home-testimonial-footer">
                                 <figure class="testimonial-thumbnail">
                                     <?php the_post_thumbnail('thumbnail', array('itemprop'=>'image')); ?>

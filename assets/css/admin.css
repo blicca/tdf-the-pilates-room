@@ -1,3 +1,6 @@
 .toplevel_page_berocket_account {
     display: none !important;
 }
+tr[data-slug=load-more-products-for-woocommerce] {
+    display: none;
+    }

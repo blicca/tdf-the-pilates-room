@@ -477,13 +477,13 @@ transition: all 0.4s ease;
     }
     .menu-item-has-children > .sub-menu {
     position: absolute;
-    top: 87px;
+    top: 40px;
     left:0;
     z-index: 200;
     text-align: left;
     white-space: nowrap;
-    background: #052A94;
-    padding: 7px 18px 8px 0;
+    background: #000000;
+    padding: 3px 0px 4px 0;
     opacity: 0;
     visibility: hidden;
     -webkit-transition: all 0.4s;
@@ -496,7 +496,7 @@ transition: all 0.4s ease;
     content: "";
     width: 0;
     height: 0;
-    border-bottom: 12px solid #052A94;
+    border-bottom: 12px solid #000000;
     border-right: 12px solid transparent;
     position: absolute;
     top: -12px;
@@ -504,12 +504,13 @@ transition: all 0.4s ease;
     }
     .menu-item-has-children .sub-menu li {
     display: block;
-    height: 48px;
+    height: 40px;
+    padding-left: 15px;
     }
     .menu-item-has-children .sub-menu li a {
     padding-top: 0;
-    height: 48px;
-    line-height: 48px;
+    height: 40px;
+    line-height: 40px;
     display: block;
     color: #fff;
     }
@@ -528,12 +529,12 @@ transition: all 0.4s ease;
 .mobile-menu-icon .icoline {
   height: 3px;
   width: 100%;
-  background: #052A94;
+  background: #101010;
 }
 .mobile-menu-icon .icoline:nth-child(2) {
   height: 3px;
   width: 100%;
-  background: #052A94;
+  background: #101010;
   margin: 5px 0;
 }
 .mobile-menu-container {
@@ -552,7 +553,7 @@ background:rgba(11,12,15,0.8);
   position: absolute;
   top: 0;
   right: 0;
-  background: #052A94;
+  background: #F5F5FB;
   width: 296px;
   height: 100vh;
   padding: 81px 24px 24px 24px;
@@ -756,6 +757,7 @@ display: block;
 /* About Us */
 .home-about {
   position: relative;
+  background: #FAFAFB;  
 }
 .hero-bg-col {
   position: absolute;
@@ -1030,7 +1032,9 @@ padding: 96px 12px;
 max-width: 776px;
 text-align: center;
 }
-
+.hero-outro-content p {
+margin-bottom: 40px; 
+}
 /**
  * 5.0 - Breadcrumbs
  */
@@ -1177,14 +1181,16 @@ span.wpcf7-list-item-label, .mc4wp-checkbox label span {
 
 input[type=submit]
 {
-  background-color: #052A94;
-  color: #FFFFFF;
-  font-family: 'Gilroy';
+  background-color: var(--buttonBG);
+  display: inline-block;
+  color: var(--buttonColor);
+  font-family: var(--titleFonts);
   font-size: 16px;
   font-weight: bold;
   letter-spacing: 0;
-  line-height: 28px;
-  padding: 12px 36px;
+  line-height: 19px;
+  padding: 13px 24px 16px 24px;
+  border-radius: 4px;
   box-shadow: none;
   outline: none;
   border: 0;  
@@ -1890,6 +1896,186 @@ color: #ffffff;
 text-decoration: underline;
 }
 /**
+ * Log In Sign Up 
+ */
+.log-in-container {
+position: relative;
+height: 100vh;
+background: #fff;
+}
+.log-in-bg {
+position: fixed;
+top: 0;
+right: 0;
+width: 60.27%;
+max-width: 738px;
+height: 100%;
+background-color: #ffffff;
+background-repeat: no-repeat;
+background-position: right center;
+background-size: cover;
+}
+.log-in-form-col {
+width: 100%;
+max-width: 1336px;
+padding: 196px 12px 0;
+margin: 0 auto;
+}
+
+.log-in-form-col .mp_login_form, .mp_wrapper {
+width: 100%;
+max-width: 443px;
+}
+
+.note-for-block {
+color: rgba(0,0,0,0.5);
+font-size: 13px;
+letter-spacing: 0;
+line-height: 26px;
+}
+.note-for-block a{
+color: rgba(0,0,0,0.5);
+text-decoration: underline;
+}
+
+/* Sign Up */
+
+.mepr-signup-form.mepr-form  {
+  max-width: 443px;
+}
+
+.mepr-signup-form.mepr-form .mepr_first_name, .mepr-signup-form.mepr-form  .mepr_last_name {
+  width: calc( (100% - 8px) / 2) !important;
+  float: left;
+}
+.mepr-signup-form.mepr-form .mepr_first_name {
+  margin-right: 8px;
+}
+.mepr-signup-form.mepr-form  .mepr_last_name {
+  clear:right;
+}
+/* Sign Up and Login remove header footer */
+.memberpressproduct-template-page-sign-up footer,
+.memberpressproduct-template-page-sign-up #site-navigation,
+.memberpressproduct-template-page-sign-up .header-button-col,
+.memberpressproduct-template-page-sign-up .mobile-menu-icon,
+.memberpressproduct-template-page-sign-up .sticky-header,
+.page-template-page-log-in footer,
+.page-template-page-log-in #site-navigation,
+.page-template-page-log-in .header-button-col,
+.page-template-page-log-in .mobile-menu-icon {
+display: none;
+}
+
+.mepr-signup-form .mp-form-row.mepr_bold.mepr_price .mepr_price_cell_label{
+display: none;
+}
+
+.sign-up-footer {
+font-size: 13px;
+line-height: 15px;
+color: rgba(0,0,0,0.5);
+}
+.sign-up-footer a {
+color: rgba(0,0,0,0.5);
+text-decoration: underline;
+}
+.sign-up-copyright { margin-bottom: 22px; }
+.sign-up-policy { margin-bottom: 56px; }
+.link-seperator {
+margin: 0 30px;
+}
+/** 
+ * Form Style **/
+
+.mp_wrapper textarea, .mp_wrapper select, .mp_wrapper input[type=text], .mp_wrapper input[type=url], .mp_wrapper input[type=email], .mp_wrapper input[type=tel], .mp_wrapper input[type=number], .mp_wrapper input[type=password] {
+  border: 1px solid #C2C4C9;
+  border-radius: 4px;
+  color: #141415;
+}
+
+.mp_login_form .mepr-form div:nth-child(3),
+.custom-tpr,
+.membership-subscription {
+position: relative;
+font-size: 13px;
+color: rgba(0,0,0,0.5);
+padding-left: 30px;
+}
+.mp_login_form .mepr-form div:nth-child(3) #rememberme,
+.mepr-checkbox-field #mepr_agree_to_privacy_policy1,
+.mepr-checkbox-field #mepr_agree_to_subscription {
+opacity: 0;
+position: absolute;
+}
+.custom-checkbox {
+position: absolute;
+top: 6px;
+left: 0;
+border: 1px solid #141415;
+width: 18px; 
+height: 18px;
+border-radius: 3px;
+}
+
+#rememberme:checked ~ .custom-checkbox,
+#mepr_agree_to_privacy_policy1:checked ~ .custom-checkbox,
+#mepr_agree_to_subscription:checked ~ .custom-checkbox {
+background-color: #141415;
+background-image: url(../img/checkbox-approve.svg);
+background-repeat: no-repeat;
+background-size: 14px auto;
+background-position: center center;
+}
+.note-for-block.form-note { margin-top: 30px; margin-bottom: 112px;}
+/**
+ * Pilates Studio
+ */
+.studio-pilates-room { 
+  background: #FAFAFB;
+  position: relative; 
+}
+.studio-pilates-room-container.theme-row {
+ padding: 193px 12px 63px;
+}
+.page-studio-content {
+ width: calc( 41% - 12px);  
+}
+/**
+ * Physiotherapy and rehabilitation programmes
+ */
+
+.physiotherapy-main-row.studio-pilates-room-container.theme-row {
+  padding: 193px 12px 164px
+} 
+.physiotherapy-main-row h1 {
+  margin-bottom: 30px;
+}
+.physiotherapy-row {
+position: relative
+}
+.physiotherapy-row2 .page-studio-content{
+float: right;
+}
+.physiotherapy-row2 .studio-pilates-room-container.theme-row,
+.physiotherapy-row3 .studio-pilates-room-container.theme-row {
+padding: 100px 12px 96px;
+}
+.physiotherapy-row2 .hero-bg-col {
+width: 42.43%;
+left: 0;
+}
+.physiotherapy-row3 .hero-bg-col {
+width: 28.95%;
+}
+.physiotherapy-row3 {
+background: #FAFAFB
+}
+
+.physiotherapy-row .thepilatesroom-button{
+margin-top: 16px;
+} 
+/**
  * 1.0 - WordPress Defaults
  */
 
@@ -1908,6 +2094,14 @@ text-decoration: underline;
  img.aligncenter { margin: 20px auto; }
  img.alignleft { margin: 15px 20px 15px 0;}
  img.alignright { margin: 15px 0 15px 20px;}
+ .wp-block-button__link {
+  padding: 17px 24px 18px 24px;
+  font-size: 16px;
+  line-height: 16px;
+  font-family: var(--titleFonts);
+  background: var(--buttonBG);
+  color: var(--buttonColor);
+ }
 /**
  * 1.0 - Footer
  */
@@ -2127,7 +2321,7 @@ display: none !important;
 /* Cart Box Finished */
 
 /* Shop Page */
-.lmp_button  {
+.lmp_button, .lmp_button:hover, .thepilatesroom-helper .lmp_load_more_button.br_lmp_button_settings .lmp_button:hover  {
   height: 40px !important;
   width: 115px !important;
   border-radius: 4px !important;
@@ -2140,6 +2334,8 @@ display: none !important;
   line-height: 40px !important;
   text-align: center !important;
   cursor: pointer !important;
+  padding: 0 !important;
+  
 }
 .theme-row.shop-row {
   padding: 188px 12px 100px 12px;
@@ -2490,7 +2686,7 @@ font-weight: 400
   
   .thepilatesroom-helper .woocommerce .coupon button.button {
     height: 36px;
-    width: 70px;
+    width: auto;
     border-radius: 4px;
     background-color: #141415;
     color: #fff;

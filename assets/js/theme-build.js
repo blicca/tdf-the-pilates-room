@@ -116,7 +116,20 @@
 	function add_year() {
 		var year = new Date().getFullYear();
 		$('.footer-year').html(year);
-	}    
+    }    
+    
+    //
+    // Checkbox For Membership
+    function checkbox(){
+        if ( $('.mp_login_form').length ) {
+            $('<span class="custom-checkbox"></span>').insertAfter("#rememberme");    
+        }
+        if ( $('.mepr-signup-form').length ) {
+            $('#mepr_agree_to_privacy_policy1').parents('.mp-form-row').addClass("custom-tpr");
+            $('<span class="custom-checkbox"></span>').insertAfter('#mepr_agree_to_privacy_policy1');
+            $('<div class="note-for-block form-note">Subscription billed monthly and can be cancelled at any time.</div>').insertAfter('.mp-form-submit');
+        }
+    }
     //
     // Document Ready
     $(document).ready(function(){
@@ -125,9 +138,10 @@
         sticky_main_header();
         testimonials_slider();
         tdf_select2();
+        checkbox();
     });
     $( document ).ajaxComplete(function() {
         tpr_play_video();
-      });
+    });
 
 })(jQuery);    
