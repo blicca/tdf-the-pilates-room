@@ -130,6 +130,15 @@
             $('<div class="note-for-block form-note">Subscription billed monthly and can be cancelled at any time.</div>').insertAfter('.mp-form-submit');
         }
     }
+
+    //
+    // FAQ Widget
+    function faq() {
+        $('.faq-title').on('click', function() {
+            $(this).toggleClass('faqopend');
+            $(this).next('.faq-box-content').slideToggle();
+        });
+    }
     //
     // Document Ready
     $(document).ready(function(){
@@ -139,6 +148,7 @@
         testimonials_slider();
         tdf_select2();
         checkbox();
+        faq();
     });
     $( document ).ajaxComplete(function() {
         tpr_play_video();

@@ -50,7 +50,16 @@
                 </div>
                 <div class="footer-top-col4">
                     <div class="footer-nav">
-                        <?php the_field("footer_column_4", "option"); ?>
+                        <?php
+                        if( have_rows('social_links', 'option') ): ?>
+                            <?php while( have_rows('social_links', 'option') ): the_row(); ?>    
+                                <div class="social-single">
+                                    <a href="<?php the_sub_field('social_link'); ?>" target="_blank"><img width="24" height="24" src="<?php the_sub_field('social_logo'); ?>"></a>
+                                </div>
+                            <?php
+                            endwhile;
+                        endif;
+                        ?>   
                         <div class="clearfix"></div>
                     </div>                
                 </div>
@@ -64,21 +73,18 @@
             <div class="footer-copy-container">
                 
                 <div class="footer-copy-left">
-                    <p><?php the_field('footer_copyright', 'option'); ?> 
-                    <span class="tpp-link">
+                    <p><?php the_field('footer_copyright', 'option'); ?> </p>
+                </div>
+                <div class="footer-copy-right">
                     <?php
                         if ( function_exists( 'the_privacy_policy_link' ) ) {
                             the_privacy_policy_link( '', '' );
                         }
-                    ?>
-                    </span>
-                    </p>
-                    <div class="footer-extra-desc"><?php the_field('copyright_description', 'option'); ?></div> 
+                    ?>    
+                    <span class="link-seperator">|</span>
+                    <a href="/terms-and-conditions" target="_blank">Terms of Service</a>           
                 </div>
-                <div class="footer-copy-right">
-                        <?php the_field('footer_copyright_right', 'option'); ?>               
-                </div>
-                    <div class="clearfix"></div>
+                <div class="clearfix"></div>
             </div>
      
             

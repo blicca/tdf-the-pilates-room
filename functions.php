@@ -618,7 +618,18 @@ function register_acf_block_types() {
         'category'          => 'thepilatesroom',
         'icon'              => 'info',
         'keywords'          => array( 'warning', 'notice', 'info' ),
-	));    
+    ));    
+    
+    // register meet the team block.
+    acf_register_block_type(array(
+        'name'              => 'faq',
+        'title'             => __('FAQ', 'thepilatesroom'),
+        'description'       => __('Create FAQ', 'thepilatesroom'),
+        'render_template'   => 'template-parts/global-faq.php',
+        'category'          => 'thepilatesroom',
+        'icon'              => 'plus-alt2',
+        'keywords'          => array( 'faq' ),
+	));      
 	
 }
 
@@ -690,6 +701,9 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
     include_once( 'inc/woocommerce-settings.php' );
 }
 
+/*********************/
+/*   Memberpress     */
+/*********************/
 function add_privacy_policy_and_subscribtion_membership($membership_ID) { ?>
     <div class="mp-form-row membership-subscription">
         <label for="mepr_agree_to_subscription" class="mepr-checkbox-field mepr-form-input">

@@ -1967,8 +1967,9 @@ text-decoration: underline;
 display: none;
 }
 
+/* Hide Title Price */
 .mepr-signup-form .mp-form-row.mepr_bold.mepr_price .mepr_price_cell_label{
-display: none;
+display: none !important;
 }
 
 .sign-up-footer {
@@ -2001,6 +2002,7 @@ position: relative;
 font-size: 13px;
 color: rgba(0,0,0,0.5);
 padding-left: 30px;
+overflow: hidden;
 }
 .mp_login_form .mepr-form div:nth-child(3) #rememberme,
 .mepr-checkbox-field #mepr_agree_to_privacy_policy1,
@@ -2075,6 +2077,46 @@ background: #FAFAFB
 .physiotherapy-row .thepilatesroom-button{
 margin-top: 16px;
 } 
+/**
+ * FAQ
+ */
+.thepilatesroom-faq-box {
+border-bottom: 1px solid rgba(0,0,0,0.1);
+max-width: 780px;
+}
+
+.faq-title {
+padding: 12px 0;
+font-size: 20px;
+line-height: 30px;
+font-family: var(--titleFonts);
+font-weight: 700;
+position: relative;
+cursor: pointer;
+}
+.faq-title img {
+position: absolute;
+top: 24px;
+right: 0;
+-webkit-transition: all 0.2s;
+transition: all 0.2s;
+}
+.faq-title.faqopend img{
+transform: rotate(180deg);
+}
+.faq-box-content {
+padding: 20px 0 6px;
+display: none;
+} 
+/**
+ * Default Page
+ */
+.default-page-bg {
+  background: #FAFAFB;  
+}
+.default-page-caption.theme-row {
+  padding: 188px 12px 72px;
+}
 /**
  * 1.0 - WordPress Defaults
  */
@@ -2166,9 +2208,16 @@ img.thepilatesroom-qr.alignright{
   margin: 0;
 }
 
-/* Footer Linkedin */
+/* Footer Socials */
 .footer-top-col4 .footer-nav { position: relative; }
-
+.social-single {
+  float: right;
+  margin-left: 23px;
+}
+.social-single img {
+  width: 24px;
+  height: 24px;
+}
 /* Footer Menu */
 .footer-nav ul li {
 margin: 0;
@@ -2207,6 +2256,12 @@ transition: all 0.3s;
   width: 30%;
   float: left;
   text-align: right;
+  font-size: 13px;
+  line-height: 15px;
+  color: rgba(0,0,0,0.5);
+}
+.footer-copy-right a {
+  color: rgba(0,0,0,0.5);
 }
 .footer-copy-right p img {
   vertical-align: top;
