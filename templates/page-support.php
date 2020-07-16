@@ -14,27 +14,27 @@
 
 get_header();
 ?>
-<div class="solutions-caption">
-    <div class="theme-row-zero">
-        <?php
-        if ( function_exists('yoast_breadcrumb') ) {
-        yoast_breadcrumb( '<div id="breadcrumbs" class="thepilatesroom-breadcrumbs">','</div>' );
-        }
-        ?>
-        <div class="caption-title"><h1><?php the_title(); ?></h1></div>
-    </div>
-</div>
-<div class="support-container">
-    <div class="theme-row support-row">
-         <div class="support-main-content">
-            <?php the_field("main_content"); ?>
-         </div>
-         <div class="gapper"></div>
-         <div class="support-second-content">
-            <?php the_field("second_content"); ?>
-         </div>   
+<?php
+while ( have_posts() ) : the_post();
+?>
+
+<?php
+if ( is_user_logged_in() ) {
+    $current_user = wp_get_current_user();
+    ?>
+    <div class="main-support-page" data-cuser="<?php echo esc_js($current_user->user_firstname); ?>" data-cmail="<?php echo esc_js($current_user->user_email); ?>">
+    <?php
+} else { ?>
+    <div class="main-support-page">
+<?php }
+?>
+<div class="main-support-page">
+    <div class="theme-row">
+        <h1 itemprop="headline"><?php the_title(); ?></h1>
+        <?php the_content(); ?>
     </div>
 </div>
 
+<?php endwhile; // end of the loop. ?>
 <?php
 get_footer();

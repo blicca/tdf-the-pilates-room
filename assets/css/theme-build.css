@@ -801,50 +801,7 @@ img.section-icon {
   line-height: 24px;
   margin-top: 20px;
 }
-/* Front Services */
-.home-services {
-  background: #f7f8fa;
-}
-.home-services-row .section-description {
-margin-bottom: 56px;
-}
-.home-services-item {
-float: left;
-margin-bottom: 56px;
-}
-.home-services-item:nth-child(3n+1) {
-width: 32%;
-margin-right: 10.25%;
-}
-.home-services-item:nth-child(3n+2) {
-width: 24%;
-margin-right: 10.25%;
-}
-.home-services-item:nth-child(3n+3) {
-width: 23.5%;
-}
-.home-services-item .services-thumbnail img {
-  width: auto;
-  height: 48px;
-  margin-bottom: 32px;
-}
-.home-services-item a {
-color: #083FDE;
-}
-.home-services-item h3:after {
-    width: 4px;
-    height: 4px;
-    margin-left: 4px;
-    background-color: #E600BD;
-    display: inline-block;
-    content:"";
-}
-.home-services-item p {
-margin-bottom: 16px;
-}
-.readmore-icon {
-  margin-left: 7px;
-}
+
 
 /* Clients */
 
@@ -1206,19 +1163,18 @@ input[type=submit]
 }
 
 /* Contact Form Layouts */
-.contact-row-button {
-  position: relative;
-  display: inline-block;  
+
+.main-support-page .theme-row{
+padding: 188px 12px 95px;
+max-width: 412px;
 }
-.contact-row-button .square {
-  width: 3px;
-  height: 3px;
-  margin-left: 4px;
-  background-color: #E600BD;
-  display: inline-block;
-  position: absolute;
-  top: 37px;
-  right: 50px;  
+.main-support-page h1 {
+text-align: center;
+margin-bottom: 59px;
+}
+.contact-row-button {
+position: relative;
+display: inline-block;  
 }
 
 .contact-row-1 {
@@ -1237,99 +1193,28 @@ margin-top: 0;
 margin-bottom: 12px;
 }
 /* Contact Us */
-.page-template-page-contact .thepilatesroom-breadcrumbs,
-.page-template-page-contact .single-blog-caption {
-text-align: left;
-}
-.page-template-page-contact .single-blog-content { padding-top: 50px; padding-bottom: 125px; }
-.page-template-page-contact .single-blog-row {
-max-width: 1248px;
+.main-contact-page {
 position: relative;
+background: #FAFAFB;
 }
-.page-template-page-contact .single-gutenberg h4 {
-font-size: 20px;
-margin-bottom: 18px;
-margin-top: 10px;
-color: #083FDE;
+.main-contact-page .theme-row {
+padding: 207px 12px 139px;
 }
 
-.page-template-page-contact .single-gutenberg .tdf-mail:before {
-  content: "";
-  background: url("../img/small-envelope.svg") no-repeat;
-  background-position: 0 14px;
-  display: inline-block;
-  width: 16px;
-  height: 28px;
-  margin-right: 17px;
+.main-contact-page h1 {
+margin-bottom: 45px;
 }
-.page-template-page-contact .single-gutenberg .tdf-phone:before {
-  content: "";
-  background: url("../img/phone.svg") no-repeat;
-  background-position: 0 4px;
-  display: inline-block;
-  width: 16px;
-  height: 28px;
-  margin-right: 17px;
-  vertical-align: middle;
-}
-.page-template-page-contact .single-gutenberg .contact-col-1, .page-template-page-contact .single-gutenberg .contact-col-2 {
-  padding-bottom: 10px;
-}
-.page-template-page-contact .single-gutenberg .col-title-special { display: none; }
-.contact-us-link-edin, 
-.contact-us-we-chat {
-color: #363B49;
-display: inline-block;
-margin-right: 15px;
-}
-.contact-us-link-edin img {
-width: 21px;
-} 
-.contact-us-we-chat img {
-width: 27px;
-}
+
 .contact-google-maps {
 position: absolute;
-top: -324px;
+top: 0;
 right: 0;
-width: calc( 100% - 318px);
-height: 939px;
-background: #000;
-z-index: 100; 
-}
-.au-ch-map {
-width: 101px;
-height: 44px;
-background: #fff;
-padding: 10px 16px;
-font-size: 16px;
-line-height: 24px;
-position: absolute;
-z-index: 1000;
-top: 60px;
-left: 10px;
-color: #052A94;
-}
-.au-button {
-width: 50%;
+width: 39.73%;
 height: 100%;
-padding-right: 12px;
-border-right: 1px solid #052A94;
-float: left;
-cursor: pointer;
+background: #000;
+z-index: 1;
 }
-.ch-button {
-width: 50%;
-padding-left: 12px;
-float: left;
-cursor: pointer;
-}
-.au-button.active, .ch-button.active {
-color: #E600BD;
-pointer-events: none;
-cursor: auto;
-}
-.hide-this-map { display: none; }
+
 /**
  * 1.0 - Blog 
  */
@@ -2143,6 +2028,7 @@ display: none;
   font-family: var(--titleFonts);
   background: var(--buttonBG);
   color: var(--buttonColor);
+  font-weight: 700;
  }
 /**
  * 1.0 - Footer
