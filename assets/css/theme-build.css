@@ -448,8 +448,10 @@ height: 100%;
   color: #919AAB !important;
   display: inline-block;
 }
-.main-navigation { width: calc(100% - 379px); padding-left: 112px; margin-top: 5px; }
-.main-navigation ul { margin: 0; padding: 0; list-style: none; text-align: left; }
+.main-navigation { width: calc(100% - 379px); padding-right: 56px; margin-top: 5px; }
+.header-align-left .main-navigation { padding-left: 112px; }
+.main-navigation ul { margin: 0; padding: 0; list-style: none; text-align: right; }
+.header-align-left .main-navigation ul { text-align: left; }
 .main-navigation ul li { display: inline-block; margin: 0 18px 0 0; }
 .main-navigation ul li a {
 display: inline-block;
@@ -1035,21 +1037,21 @@ pointer-events: none;
 .contact-form-main input[type=tel],
 .contact-form-main select,
 .contact-form-main textarea {
-height: 53px;
+height: 48px;
 width: 100%;
-border: 1px solid #C4C8D4;
-border-radius: 0px;
+border: 1px solid #C2C4C9;
+border-radius: 4px;
 background-color: #FFFFFF;
-padding: 12px;
+padding: 18px 16px;
 font-size: 16px;
 }
 .contact-form-main select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgba(15, 17, 38, 1)'><polygon points='0,0 100,0 50,50'/></svg>") no-repeat;
+  background: url('../img/selecticon.svg') no-repeat;
   background-size: 12px;
-  background-position: calc(100% - 6px) 14px;
+  background-position: calc(100% - 12px) 20px;
   background-repeat: no-repeat;
   background-color: #FFFFFF;  
 }
@@ -1064,7 +1066,7 @@ font-size: 16px;
 .contact-form-main select:active,
 .contact-form-main textarea:active {
 border-width: 2px;
-border-color: #156A9F;
+border-color: #000000;
 }
 .wpcf7-not-valid {
   border-color: #9E1012 !important;
@@ -1153,7 +1155,7 @@ input[type=submit]
   border: 0;  
   display: inline-block;  
 }
-
+.support-submit-button { width: 100%; }
 .grecaptcha-badge { 
   visibility: hidden;
 }
@@ -1214,6 +1216,16 @@ height: 100%;
 background: #000;
 z-index: 1;
 }
+/* Narrow Template */
+.narrow-grey-page {
+background: #FAFAFB;
+}
+.narrow-grey-page h1 { text-align: center; margin-bottom: 45px; }
+.narrow-grey-page .theme-row {
+padding: 192px 12px 96px;
+max-width: 582px;
+}
+
 
 /**
  * 1.0 - Blog 
@@ -2227,34 +2239,31 @@ margin-top: 20px;
 
 /* Cart Box at Header */
 .cart-header-icon {
-	display: inline-block;
-	margin-top: -3px;
+  display: inline-block;
+  margin-right: 5px;
 }
 .cart-header-icon:before {
-    font-family:WooCommerce;
-    content: "\e01d";
-    font-size:20px;
-    margin-top:10px;
-    font-style:normal;
-    font-weight:400;
-    padding-right:5px;
-    vertical-align: bottom;
+  content: " ";
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+  background: transparent url(../img/cart.svg) no-repeat center/16px 16px;
+  display: inline-block;
 }
 .cart-contents:hover {
     text-decoration: none;
 }
 .cart-contents-count {
-		font-size: 12px;
-    color: #000;
-    background-color: #e7e7e7;
-    font-weight: bold;
-    border-radius: 10px;
-    width: 20px;
-	height: 20px;
-	text-align: center;
-    line-height: 20px;
-    vertical-align: top;
-	display: inline-block;
+  font-size: 16px;
+  color: #000;
+  background-color: rgba(16,16,16,0.1);
+  font-weight: bold;
+  border-radius: 12px;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  line-height: 24px;
+  display: inline-block;
 }
 .sub-menu li a:before {
 display: none !important;

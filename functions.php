@@ -201,7 +201,14 @@ if( function_exists('acf_add_options_page') ) {
 /********/
 if (!function_exists('thepilatesroom_body')) {
   function thepilatesroom_body($classes) {
+    // general helper class
     $classes[] = "thepilatesroom-helper";
+    // header layout
+    $postid = get_queried_object_id();
+    $header_layout = get_field('left_aligned_header', $postid);    
+    if ( $header_layout ) {
+        $classes[] = "header-align-left";
+    }
     return $classes;
   }
   add_filter( 'body_class', 'thepilatesroom_body' );
@@ -704,6 +711,8 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 /*********************/
 /*   Memberpress     */
 /*********************/
+
+// Subscription
 function add_privacy_policy_and_subscribtion_membership($membership_ID) { ?>
     <div class="mp-form-row membership-subscription">
         <label for="mepr_agree_to_subscription" class="mepr-checkbox-field mepr-form-input">
@@ -713,3 +722,20 @@ function add_privacy_policy_and_subscribtion_membership($membership_ID) { ?>
 <?php
 }
 add_action('mepr-checkout-before-submit', 'add_privacy_policy_and_subscribtion_membership');
+
+// Profile Picture
+function mepr_add_image_tab($user) {
+    ?>
+    <span class="mepr-nav-item custom-image">
+      <a href="/index.php/account/?action=profile-image">Profile Image</a>
+    </span>
+    <?php
+}
+add_action('mepr_account_nav', 'mepr_add_image_tab');
+
+function mepr_add_image_tab_content($action) {
+    if($action == 'profile-image') {
+   echo do_shortcode('[avatar_upload]');
+    }
+}
+add_action('mepr_account_nav_content', 'mepr_add_image_tab_content');

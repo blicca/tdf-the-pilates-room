@@ -61,8 +61,17 @@ if ( is_single() ) {
 			</nav><!-- #site-navigation -->
 			
 			<div class="header-button-col">
-				<a href="/register/the-pilates-room-online/">Sign Up</a>
-				<a href="/log-in">Log in</a>
+				<?php 
+					if ( is_user_logged_in() ) {
+						echo do_shortcode('[avatar]'); 
+						$current_user = wp_get_current_user();
+						echo '<a class="user-profile-link" href="/index.php/account/">' . $current_user->user_firstname . ' ' . $current_user->user_lastname . '</a>';
+						echo '<a href="' . do_shortcode("[mepr-logout-link]") . '"><img width="16" height="16" src="'. get_parent_theme_file_uri() . '/assets/img/logOut.svg" alt="exit"></a>';
+					}
+					else { ?>
+					<a href="/register/the-pilates-room-online/">Sign Up</a>
+					<a href="/log-in">Log in</a>
+					<?php } ?>
 			</div>
 
 			<div class="mobile-menu-icon">

@@ -107,7 +107,7 @@ function add_icon($items, $args) {
   if( $args->theme_location == 'menu-main' ){
     $items .= '<li class="menu-item tpr-shop-cart">';
     $count = WC()->cart->cart_contents_count;
-    $items .= '<a class="cart-contents" href="'. WC()->cart->get_cart_url() .'" title="View your shopping cart"><span class="cart-header-icon"></span>';
+    $items .= '<a class="cart-contents" href="'. wc_get_cart_url() .'" title="View your shopping cart"><span class="cart-header-icon"></span>';
 
     
        
@@ -130,7 +130,7 @@ function my_header_add_to_cart_fragment( $fragments ) {
  
     ob_start();
     $count = WC()->cart->cart_contents_count;
-    ?><a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><span class="cart-header-icon"></span><?php
+    ?><a class="cart-contents" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><span class="cart-header-icon"></span><?php
    
         ?>
         <span class="cart-contents-count"><?php echo esc_html( $count ); ?></span>

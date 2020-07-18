@@ -28,12 +28,12 @@ if ( is_user_logged_in() ) {
     <div class="main-support-page">
 <?php }
 ?>
-<div class="main-support-page">
-    <div class="theme-row">
-        <h1 itemprop="headline"><?php the_title(); ?></h1>
-        <?php the_content(); ?>
+
+        <div class="theme-row">
+            <h1 itemprop="headline"><?php the_title(); ?></h1>
+            <?php the_content(); ?>
+        </div>
     </div>
-</div>
 
 <?php endwhile; // end of the loop. ?>
 <?php
