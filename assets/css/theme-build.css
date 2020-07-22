@@ -553,6 +553,12 @@ opacity: 0;
 transition: all 0.4s ease;
 background:rgba(11,12,15,0.8);
 }
+.logged-in .mobile-menu-row {
+  top: 46px;
+}
+.logged-in .mob-sticky .mobile-menu-row {
+  top: 0;
+}
 .mobile-menu-row {
   position: absolute;
   top: 0;
@@ -640,16 +646,7 @@ position: relative;
 .mobile-menu-nav .menu-main-menu-container ul li.current-menu-item > a {
 color: #141415 !important;
 }
-.mobile-menu-nav .menu-main-menu-container ul li.current-menu-ancestor > a:after,
-.mobile-menu-nav .menu-main-menu-container ul li.current-menu-item > a:after {
-color: #141415 !important;
-width: 3px;
-height: 3px;
-background-color: #141415;
-content: "";
-display: inline-block;
-margin-left: 2px;
-}
+
 .mobile-menu-nav > div > ul > li.mega_one > .sub-menu > li > a, .mobile-menu-nav > div > ul > li.mega_two > .sub-menu > li > a {
 display: none;
 }
@@ -727,6 +724,7 @@ transition: all 0.4s;
   position: relative;
   display: inline-block;
   vertical-align: middle;
+  font-weight: 700;
 }
 
 
@@ -757,11 +755,14 @@ transition: all 0.4s;
 position: static;
 color: #fff;
 text-align: left;
-height: 30px;
+height: 40px;
 width: 100%;
-margin-top: 48px;
-margin-bottom: 48px;
-display: block;
+margin-top: 0;
+margin-bottom: 20px;
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-column-gap: 10px;
+text-align: center;
 }
 
 /**
@@ -2992,6 +2993,10 @@ margin-top: 10px !important;
   .header-row { justify-content: space-between; align-items: center; }
   .site-branding { width: 133px; height: 16px; margin-top: 0; line-height: 0px; }
   .site-branding .logo-alt-text { font-size: 10px; font-weight: 500; letter-spacing: 0.15px; line-height: 12px; display: block; }
+  .logged-in .main-header.sticky-anim.sticky-header { top: 0; }
+  .main-header.sticky-anim.sticky-header { padding: unset; }  
+  .mobile-menu-container .header-button-col-in { display: block; width: 100%; height: auto; margin-bottom: 22px;}
+  .user-profile-link-name { text-align: left; width: calc(100% - 80px);}
   /* Meet The Team Block - Gutenberg - */
   .meet-the-team-gutenberg {
     margin: 56px 0;
@@ -3017,69 +3022,17 @@ margin-top: 10px !important;
     padding: 62px 0;
   }
 
-  /* Client - Global Exposure */
-  .global-clients { background: #fff; text-align: center;}
-  .theme-row.global-clients-row { width: 100%; padding: 0 0 36px; }
-  .clients-left { background: #052a94; padding: 66px 24px; width: 100%; }
-  .client-column { width: 100%; padding: 56px 24px; }   
-  .clients-left p { margin: 0 auto 24px;}
-  .client-slider { -webkit-transform: translateX(0); transform: translateX(0);}
-
-  /* Contact Page */
-  .contact-google-maps {
-  position: relative;
-  top: unset;
-  width: 100vw;
-  margin-left: -24px;
-  margin-right: -24px;
-  }
-  .contact-col-1, .contact-col-2, .contact-col-3 {
-  float: left;
-  width: calc( (100% - 48px) / 3);
-  margin-right: 24px;
-  margin: 0 24px 48px 0;
-  }
-  .contact-col-3 {
-  margin-right: 0;
-  margin-bottom: 48px;
-  }
-  .page-template-page-contact .single-blog-content {
-  padding-bottom: 0;
-  }
-  .page-template-page-contact .thepilatesroom-breadcrumbs {
-  padding-left: 24px;
-  }  
-
-  /* Footer */
-  .footer-linkedin {
-    left: auto;
-    right: 40px;  
-  }
-  .footer-we-chat {
-    display: block;
-  }
-  .footer-nav .thepilatesroom-qr { display: none; }
-  .footer-menu-row-middle { display: none; }
-
-  .footer-top-col3 {
-  width: 25.041%;
-  }
-  .footer-top-col4 {
-  width: 11.029%;
-  }
-  .footer-copy-container {
-      padding: 56px 24px;
-  }  
-
-  .wpml-custom-sw { margin-left: 15px; padding-left: 10px; border-color: #fff; }
 
 }
 
 @media (max-width: 766px) {
-
+  /* General */
+  .thepilatesroom-button { display: inline-block; }
+  /* Outro */
+  .home-outro-container.theme-row { text-align: left;}
   /* Footer */
   .main-footer .theme-row {
-    padding: 0 24px;
+    padding: 0 20px;
   }
   .footer-menu-row > div, .footer-copy-left, .footer-copy-right {
     width: 100%;
@@ -3090,7 +3043,8 @@ margin-top: 10px !important;
   .thepilatesroom-qr { float: left; }  
   .footer-menu-row-middle { display: none; }
   .tpp-link { margin-left: 0; display: block; }
-
+  .footer-top-background { display: none; }
+  .footer-copy-container { padding: 30px 0; border-top: 1px solid rgba(0,0,0,0.1); }
   /* About */
   .home-about { background: #fff; }
   .home-about-title, .home-about-content {
@@ -3104,28 +3058,47 @@ margin-top: 10px !important;
     top: -31px;
     left: 24px; 
   }  
-
+  
+  /* Pilates Studio */
+  .page-template-page-pilates-studio .hero-bg-col, .hero-bg-col { 
+    width: 100vw;
+    height: 116.25vw;
+  }
+  .studio-pilates-room-container.theme-row,
+  .physiotherapy-main-row.studio-pilates-room-container.theme-row {
+    padding: 54px 24px 72px;
+  }
+  .page-studio-content, .physiotherapy-row2 .hero-bg-col { width: 100%; }
+  .physiotherapy-row2 .hero-bg-col { width: 100vw; height: 65.625vw; }
+  .physiotherapy-row2 .studio-pilates-room-container.theme-row, .physiotherapy-row3 .studio-pilates-room-container.theme-row {
+    padding: 54px 24px 72px;
+  }
+  .physiotherapy-row3 .hero-bg-col {
+    width: 100vw;
+    height: 100vw;
+  }
   /* Benefits */
   .home-benefits-container.theme-row { padding: 72px 24px 40px; }
+  .home-benefit { grid-template-columns: 100%; grid-row-gap: 24px; }
   .home-benefits-bg-col, .hero-benefits-content-col {
     width: 100%;
     padding: 0;
   }
   /* Testimonials */
-  h1.section-title {
-    padding: 48px 24px 72px;
-  }
+  .home-testimonials { padding: 58px 0 72px; }
+  .home-testimonials .section-title, .home-testimonials .section-description { padding: 0 24px; text-align: left !important;}
   .home-testimonials-item { width: calc( 100% - 48px ); margin-right: 2px; }
-
+  .home-testimonials .thepilatesroom-button { margin: 0 24px; }
   /* Home Videos */
   .home-videos-row.theme-row {
-    padding: 48px 24px 42px;
+    padding: 48px 24px 11px;
+    text-align: left;
   }
-
+  .home-videos-row.theme-row .section-description br { display: none; }
   .home-videos-grid {
     grid-template-columns: repeat(1, 1fr);
   }
-
+  .home-videos-row.theme-row h3 { margin-bottom: 0; }
   /* Home Approach */
   .home-approach-bg-col {
     position: static; 
@@ -3140,84 +3113,29 @@ margin-top: 10px !important;
     padding: 58px 24px 72px;
   }
 
-  /* Client - Global Exposure */
+  /* Client - Global Exposure */  /* Partners */
+  .theme-row.global-clients-partners-row { padding: 48px 24px 52px; }
   .global-clients { background: #fff; text-align: left; }
-  .clients-left { background: #052a94; padding: 66px 24px; width: 100%; }
-  .client-column { width: 100%; padding: 56px 24px; } 
-  .client-single {
-    padding: 0;
-    display: block;
-   margin-right: 0;
-    text-align: center;
-    width: 100%;
-    max-width: 100%;
-    flex: unset;
-  } 
-  .client-slider {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 24px;
-    justify-items: center;
-    align-items: center;
-    text-align: center;
-      scrollbar-width: thin;          /* "auto" or "thin"  */
-      scrollbar-color: rgb(230,0,189) #e2e4e9;   /* scroll thumb & track */   
-      -webkit-overflow-scrolling: auto;    
-  }
-
-  .client-slider::-webkit-scrollbar {
-  height: 2px;
-  background-color: #e2e4e9;
-  }
-  .client-slider::-webkit-scrollbar-track {
-  height: 2px;
-  background-color: #e2e4e9;
-  }
-  .client-slider::-webkit-scrollbar-thumb {
-  width: 25px;
-  height: 2px;
-  background: rgb(230,0,189);
-  }
-  
-  /* Partners */
-  .theme-row.global-partners-row { text-align: left; }
-  .partner-single {
+  .partners-left, .partner-column, .client-column, .clients-right, .client-column { padding: 0; width: 100%; } 
+  .partner-column { margin-bottom: 14px; }
+  .partner-single img { max-height: 28px; }
+  .partner-slider, .client-slider  {
     display: inline-block;
-    padding: 0;
-    margin-right: 32px;
+    text-align: left;
   }
-  .partner-single img { max-height: 32px; }
-  .partner-slider {
-    overflow: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 24px;
-    justify-items: center;
-    align-items: center;
-    text-align: center;
-      scrollbar-width: thin;          /* "auto" or "thin"  */
-      scrollbar-color: rgb(230,0,189) #e2e4e9;   /* scroll thumb & track */   
-      -webkit-overflow-scrolling: auto;    
-    }
-
-    .partner-single {
+  .partner-single, .client-single {
     width: unset !important;
     margin: unset !important;
     flex: unset !important;
-    }
-  .partner-slider::-webkit-scrollbar {
-  height: 2px;
-  background-color: #e2e4e9;
+    display: inline-block;
+    padding: 0;   
+    margin-bottom: 28px !important;
+    margin-right: 15px !important;
+    max-width: 187px;
   }
-  .partner-slider::-webkit-scrollbar-track {
-  background-color: #e2e4e9;
-  }
-  .partner-slider::-webkit-scrollbar-thumb {
-  width: 25px;
-  height: 2px;
-  background: rgb(230,0,189);
-  } 
-  .partners-left, .partner-column { padding: 0 24px; } 
+  .partner-single, .client-single img { max-height: 28px; }
+  .section-small-title { margin-bottom: 16px; }
+  .clients-right .section-small-title { margin-bottom: 20px; }
 
   /* Outro */
   .home-outro-container.theme-row {
@@ -3227,24 +3145,14 @@ margin-top: 10px !important;
 
   /* Single Posts and Pages */
  
-  /* Meet The Team Gutenberg and CPT */
-  .meet-the-team-gutenberg .grid-team-member {
-    width: 100%;
-    margin: 0 auto 24px !important;
-  }
-  .single-meet_our_teams .thepilatesroom-breadcrumbs { display: none; }
-  .single-team-left img { position: static; }
-  .single-team-left, .single-team-right, .single-team-content-row { width: 100%; float: none; margin: 0; }
-  .grid-team-member { width: 100%; margin-bottom: 48px; }
+
 
   /* Blog Pages */
   .grid-sizer, .front-blog-item {
     width: 100%;
   }
   .single-post .single-blog { padding-top: 50px; }
-  /* Footer Socials */
-  .footer-linkedin { left: 0; }
-  .footer-we-chat { left: 40px; }
+
   /* Icon Box */
   .hero-icon-box {
     margin-top: 0;
@@ -3274,22 +3182,24 @@ margin-top: 10px !important;
   }
   .hero-link-edin img { margin-top: 6px; }
   /* Contact Page */
-  .contact-col-1, .contact-col-2, .contact-col-3 {
-    width: 100%;
-    margin: 0;
-  }
-  .contact-col-3 { padding-bottom: 42px;}
-  .footer-copy-right p img, .footer-copy-right p img:first-child {
-    display: block;
-    margin: 0 auto 10px;
-  }
-  .hero-slider-container { pointer-events: none;}
-}
 
-@media (max-width: 330px) {
-.slide-main-title { font-size: 36px; line-height: 1.1 }
-}
+  .main-contact-page .theme-row { padding: 72px 24px; }
+  .contact-google-maps { position: static; }
+  /* General Again */
+  .caption.theme-row {
+    padding: 0 24px 0; 
+  }
+  .caption-title { padding: 0; }
+  /* Video Posts */
+  .all-video-posts {
+    grid-template-columns: repeat(1, 1fr);
+    grid-column-gap: 0;
+    grid-row-gap: 30px;
+  }
+  .video-library-load-more, .principles-load-more, .knowledge-load-more, .events-load-more { width: 100%; }
+  .sessions-row.theme-row { padding: 0 24px 59px; }
 
+}
 
 .slick-slider.slick-horizontal { -ms-touch-action: pan-y; touch-action: pan-y; }
 .slick-slider.slick-vertical { -ms-touch-action: pan-x; touch-action: pan-x; }

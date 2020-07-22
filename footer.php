@@ -94,9 +94,28 @@
 
 </div><!-- #thepilatesroom-page -->
 <!-- Mobile menu -->
-<div class="mobile-menu-container">
+<div id="mob-menu" class="mobile-menu-container">
     <div class="mobile-menu-row">
         <div class="mobile-menu-closing"><img src="<?php echo get_parent_theme_file_uri() . '/assets/img/main-thin-times.svg'; ?>" alt="close"></div>
+
+            <?php 
+				if ( is_user_logged_in() ) {
+				?>
+				<div class="header-button-col-in">
+				<?php
+					$current_user = wp_get_current_user();
+					echo '<a class="user-profile-link" href="/index.php/account/"><img width="36" height="36" src="'. esc_url( get_avatar_url( $current_user->ID ) ). '" /></a>';
+					echo '<a class="user-profile-link-name" href="/index.php/account/">'. $current_user->user_firstname . ' ' . $current_user->user_lastname . '</a>';
+					echo '<a class="exit" href="' . wp_logout_url( home_url() ) . '"><img width="16" height="16" src="'. get_parent_theme_file_uri() . '/assets/img/logOut.svg" alt="exit"></a>';
+					echo '</div>';
+			}
+			else { ?>
+				<div class="header-button-col">	
+					<a href="/register/the-pilates-room-online/">Sign Up</a>
+					<a href="/log-in">Log in</a>
+				</div>
+            <?php } ?>        
+            
         <div class="mobile-menu-nav">
             <?php
                 wp_nav_menu( array(

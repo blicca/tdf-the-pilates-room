@@ -76,6 +76,7 @@
         // Get the header
         var header = document.getElementById("thepilatesroom-content");
         var real_header = document.getElementById("thepilatesroom-header");
+        var mob_header = document.getElementById('mob-menu');
         // Get the offset position of the navbar
         var head_anim = header.offsetTop + 40;
 
@@ -84,9 +85,11 @@
             if (window.pageYOffset > head_anim) {
                 real_header.classList.add("sticky-anim");
                 real_header.classList.add("sticky-header");
+                mob_header.classList.add("mob-sticky");
             } else {
                 real_header.classList.remove("sticky-anim");
                 real_header.classList.remove("sticky-header");
+                mob_header.classList.remove("mob-sticky");
             }
         }     
         
