@@ -104,7 +104,7 @@ function activello_theme_setup() {
  * Add Cart icon and count to header if WC is active
  */
 function add_icon($items, $args) {
-  if( $args->theme_location == 'menu-main' ){
+  if( $args->theme_location == 'menu-main' || $args->theme_location == 'menu-flyout' ){
     $items .= '<li class="menu-item tpr-shop-cart">';
     $count = WC()->cart->cart_contents_count;
     $items .= '<a class="cart-contents" href="'. wc_get_cart_url() .'" title="View your shopping cart"><span class="cart-header-icon"></span>';

@@ -529,15 +529,17 @@ transition: all 0.4s ease;
   text-align: right;  
 }
 .mobile-menu-icon .icoline {
-  height: 3px;
+  height: 2px;
   width: 100%;
-  background: #101010;
+  background: #000000;
+  border-radius: 8px;
 }
 .mobile-menu-icon .icoline:nth-child(2) {
-  height: 3px;
-  width: 100%;
-  background: #101010;
-  margin: 5px 0;
+  margin: 3px 0;
+}
+.mobile-menu-icon .icoline:nth-child(3) {
+  width: 9px;
+  float: right; 
 }
 .mobile-menu-container {
 position: fixed; 
@@ -558,7 +560,7 @@ background:rgba(11,12,15,0.8);
   background: #F5F5FB;
   width: 296px;
   height: 100vh;
-  padding: 81px 24px 24px 24px;
+  padding: 20px 24px 24px 24px;
   -webkit-transform: translate3d(296px, 0, 0);
   transform: translate3d(296px, 0, 0);
   -webkit-transform-style: preserve-3d;
@@ -612,7 +614,9 @@ width: calc( (100% - 11px) / 2);
 margin-right: 0; 
 }
 .mobile-menu-nav {
-padding-left: 24px;
+padding-left: 0px;
+padding-top: 21px;
+border-top: 1px solid rgba(41, 30, 7, 0.21);
 }
 .mobile-menu-nav .menu-main-menu-container ul {
 list-style-type: none;
@@ -622,26 +626,26 @@ line-height: 24px;
 }
 .mobile-menu-nav .menu-main-menu-container ul li {
 position: relative;
-margin-bottom: 16px
+margin-bottom: 0;
 }
 .mobile-menu-nav .menu-main-menu-container ul li a {
-color: #ffffff;	
-font-family: 'Gilroy', serif;
+color: #141415;	
 font-size: 16px;
-font-weight: 500;
+font-weight: 400;
 letter-spacing: 0;
-line-height: 28px;
+line-height: 30px;
+position: relative;
 }
 .mobile-menu-nav .menu-main-menu-container ul li.current-menu-ancestor > a,
 .mobile-menu-nav .menu-main-menu-container ul li.current-menu-item > a {
-color: #E600BD !important;
+color: #141415 !important;
 }
 .mobile-menu-nav .menu-main-menu-container ul li.current-menu-ancestor > a:after,
 .mobile-menu-nav .menu-main-menu-container ul li.current-menu-item > a:after {
-color: #E600BD !important;
+color: #141415 !important;
 width: 3px;
 height: 3px;
-background-color: #E600BD;
+background-color: #141415;
 content: "";
 display: inline-block;
 margin-left: 2px;
@@ -651,8 +655,9 @@ display: none;
 }
 .mobile-menu-nav > div > ul > li > .sub-menu {
 display: none;
-padding-left: 19px;
+padding-left: 28px;
 margin-top: 16px;
+margin-bottom: 16px;
 }
 .mobile-menu-nav .menu-main-menu-container .disable-eventers > .sub-menu li {
 margin-bottom: 2px;
@@ -674,38 +679,21 @@ padding-bottom: 0 !important;
 display: none; 
 }
 .mobile-menu-nav > div > ul > li.menu-item-has-children.mobile-dropdown > a {
-  color: #E600BD;
+  color: #141415;
 }
-.mobile-menu-nav > div > ul > li.menu-item-has-children:before {
+.mobile-menu-nav > div > ul > li.menu-item-has-children a:before {
 content: "";
-width: 0;
-height: 0;
-border-left: 5px solid transparent;
-border-right: 5px solid transparent;  
-border-top: 5px solid #ffffff;
+width: 10px;
+height: 6px;
+background: url('../img/mobilesortdown.svg') no-repeat top center; 
 position: absolute;
-top: 10px;
-left: -20px;
+top: 8px;
+right: -18px;
+-webkit-transform: all 0.2s;
+transform: all 0.2s;
 }
-.mobile-menu-nav > div > ul > li.menu-item-has-children.mobile-dropdown:before {
-border-left: 5px solid transparent;
-border-right: 5px solid transparent; 
-border-bottom: 5px solid #052A94; 
-border-top: 0;
-}
-
-
-.mobile-menu-nav > div > ul > li > .sub-menu:before {
-content: " ";
-display: block;
-width: 1px;
-height: calc( 100% - 47px );
-border-left: 1px solid #D8D8D8;
-position: absolute;
-z-index: 11;
-top: 45px;
-left: 0px;
-opacity: 0.2;
+.mobile-menu-nav > div > ul > li.menu-item-has-children.mobile-dropdown a:before {
+transform: rotate(180deg);
 }
 
 .mobile-menu-closing {
@@ -715,10 +703,34 @@ position: absolute;
 top: 30px;
 right: 32px;
 z-index: 12;
+display: none;
 }
 
 
 /* Header Buttons */
+.header-button-col-in {
+width: 180px;
+height: 40px;
+text-align: right;
+color: #000;
+height: 100%;
+-webkit-transition: all 0.4s;
+transition: all 0.4s;  
+}
+.user-profile-link img { margin-right: 16px; }
+.user-profile-link-name { 
+  margin-right: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100px;
+  text-overflow: ellipsis;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+
 .header-button-col {
 width: 180px;
 height: 40px;
@@ -2961,50 +2973,42 @@ margin-top: 10px !important;
  */
 @media (max-width: 1336px) {
   /* General */
+  .thepilatesroom-content {
+    margin-top: 0;
+  }
   .header-row, .theme-row, .theme-row-zero, .main-blog-caption, .page-template-page-meet-our-team .single-blog-row, .single-team-row, .caption-title {
     padding-left: 24px;
     padding-right: 24px;  
   }
+  /* General */
+  h1 { font-size: 39px; line-height: 48px; }
+  h2 { font-size: 28px; line-height: 40px; }
+  h3 { font-size: 24px; line-height: 36px; }
+  h1.section-title { font-size: 39px; line-height: 48px; }  
   /* Mobile Header */
-  .main-navigation, .header-button-col, .contact-us-button-header { display: none; }
-  .mobile-menu-icon { width: 24px; display: block; }
-  .main-header, .header-row { height: 80px; }
-  .header-row { justify-content: space-between; }
-  .site-branding { width: 149px; height: 40px; }
+  .main-navigation, .header-button-col, .contact-us-button-header, .header-button-col-in { display: none; }
+  .mobile-menu-icon { width: 16px; display: block; }
+  .main-header, .header-row { height: 80px; top: 0; }
+  .header-row { justify-content: space-between; align-items: center; }
+  .site-branding { width: 133px; height: 16px; margin-top: 0; line-height: 0px; }
   .site-branding .logo-alt-text { font-size: 10px; font-weight: 500; letter-spacing: 0.15px; line-height: 12px; display: block; }
   /* Meet The Team Block - Gutenberg - */
   .meet-the-team-gutenberg {
     margin: 56px 0;
   }
 
-  /* Sliders */
-  .hero-slider-container .slick-slide > img {
-    width: 100%;
-    height: 461px;
-    object-fit: cover;
-  }  
-  .hero-slider-container .slide-content p {
-    font-size: 20px;
-    line-height: 30px;
-  }
-  .slide-main-title {
-    font-size: 56px;
-    line-height: 1;
-  }
-  .hero-slider-container .slick-slide.slick-current.slick-active .slide-content {
-    top: 0;
-  }  
-  .hero-slider-container .slick-dots { padding-left: 24px; }
-  .home-hero-slider-timer { left: 52px; }
-
   /* About */
-  .home-about { background: #fff; text-align: center;}
-  .home-about-container.theme-row { padding: 0; }
-  .home-about-title, .home-about-content {
+  .hero-bg-col {
+    position: static;
     width: 100%;
-    padding: 62px 24px;
-    margin: 0 auto;
-    float: none;
+    height: 75vw;
+    background-position: top center;
+  }
+  .hero-about-content {
+    width: 100%;
+  }  
+  .home-about-container.theme-row {
+  padding: 56px 24px 48px;
   }
   .home-about-content {
     max-width: 462px;
@@ -3012,21 +3016,7 @@ margin-top: 10px !important;
     text-align: left;
     padding: 62px 0;
   }
-  .home-about-title { background: #052a94; }
-  img.section-icon {
-    position: absolute;
-    top: -31px;
-    left: 0; 
-  }  
-  /* Meet The Team Single */
-  .single-team-right { width: 66.66666%; }
-  .single-team-right, .single-team-left { margin: 0; }
-  .single-team-right .thepilatesroom-breadcrumbs { margin-left: 24px; }
-  .single-team-content-row {
-    width: 100%;
-    margin: 0; 
-  }
-  .single-team-right .thepilatesroom-breadcrumbs { margin-bottom: 12px; }
+
   /* Client - Global Exposure */
   .global-clients { background: #fff; text-align: center;}
   .theme-row.global-clients-row { width: 100%; padding: 0 0 36px; }
@@ -3059,16 +3049,6 @@ margin-top: 10px !important;
   .page-template-page-contact .thepilatesroom-breadcrumbs {
   padding-left: 24px;
   }  
-  /* Home Services */
-  .home-services-item:nth-child(3n+1),
-  .home-services-item:nth-child(3n+2),
-  .home-services-item:nth-child(3n+3) {
-    width: calc( (100% - 24px) / 2 );
-    margin-right: 0;
-  }
-  .home-services-item:nth-child(2n+1) {
-    margin-right: 24px;
-  }
 
   /* Footer */
   .footer-linkedin {
@@ -3080,9 +3060,7 @@ margin-top: 10px !important;
   }
   .footer-nav .thepilatesroom-qr { display: none; }
   .footer-menu-row-middle { display: none; }
-  .footer-top-background {
-  padding: 56px 24px 53px;
-  }
+
   .footer-top-col3 {
   width: 25.041%;
   }
@@ -3098,11 +3076,7 @@ margin-top: 10px !important;
 }
 
 @media (max-width: 766px) {
-  /* General */
-  h1 { font-size: 36px; line-height: 48px; }
-  h2 { font-size: 28px; line-height: 40px; }
-  h3 { font-size: 24px; line-height: 36px; }
-  h1.section-title { font-size: 40px; line-height: 56px; }
+
   /* Footer */
   .main-footer .theme-row {
     padding: 0 24px;
@@ -3116,24 +3090,9 @@ margin-top: 10px !important;
   .thepilatesroom-qr { float: left; }  
   .footer-menu-row-middle { display: none; }
   .tpp-link { margin-left: 0; display: block; }
-  /* Slider */
-  .hero-slider-container .slick-slide > img {
-    width: 100%;
-    height: calc( 100% - 80px);
-    height: calc((var(--vh, 1vh) * 100) - 80px);
-    object-fit: cover;
-  }
 
-  .slide-content {
-  max-width: 300px;
-  margin-left: 0;
-  }
-  .slide-content br { display: none; }
-  .hero-slider-container .slick-dots { bottom: 143px; }
-  .home-hero-slider-timer { bottom: 150px; }
   /* About */
   .home-about { background: #fff; }
-  .home-about-container.theme-row { padding: 0; }
   .home-about-title, .home-about-content {
     width: 100%;
     padding: 62px 24px;
@@ -3146,10 +3105,40 @@ margin-top: 10px !important;
     left: 24px; 
   }  
 
-  /* Services */
-  .home-services-item:nth-child(3n+1), 
-  .home-services-item:nth-child(3n+2), 
-  .home-services-item:nth-child(3n+3) { width: 100%; margin-bottom: 48px; }
+  /* Benefits */
+  .home-benefits-container.theme-row { padding: 72px 24px 40px; }
+  .home-benefits-bg-col, .hero-benefits-content-col {
+    width: 100%;
+    padding: 0;
+  }
+  /* Testimonials */
+  h1.section-title {
+    padding: 48px 24px 72px;
+  }
+  .home-testimonials-item { width: calc( 100% - 48px ); margin-right: 2px; }
+
+  /* Home Videos */
+  .home-videos-row.theme-row {
+    padding: 48px 24px 42px;
+  }
+
+  .home-videos-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  /* Home Approach */
+  .home-approach-bg-col {
+    position: static; 
+    width: 100vw;
+    height: 100vw;
+  }
+  .home-approach-column {
+    width: 100%; 
+    margin: unset;
+  }
+  .home-approach-container.theme-row {
+    padding: 58px 24px 72px;
+  }
 
   /* Client - Global Exposure */
   .global-clients { background: #fff; text-align: left; }
@@ -3229,6 +3218,12 @@ margin-top: 10px !important;
   background: rgb(230,0,189);
   } 
   .partners-left, .partner-column { padding: 0 24px; } 
+
+  /* Outro */
+  .home-outro-container.theme-row {
+    padding: 50px 24px 72px;
+  }  
+
 
   /* Single Posts and Pages */
  
