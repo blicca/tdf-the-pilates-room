@@ -3036,6 +3036,7 @@ margin-top: 10px !important;
   /* General */
   .thepilatesroom-button { display: inline-block; }
   .default-page-caption.theme-row { padding: 72px 24px; }
+  .single-blog-row { padding: 0 24px 59px; }
   /* Outro */
   .home-outro-container.theme-row { text-align: left;}
   /* Footer */
@@ -3102,6 +3103,7 @@ margin-top: 10px !important;
     padding: 48px 24px 11px;
     text-align: left;
   }
+  .home-videos-row.theme-row .section-description p { text-align: left !important; }
   .home-videos-row.theme-row .section-description br { display: none; }
   .home-videos-grid {
     grid-template-columns: repeat(1, 1fr);
