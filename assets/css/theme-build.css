@@ -1635,6 +1635,9 @@ padding: 15px 36px 13px 16px;
 background-color: #ffffff;
 color: rgba(20,20,21,0.5);
 }
+.thepilatesroom-helper .select2-container--default .select2-results__option--highlighted[data-selected] {
+  color: #fff !important; 
+}
 .thepilatesroom-helper .select2-container {
 transform: translateY(-2px);
 z-index: 100;  
@@ -2477,6 +2480,7 @@ margin-bottom: 30px;
   background: #101010;
   border-radius: 4px;
   box-shadow: none;
+  line-height: 10px;
   }
   .single-product.woocommerce .quantity .qty {
   height: 48px;
@@ -2864,6 +2868,11 @@ margin-top: 10px !important;
 	margin-top: 20px;
 }
   @media (max-width: 768px) {
+
+    .theme-row.shop-row {
+      padding: 72px 24px; 
+    }
+    .woocommerce table.shop_table td { border-top: 1px solid transparent !important; }
     .woocommerce table.shop_table_responsive tbody tr:first-child td:first-child, .woocommerce-page table.shop_table_responsive tbody tr:first-child td:first-child {
       border-top: 2px solid #141515;
     }
@@ -2902,7 +2911,7 @@ margin-top: 10px !important;
       }
   
       .woocommerce table.shop_table_responsive td.actions .coupon .input-text+.button {
-      width: 75px!important;
+      width: 85px!important;
       }
       .woocommerce table.shop_table_responsive td.actions .coupon .input-text {
       width: calc(100% - 90px) !important;
@@ -2910,9 +2919,7 @@ margin-top: 10px !important;
     .woocommerce-checkout .woocommerce-terms-and-conditions-wrapper {
       width: 100%;
     }
-    .gym-mobil-woo-categories {
-      display: block;
-    }
+
   .main-woo-category, .main-woo-category ~ .widget_product_categories { display: none; }
   .woocommerce ul.products[class*=columns-] li.product, .woocommerce-page ul.products[class*=columns-] li.product {
     width: 100%;
@@ -3028,6 +3035,7 @@ margin-top: 10px !important;
 @media (max-width: 766px) {
   /* General */
   .thepilatesroom-button { display: inline-block; }
+  .default-page-caption.theme-row { padding: 72px 24px; }
   /* Outro */
   .home-outro-container.theme-row { text-align: left;}
   /* Footer */
