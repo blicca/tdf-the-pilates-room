@@ -3046,7 +3046,7 @@ margin-top: 10px !important;
   .footer-menu-row > div, .footer-copy-left, .footer-copy-right {
     width: 100%;
   }
-  .footer-copy-right { text-align: center; }
+  .footer-copy-right { text-align: left; }
   .footer-copy-right .alignright { float: none; }
   .footer-top-col4 h4{ text-align: left!important; }
   .thepilatesroom-qr { float: left; }  
@@ -3208,6 +3208,11 @@ margin-top: 10px !important;
   }
   .video-library-load-more, .principles-load-more, .knowledge-load-more, .events-load-more { width: 100%; }
   .sessions-row.theme-row { padding: 0 24px 59px; }
+
+
+  /* Log in Sign Up Etc */
+  .log-in-bg { display: none; }
+  .log-in-form-col { padding: 0 24px 59px; }
 
 }
 
