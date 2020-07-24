@@ -1626,10 +1626,22 @@ border-radius: 4px;
 .thepilatesroom-helper .select2-container--default .select2-selection--single .select2-selection__rendered {
 color: rgba(20,20,21,0.5);
 font-size: 16px;
-line-height: 20px;
+line-height: 17px;
 padding: 15px 36px 13px 16px;
 }
-
+.thepilatesroom-helper .select2-container--default .select2-selection--single .select2-selection__arrow b {
+border: 0;
+background: url('../img/selecticon.svg') no-repeat top left;
+width: 10px;
+height: 6px;
+top: 0;
+}
+.thepilatesroom-helper .select2-container--default .select2-selection--single .select2-selection__arrow {
+    width: 12px;
+    height: 8px;
+    top: 25px;
+    right: 16px;
+}
 .thepilatesroom-helper.select2-container--default .select2-results__option[aria-selected=true], .thepilatesroom-helper.select2-container--default .select2-results__option[data-selected=true],
 .thepilatesroom-helper .select2-container--default .select2-results__option--highlighted[aria-selected], .thepilatesroom-helper .select2-container--default .select2-results__option--highlighted[data-selected] {
 background-color: #ffffff;
@@ -3098,6 +3110,10 @@ margin-top: 10px !important;
   .home-testimonials .section-title, .home-testimonials .section-description { padding: 0 24px; text-align: left !important;}
   .home-testimonials-item { width: calc( 100% - 48px ); margin-right: 2px; }
   .home-testimonials .thepilatesroom-button { margin: 0 24px; }
+  .home-testimonials-item { padding: 24px; }
+  .testimonial-names { line-height: 20px; }
+  .home-testimonial-footer { grid-template-columns: 36px auto; }
+  .testimonial-thumbnail { height: 36px; }
   /* Home Videos */
   .home-videos-row.theme-row {
     padding: 48px 24px 11px;
@@ -3198,6 +3214,9 @@ margin-top: 10px !important;
   /* General Again */
   .caption.theme-row {
     padding: 0 24px 0; 
+  }
+  .main-testimonials .caption.theme-row {
+    padding: 72px 24px 32px;
   }
   .caption-title { padding: 0; }
   /* Video Posts */
