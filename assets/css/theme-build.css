@@ -294,6 +294,9 @@ a[href^=tel] {
   --buttonHBG: #101010;
   --buttonColor: #ffffff;
 }
+button {
+  font-family: var(--titleFonts);
+}
 body { 
   font-family: 'Lora', serif; 
   font-size: 16px; 
@@ -341,9 +344,7 @@ a:hover {
 .caption.theme-row{
   padding: 155px 12px 0;
 }
-.caption.theme-row h1 {
-  margin-bottom: 18px;
-}
+
 .narrow-text {
   max-width: 572px;
   margin: 0 auto;
@@ -360,7 +361,7 @@ a:hover {
   padding: 13px 24px 16px 24px;
   border-radius: 4px;
 }
-.thepilatesroom-button:hover { background-color:  var(--buttonHBG); color: var(--buttonColor); }
+.thepilatesroom-button:hover { background-color:  var(--buttonHBG); color: var(--buttonColor); opacity: 0.9; }
 .thepilatesroom-button:active, .thepilatesroom-button:focus { background-color: var(--buttonBG);}
 .thepilatesroom-content {
   margin-top: -40px;
@@ -460,10 +461,11 @@ height: 100%;
 -webkit-transition: all 0.4s ease;
 transition: all 0.4s ease;
 }
-
-.main-navigation ul li.current-menu-item > a, .main-navigation ul li a:hover {
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+.main-navigation ul li.current-menu-item > a {
+opacity: 0.5;
+}
+.main-navigation ul li a:hover {
+opacity: 0.7;
 }
 
 
@@ -1703,7 +1705,7 @@ color: #ffffff !important;
 background: #FAFAFB;
 }
 .main-testimonials .theme-row {
-padding-bottom: 66px;
+padding: 188px 12px 72px;
 }
 .single-testimonial {
 max-width: 655px;
@@ -1820,9 +1822,20 @@ margin-bottom: 30px;
 color: #ffffff;
 text-decoration: underline;
 }
+.thepilatesroom-warning-box a:hover {
+text-decoration: none;
+opacity: 0.9;
+}
 /**
  * Log In Sign Up 
  */
+
+.thepilatesroom-helper .mepr_error {
+  border: 0 !important;
+  border-radius: 4px;
+}
+
+
 .log-in-container {
 position: relative;
 height: 100vh;
@@ -2087,6 +2100,7 @@ display: none;
 }
 .main-footer a:hover {
   opacity: 0.5;
+  text-decoration: none;
 }
 .main-footer .theme-row { padding: 0; }
 .main-footer h1, .main-footer h2, .main-footer h3, .main-footer h4, .main-footer h5, .main-footer h6 {
@@ -2097,6 +2111,14 @@ display: none;
   padding: 68px 0 26px;
   border-top: 1px solid rgba(0,0,0,0.1);
 }
+
+.page-template-page-pilates-studio .theme-row.footer-logo,
+.page-template-page-physiotherapy .theme-row.footer-logo,
+.page-template-page-contact .theme-row.footer-logo {
+  border-top: 0;
+}
+
+
 .theme-row.footer-menu-row {
   max-width: 1312px;
   padding: 26px 0 55px;
@@ -2158,6 +2180,7 @@ transition: all 0.3s;
 }
 .footer-nav ul li a:hover {
   opacity: 0.5;
+  text-decoration: none;
 }
 /* Footer Copyright */
 .theme-row.footer-bot-row {
@@ -2292,6 +2315,15 @@ margin-top: 20px;
   text-align: center;
   line-height: 24px;
   display: inline-block;
+}
+.cart-contents:hover .cart-contents-count {
+  background: #000;
+  color: #fff;
+  opacity: 0.9 !important; 
+}
+
+.main-navigation ul li.tpr-shop-cart a:hover {
+  opacity: 1;
 }
 .sub-menu li a:before {
 display: none !important;
@@ -2472,7 +2504,8 @@ margin-bottom: 30px;
   line-height: 60px;
   font-weight: 700;
   color: #000000;
-  margin-bottom: 0;
+  margin-bottom: 16px;
+  font-family: var(--titleFonts);
   }
   .woocommerce-product-details__short-description {
     margin-bottom: 24px;
@@ -2496,6 +2529,9 @@ margin-bottom: 30px;
   }
   .single-product.woocommerce .quantity .qty {
   height: 48px;
+  border-radius: 4px;
+  border-color: #101010;
+  margin-right: 12px;
   }
   .product_meta {
   font-size: 13px;

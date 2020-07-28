@@ -23,6 +23,7 @@ remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 3
 remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart' );
 
 add_action( 'woocommerce_before_main_content', 'custom_shop_before_main_content', 10);
+add_action( 'woocommerce_before_shop_loop', 'custom_woocommerce_before_shop_loop', 10);
 add_action( 'woocommerce_after_main_content', 'custom_shop_after_main_content', 10);
 function custom_shop_before_main_content($location) {
 global $post;
@@ -30,9 +31,21 @@ global $woocommerce;
 
 ?>
 <div class="main-woo">
-  <div class="theme-row shop-row">
+  <div class="default-page-bg">
+      <div class="default-page-caption theme-row">
 <?php			 
 }
+
+function custom_woocommerce_before_shop_loop($location) {
+global $woocommerce;  
+?>
+	</div>
+</div>
+<div class="theme-row shop-loop-row">
+<?php
+}
+
+
 
 function custom_shop_after_main_content($location) {
 global $woocommerce;  
