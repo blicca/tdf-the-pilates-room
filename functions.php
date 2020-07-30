@@ -135,7 +135,7 @@ add_action( 'wp_enqueue_scripts', 'thepilatesroom_scripts' );
 function thepilatesroom_script_style() {
   /* CSS */
   wp_enqueue_style( 'flickity', get_parent_theme_file_uri() .'/assets/css/flickity.min.css' );
-  wp_enqueue_style( 'thepilatesroom', get_parent_theme_file_uri() . '/assets/css/theme-build.css', '1.0.12' );
+  wp_enqueue_style( 'thepilatesroom', get_parent_theme_file_uri() . '/assets/css/theme-build.css', '1.0.13' );
   wp_enqueue_style( 'select2', get_parent_theme_file_uri() . '/assets/css/select2.min.css', '1.0.12' );
  
   /* Scripts */
