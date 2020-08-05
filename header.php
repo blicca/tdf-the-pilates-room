@@ -53,10 +53,18 @@ if ( is_single() ) {
 
             <nav id="site-navigation" class="main-navigation">
                 <?php
+				if ( is_user_logged_in() ) {
                 wp_nav_menu( array(
-                    'theme_location' => 'menu-main',
+                    'theme_location' => 'menu-main-login',
                     'menu_id'        => 'menu-main',
-                ));
+				));
+				}
+				else {
+					wp_nav_menu( array(
+						'theme_location' => 'menu-main',
+						'menu_id'        => 'menu-main',
+					));	
+				}
                 ?>
 			</nav><!-- #site-navigation -->
 			

@@ -118,12 +118,21 @@
             
         <div class="mobile-menu-nav">
             <?php
+                if ( is_user_logged_in() ) {
                 wp_nav_menu( array(
-                    'theme_location' => 'menu-flyout',
+                    'theme_location' => 'menu-flyout-login',
                     'menu_id'        => 'menu-main2',
                     'container_class' => 'menu-main-menu-container'
                 ));
-                ?>
+                }
+                else {
+                    wp_nav_menu( array(
+                        'theme_location' => 'menu-flyout',
+                        'menu_id'        => 'menu-main2',
+                        'container_class' => 'menu-main-menu-container'
+                    ));
+                }
+            ?>
         </div>
         <div class="header-button-col">
 

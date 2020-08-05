@@ -8,7 +8,7 @@ if( $hero_section ): ?>
         <div class="hero-about-content">
             <h1><?php echo $hero_section['hero_title']; ?></h1>
             <?php echo $hero_section['hero_description']; ?>
-            <a class="thepilatesroom-button" href="#">Start 14-Day free trial</a>
+            <a class="thepilatesroom-button" href="/register/the-pilates-room-online/">Start 14-Day free trial</a>
             <div class="button-desc"><?php echo $hero_section['button_desc']; ?></div>
         </div>
         <div class="clearfix"></div>

@@ -61,8 +61,10 @@ if ( ! function_exists( 'thepilatesroom_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-main' => esc_html__( 'Primary', 'thepilatesroom' ),
-			'menu-flyout' => esc_html__( 'Flyout', 'thepilatesroom' ),
+            'menu-main' => esc_html__( 'Primary', 'thepilatesroom' ),
+            'menu-main-login' => esc_html__( 'Primary Logged In', 'thepilatesroom' ),
+            'menu-flyout' => esc_html__( 'Flyout', 'thepilatesroom' ),
+            'menu-flyout-login' => esc_html__( 'Flyout Logged In', 'thepilatesroom' ),
 			'footer-menu1' => esc_html__( 'Footer Menu 1', 'thepilatesroom'),
 			'footer-menu2' => esc_html__( 'Footer Menu 2', 'thepilatesroom'),
 		) );
