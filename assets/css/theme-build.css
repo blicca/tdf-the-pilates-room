@@ -1901,6 +1901,14 @@ text-decoration: underline;
 .mepr-signup-form.mepr-form  .mepr_last_name {
   clear:right;
 }
+
+.cc-error { font-size: 13px; width: 100%; clear: both; float: left; }
+
+/* reset password */
+#mepr_forgot_password_form {
+  margin-bottom: 30px;
+}
+
 /* Sign Up and Login remove header footer */
 .memberpressproduct-template-page-sign-up footer,
 .memberpressproduct-template-page-sign-up #site-navigation,
@@ -2613,7 +2621,8 @@ margin-bottom: 30px;
     line-height: 26px;
     border: 0;
     color: #000000;
-    font-weight: 700;
+    font-weight: 400;
+    border-radius: 4px;
   }
   .woocommerce-error::before, .woocommerce-info::before, .woocommerce-message::before {
   top: 23px;
@@ -2823,7 +2832,7 @@ font-weight: 400
   color: #000000;
   padding: 24px 24px 24px 60px;
   border: 0;
-  background: #FFE95B;
+  background: #FF6666;
   }
   .woocommerce-checkout #payment ul.payment_methods {
   border: 0;
@@ -3095,7 +3104,10 @@ font-weight: 400
     padding: 62px 0;
   }
 
-
+  /* video */
+  .site-lightbox-frame { 
+    width: calc( 100% - 24px );
+  }
 }
 
 @media (max-width: 766px) {
