@@ -2367,6 +2367,9 @@ display: none !important;
 .theme-row.shop-row {
   padding: 188px 12px 100px 12px;
 }
+.single-product.single .default-page-bg {
+  background: transparent;
+}
 .single-product.single .summary ul {
   padding-left: 0;
   list-style-position: unset;
