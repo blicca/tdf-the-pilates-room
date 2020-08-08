@@ -1903,7 +1903,10 @@ text-decoration: underline;
 }
 
 .cc-error { font-size: 13px; width: 100%; clear: both; float: left; }
-
+.thepilatesroom-helper .mepr-stripe-card-element {
+border: 1px solid #C2C4C9 !important;
+border-radius: 4px;
+}
 /* reset password */
 #mepr_forgot_password_form {
   margin-bottom: 30px;
