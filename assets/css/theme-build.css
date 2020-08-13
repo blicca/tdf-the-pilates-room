@@ -493,9 +493,6 @@ opacity: 0.7;
     -webkit-transition: all 0.4s;
     transition: all 0.4s;
     }
-    .sticky-header .menu-item-has-children > .sub-menu {
-      top: 65px;
-    }
     .sub-menu:before {
     content: "";
     width: 0;
