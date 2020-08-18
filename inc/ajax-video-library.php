@@ -158,6 +158,8 @@ function thepilatesroom_ajax_knowledge_handler(){
 		'post_type'=> array( 'knowledge_base'),
 		'posts_per_page' => 6,
 		'paged' => sanitize_text_field($_POST['page'] + 1),
+		'orderby' => 'title',
+		'order' => 'ASC'
 	);
 
 	$r = new WP_Query( $args );

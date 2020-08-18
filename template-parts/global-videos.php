@@ -28,12 +28,18 @@ if( !empty($block['align']) ) {
 $video_post_id = get_field('choose_video') ?: '';
 $add_title = get_field('add_title') ?: '';
 $add_content = get_field('add_content') ?: '';
-
+$vimeo_url = get_field('vimeo_url', $video_post_id);
 
 ?>
 <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
-    <figure class="video-preview-image trigger-video" data-vimeo="<?php echo esc_js(get_field('vimeo_url', $video_post_id)); ?>" data-vidtitle="<?php echo esc_js(get_field('video_title', $video_post_id)); ?>">
-        <?php echo get_the_post_thumbnail($video_post_id, 'full', array('itemprop'=>'image')); ?>
+    <figure class="video-preview-image trigger-video" data-vimeo="<?php echo esc_js($vimeo_url); ?>" data-vidtitle="<?php echo esc_js(get_field('video_title', $video_post_id)); ?>">
+        <?php 
+            if ( has_post_thumbnail($video_post_id) ) { 
+                echo get_the_post_thumbnail($video_post_id, 'full', array('itemprop'=>'image')); 
+            } else { 
+                echo '<img src="'.getIdFromVimeoURL(esc_attr($vimeo_url)).'">';
+            }
+        ?>
         <div class="single-play-icon"> 
             <img src="<?php echo get_parent_theme_file_uri() . '/assets/img/video-play-ico.svg'; ?>" alt="play">
         </div>

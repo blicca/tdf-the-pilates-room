@@ -27,6 +27,8 @@ $args = array(
     'post_type'=> array( 'knowledge_base' ),
     'posts_per_page' => 6,
     'paged' => $paged,
+    'orderby' => 'title',
+    'order' => 'ASC'
 );
 $r = new WP_Query( $args );
 $total_pages = $r->max_num_pages;

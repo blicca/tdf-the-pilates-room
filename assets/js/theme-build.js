@@ -62,8 +62,6 @@
             $('body').css('overflow', 'auto');
         })
     }
-  
-
 
     //
     // Sticky Effects

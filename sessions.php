@@ -52,23 +52,24 @@ $total_pages = $r->max_num_pages;
                 ?>
                     <div class="sessions-arrow sessions-left">
                         <?php
-                            if( get_previous_posts_link() ) {
-                            previous_posts_link( $icon, $total_pages);
-                            }
-                            else {
-                                echo $icon; 
-                            }
-                        ?>
-                    </div>
-                    <div class="sessions-arrow sessions-right">
-                        <?php
                             if( get_next_posts_link( 'next_page', $total_pages) ) {
                             next_posts_link( $icon, $total_pages );
                             }
                             else {
                                 echo $icon;
                             }
-                        ?>
+                        ?>                        
+
+                    </div>
+                    <div class="sessions-arrow sessions-right">
+                        <?php
+                            if( get_previous_posts_link() ) {
+                            previous_posts_link( $icon, $total_pages);
+                            }
+                            else {
+                                echo $icon; 
+                            }
+                        ?>                        
                     </div>
                     <div class="clearfix"></div>
                 </div>

@@ -3279,7 +3279,7 @@ font-weight: 400
   /* Contact Page */
 
   .main-contact-page .theme-row { padding: 72px 24px; }
-  .contact-google-maps { position: static; }
+  .contact-google-maps { position: static; width: 100%; }
   /* General Again */
   .caption.theme-row {
     padding: 0 24px 0; 
